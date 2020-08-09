@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ public_url('css/app.css') }}">
+    <link rel="stylesheet" href="{{ public_url('/css/app.css') }}">
 
     <style>
         /* these styles will animate bootstrap alerts. */
@@ -37,7 +37,7 @@
         @yield('content')
     </main>
 
-    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{public_url('/js/app.js')}}"></script>
     
     {{-- Success Alert --}}
     @if(session('status'))
