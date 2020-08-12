@@ -9,6 +9,6 @@
         @yield('content')
     </div>
 </div>
-@include('admin.common.style')
+@include('admin.common.script')
 </body>
 </html>
