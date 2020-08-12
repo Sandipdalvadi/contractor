@@ -95,7 +95,7 @@
                  <div class="filter-result 01">
                     <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12 pull-left">
                        <div class="company-left-info pull-left">
-                          <img src="assets/images/company-logo.png" alt=""/>
+                          <img src="{{public_url("/assets/images/company-logo.png")}}" alt=""/>
                        </div>
                        <div class="desig">
                           <h3>Senior UX Designer</h3>
@@ -118,7 +118,7 @@
                  <div class="filter-result 02">
                     <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12 pull-left">
                        <div class="company-left-info pull-left">
-                          <img src="assets/images/company-logo.png" alt=""/>
+                          <img src="{{public_url("/assets/images/company-logo.png")}}" alt=""/>
                        </div>
                        <div class="desig">
                           <h3>Full Stack Web Developer</h3>
@@ -141,7 +141,7 @@
                  <div class="filter-result 03">
                     <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12 pull-left">
                        <div class="company-left-info pull-left">
-                          <img src="assets/images/company-logo.png" alt=""/>
+                          <img src="{{public_url("/assets/images/company-logo.png")}}" alt=""/>
                        </div>
                        <div class="desig">
                           <h3>Full Stack Web Developer</h3>
@@ -164,7 +164,7 @@
                  <div class="filter-result 04">
                     <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12 pull-left">
                        <div class="company-left-info pull-left">
-                          <img src="assets/images/company-logo.png" alt=""/>
+                          <img src="{{public_url("/assets/images/company-logo.png")}}" alt=""/>
                        </div>
                        <div class="desig">
                           <h3>Web Developer / PHP & Drupal Ninja!</h3>
@@ -187,7 +187,7 @@
                  <div class="filter-result 02">
                     <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12 pull-left">
                        <div class="company-left-info pull-left">
-                          <img src="assets/images/company-logo.png" alt=""/>
+                          <img src="{{public_url("/assets/images/company-logo.png")}}" alt=""/>
                        </div>
                        <div class="desig">
                           <h3>Front-End UI Web Developer - ReactJS</h3>
@@ -270,7 +270,7 @@
         <div class="container main-container posts-list">
            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 post post-01">
               <div class="post-thumb">
-                 <img src="assets/images/post-image1.jpg" alt="Photo" /> 
+                 <img src="{{public_url("/assets/images/post-image1.jpg")}}" alt="Photo" /> 
                  <div class="post-date">
                     <span class="date postdate">15</span>
                     <span class="date postmonth">Feb</span>
@@ -285,7 +285,7 @@
            <!--Post 01-->
            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 post post-02">
               <div class="post-thumb">
-                 <img src="assets/images/post-image2.jpg" alt="Photo" /> 
+                 <img src="{{public_url("/assets/images/post-image2.jpg")}}" alt="Photo" /> 
                  <div class="post-date">
                     <span class="date postdate">15</span>
                     <span class="date postmonth">Feb</span>
@@ -300,7 +300,7 @@
            <!--Post 02-->
            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 post post-03">
               <div class="post-thumb">
-                 <img src="assets/images/post-image3.jpg" alt="Photo" /> 
+                 <img src="{{public_url("/assets/images/post-image3.jpg")}}" alt="Photo" /> 
                  <div class="post-date">
                     <span class="date postdate">15</span>
                     <span class="date postmonth">Feb</span>
@@ -326,7 +326,7 @@
               <div id="testio" class="owl-carousel owl-template">
                  <!--Slides-->
                  <div class="item">
-                    <img src="assets/images/tes-profile.png" alt="Photo" /> 
+                    <img src="{{public_url("/assets/images/tes-profile.png")}}" alt="Photo" /> 
                     <div class="info">
                        <h5>Anna Smith</h5>
                        <span>Web Designer</span>
@@ -336,7 +336,7 @@
                     </div>
                  </div>
                  <div class="item">
-                    <img src="assets/images/tes-profile.png" alt="Photo" /> 
+                    <img src="{{public_url("/assets/images/tes-profile.png")}}" alt="Photo" /> 
                     <div class="info">
                        <h5>Anna Smith</h5>
                        <span>Web Designer</span>
@@ -346,7 +346,7 @@
                     </div>
                  </div>
                  <div class="item">
-                    <img src="assets/images/tes-profile.png" alt="Photo" /> 
+                    <img src="{{public_url("/assets/images/tes-profile.png")}}" alt="Photo" /> 
                     <div class="info">
                        <h5>Anna Smith</h5>
                        <span>Web Designer</span>
@@ -356,7 +356,7 @@
                     </div>
                  </div>
                  <div class="item">
-                    <img src="assets/images/tes-profile.png" alt="Photo" /> 
+                    <img src="{{public_url("/assets/images/tes-profile.png")}}" alt="Photo" /> 
                     <div class="info">
                        <h5>Anna Smith</h5>
                        <span>Web Designer</span>
