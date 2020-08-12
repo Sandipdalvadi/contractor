@@ -30,12 +30,24 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::post('/password/reset','ResetPasswordController@reset')->name('password.update');
     });
 
-    Route::get('/dashboard','HomeController@index')->name('home');
     Route::get('locale/{locale}', function ($locale){
         Session::put('locale', $locale);
         return redirect()->back();
     })->name('locale');
-
+    Route::get('/dashboard','HomeController@index')->name('home');
+    
+    $paths = array(
+        'category'       => 'CategoryController'
+    );
+    foreach($paths as $slug => $controller){
+        Route::get('/'.$slug.'/index', $controller.'@index')->name($slug.'.index');
+        Route::post('/'.$slug.'/list', $controller.'@list')->name($slug.'.list');
+        Route::delete('/'.$slug.'/delete/{id}', $controller.'@destroy')->name($slug.'.delete');
+        Route::get('/'.$slug.'/form/{id}', $controller.'@form')->name($slug.'.form');
+        Route::post('/'.$slug.'/store/', $controller.'@store')->name($slug.'.save');
+        Route::post('/'.$slug.'/alldeletes', $controller.'@alldeletes')->name($slug.'.alldelete');
+    }
+    
     //All the admin routes will be defined here...
 });
 
@@ -57,4 +69,4 @@ Route::namespace('Auth')->group(function(){
 });
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');

@@ -7,4 +7,5 @@ return [
     'languages'=> 'Languages',
     'settings'=> 'Settings',
     'logout'=> 'Logout',
+    'category'=> 'Category',
 ];
