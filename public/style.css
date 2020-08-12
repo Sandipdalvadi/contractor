@@ -65,7 +65,7 @@ body.modal-open {
     margin-top: 0;
 }
 .pages .navbar .logo {
-    padding: 10px 0;
+    /*padding: 10px 0;*/
 }
 .logo img {
     width: 100%;
@@ -2160,7 +2160,7 @@ ul.social li a {
     font-family: OpenSansBold;
     font-size: 45px;
     background: none !important;
-    color: #007738;
+    color: #965315;
     padding: 0;
     padding-right: 60px;
 	line-height: normal;
@@ -2231,7 +2231,7 @@ ul.social li a {
     margin-bottom: 28px;
 }
 .deximJobs_tabs .sidebar {
-    background: #0cad59;
+    background: #965315;
 	margin-top: -109px;
     border-radius: 13px;
 }
@@ -3408,3 +3408,11 @@ span.login-ins {
 
 
 .navbar-toggle { background-color: #d58438; }
+.navbar-fixed-top {
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+    padding-bottom: 10px;
+    border: none;
+}
