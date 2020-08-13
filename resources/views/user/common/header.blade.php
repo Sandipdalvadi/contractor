@@ -32,20 +32,19 @@
                <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
-                     <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home 
-                        <span class="sr-only">(current)</span></a>     
+                     <li>   
                         <li class="mobile-menu add-job"><a href="#">POST A JOB, IT’S FREE!</a></li>
                      </li>
-                     <li>
-                        <a href="#">Jobs</a>
-                     </li>
-                     <li>
-                        <a href="#">Pages</a>
-                     </li>
-                     <li><a href="#">Blog</a></li>
+                     <li><a href="#">Browse Jobs</a></li>
                      <li><a href="#">How It Works</a></li>
-                     <li><a href="#">Contact</a></li>
+                     <li><a href="{{route('login')}}">Login</a></li>
+                     <li><a href="{{route('register')}}">Register</a></li>
+                     <li><a href="{{route('profile')}}">Profile</a></li>
+                     <li><form method="post" action="{{ route('logout')}}">
+                        {{ csrf_field() }}
+                     <button class="btn btn-default btn-flat">Logout</button>
+                     </form>
+                     </li>
                      <li class="mobile-menu"><a href="#">POST A JOB, IT’S FREE!</a></li>
                      <li class="mobile-menu"><a href="#">Register User</a></li>
                   </ul>

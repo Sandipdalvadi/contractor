@@ -14,6 +14,9 @@
             if($directory == "profile"){
                 return public_url().'/default_images/default_user.jpg';
             }
+            elseif($directory == "category"){
+                return public_url().'/default_images/logo.jpeg';
+            }
         }
     }
     function resize_crop_image($max_width, $max_height, $source_file, $dst_dir, $quality = 80)

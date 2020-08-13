@@ -2,10 +2,13 @@
 @extends('user.common.user_layout')
 @section('content')
         <div class="container slogan">
-           <div class="col-lg-12">
-              <h1 class="animated fadeInDown">Looking For a Job?</h1>
+           <div class="col-lg-6">
+              <h1 class="animated fadeInDown">Hire the best freelancers for any job, online.</h1>
               <h3 class="text-center"><span>Join us </span>& Explore thousands of jobs</h3>
-              <a href="#">We have <span>59</span> jobs offers for you!</a>
+              <div class="banner-btn">
+                <a href="#" class="btn-clr">Hire as a Freelancer</a>
+                <a href="#">Earn Money Freelancing</a>
+              </div>
            </div>
         </div>
     </div>
@@ -215,108 +218,143 @@
         </div>
     </div>
 </div>
-<!--main container Section -->  
-<!---full width sectio fulid-->
-<div class="container-fluid bluesection">
+<!--main container Section -->
+
+
+
+<!--Recuriting Section -->
+<div class="container-fluid" style="background:#fff;">
     <div class="row">
-        <div class="container main-container">
-           <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 blue-halef">
-              <h3>DeximJobs site stats</h3>
-              <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-           </div>
+        <div class="container main-container" style="padding-bottom: 20px;">
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 text-center lighttext">
+                <h3>Popular Company</h3>
+            </div>
         </div>
-        <div class="container main-container countjobs" id="cjobs">
-           <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-              <ul id="counter">
-                 <li>
-                    <div class="count">
-                       <div class="num">15</div>
-                       k
-                    </div>
-                    <span>Job Offers</span>
-                 </li>
-                 <li>
-                    <div class="count">
-                       <div class="num">4982</div>
-                    </div>
-                    <span>Members</span>
-                 </li>
-                 <li>
-                    <div class="count">
-                       <div class="num">768</div>
-                    </div>
-                    <span>Resume Posted</span>
-                 </li>
-                 <li>
-                    <div class="count">
-                       <div class="num">90</div>
-                       %
-                    </div>
-                    <span>Client who Rehier</span>
-                 </li>
-              </ul>
-           </div>
+        <div class="container main-container blocks popular-company">
+          <div class="popular-company-slid">
+            <div class="col-lg-12">
+                <a href="#" class="block">
+                  <div class="pc-img">
+                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                  </div>  
+                  <h3>Company Name</h3>
+                </a>
+            </div>
+            <div class="col-lg-12">
+                <a href="#" class="block">
+                  <div class="pc-img">
+                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                  </div>  
+                  <h3>Company Name</h3>
+                </a>
+            </div>
+            <div class="col-lg-12">
+                <a href="#" class="block">
+                  <div class="pc-img">
+                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                  </div>  
+                  <h3>Company Name</h3>
+                </a>
+            </div>
+            <div class="col-lg-12">
+                <a href="#" class="block">
+                  <div class="pc-img">
+                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                  </div>  
+                  <h3>Company Name</h3>
+                </a>
+            </div>
+            <div class="col-lg-12">
+                <a href="#" class="block">
+                  <div class="pc-img">
+                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                  </div>  
+                  <h3>Company Name</h3>
+                </a>
+            </div>
+            <div class="col-lg-12">
+                <a href="#" class="block">
+                  <div class="pc-img">
+                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                  </div>  
+                  <h3>Company Name</h3>
+                </a>
+            </div>
+          </div>      
         </div>
     </div>
 </div>
-<!---full width sectio fulid-->
-<!--Recent Post-->
-<div class="container-fluid recent-post" style="background:#f9f9f9;">
-    <div class="row">
-        <div class="container main-container">
-           <h3 class="text-center">Recent Post</h3>
-           <p>Completely synergize resource sucking relationships via premier niche markets.</p>
-        </div>
-        <div class="container main-container posts-list">
-           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 post post-01">
-              <div class="post-thumb">
-                 <img src="{{public_url("/assets/images/post-image1.jpg")}}" alt="Photo" /> 
-                 <div class="post-date">
-                    <span class="date postdate">15</span>
-                    <span class="date postmonth">Feb</span>
-                 </div>
-              </div>
-              <div class="post-meta">
-                 <h4>11 Tips to Help You Get New Clients Through Cold Calling</h4>
-                 <p>Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. </p>
-                 <a href="blog-post.html" class="readmore">Read More</a>
-              </div>
-           </div>
-           <!--Post 01-->
-           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 post post-02">
-              <div class="post-thumb">
-                 <img src="{{public_url("/assets/images/post-image2.jpg")}}" alt="Photo" /> 
-                 <div class="post-date">
-                    <span class="date postdate">15</span>
-                    <span class="date postmonth">Feb</span>
-                 </div>
-              </div>
-              <div class="post-meta">
-                 <h4>11 Tips to Help You Get New Clients Through Cold Calling</h4>
-                 <p>Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. </p>
-                 <a href="blog-post.html" class="readmore">Read More</a>
-              </div>
-           </div>
-           <!--Post 02-->
-           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 post post-03">
-              <div class="post-thumb">
-                 <img src="{{public_url("/assets/images/post-image3.jpg")}}" alt="Photo" /> 
-                 <div class="post-date">
-                    <span class="date postdate">15</span>
-                    <span class="date postmonth">Feb</span>
-                 </div>
-              </div>
-              <div class="post-meta">
-                 <h4>11 Tips to Help You Get New Clients Through Cold Calling</h4>
-                 <p>Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. </p>
-                 <a href="blog-post.html" class="readmore">Read More</a>
-              </div>
-           </div>
-           <!--Post 03-->
-        </div>
-    </div>
+
+
+<!--Recuriting Section -->
+
+
+<!--Plan and Prices Tags-->
+<div class="container-fluid main-container price-tags">
+   <div class="container">
+      <div class="col-lg-12">
+         <h3>Plans & Prices</h3>
+         <p>Completely synergize resource sucking relationships via premier niche markets.</p>
+      </div>
+   </div>
+   <div class="container main-container priceing_tables">
+      <!--Colg-12 for Pricing Tables--> 
+      <div class="col-lg-12">
+         <!---Price table free--->
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 price_table no-padding startup free">
+            <div class="header">Start Up</div>
+            <div class="price">Free!<span>30 day's trail</span></div>
+            <ul class="list-items">
+               <li>Unlimited number of jobs</li>
+               <li>Jobs are posted for 30 days</li>
+               <li>One Time Fee</li>
+               <li>This Plan Includes 1 Job</li>
+               <li>Non-Highlighted Post</li>
+               <li>Posted For 30 Days</li>
+            </ul>
+            <div class="purchase-now">
+               <a href="payment.html">Purchase Now</a>
+            </div>
+         </div>
+         <!---Price table pro--->
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 price_table border pro">
+            <div class="header">Company Pro<span>Best Choice</span></div>
+            <div class="price"><i>$</i>59</div>
+            <ul class="list-items">
+               <li>Unlimited number of jobs</li>
+               <li>Jobs are posted for 30 days</li>
+               <li>One Time Fee</li>
+               <li>This Plan Includes 1 Job</li>
+               <li>Non-Highlighted Post</li>
+               <li>Posted For 30 Days</li>
+            </ul>
+            <div class="purchase-now">
+               <a href="payment.html">Purchase Now</a>
+            </div>
+         </div>
+         <!---Price table enterprices--->
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 price_table no-padding startup">
+            <div class="header">Enterprise</div>
+            <div class="price"><i>$</i>149</div>
+            <ul class="list-items">
+               <li>Unlimited number of jobs</li>
+               <li>Jobs are posted for 30 days</li>
+               <li>One Time Fee</li>
+               <li>This Plan Includes 1 Job</li>
+               <li>Non-Highlighted Post</li>
+               <li>Posted For 30 Days</li>
+            </ul>
+            <div class="purchase-now">
+               <a href="payment.html">Purchase Now</a>
+            </div>
+         </div>
+      </div>
+      <!--Colg-12 for Pricing Tables--> 
+   </div>
 </div>
-<!--Recent Post-->
+<!-- Plan and Prices Tags-->
+
+
 
 <!-- Testimionals Slider-->
 <div class="container-fluid testimionals" style="background:url({{public_url('/assets/images/testbg.png')}});">
@@ -371,24 +409,5 @@
     </div>
 </div>
 <!-- Testimionals Slider-->
-<!-- Clients Slider-->
-<div class="container-fluid clients">
-    <div class="row">
-        <div class="container main-container">
-           <div class="col-lg-12">
-              <ul>
-                 <li><img src="{{public_url('/assets/images/client1.png')}}" alt="Photo" /> </li>
-                 <li><img src="{{public_url('/assets/images/client2.png')}}" alt="Photo" /> </li>
-                 <li><img src="{{public_url('/assets/images/client3.png')}}" alt="Photo" /> </li>
-                 <li><img src="{{public_url('/assets/images/client4.png')}}" alt="Photo" /> </li>
-                 <li><img src="{{public_url('/assets/images/client1.png')}}" alt="Photo" /> </li>
-              </ul>
-           </div>
-        </div>
-    </div>
-</div>
-<!-- Client Slider-->  
-
-
 
 @endsection

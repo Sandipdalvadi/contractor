@@ -14,89 +14,8 @@ class CategoryController extends Controller
 {
     public function index()
     { 
-
-        return view('admin.category.index');
-    }
-
-    public function list(Request $request)
-    {
-        $columns = array( 
-            0 =>'Id', 
-            1 =>'Id', 
-            2 =>'Name',
-            3 =>'Image',
-        );
-  
-        $totalData = DB::table('car_type')->count();
-        $totalFiltered = $totalData; 
-        $limit = $request->request->get('length');
-        $start = $request->request->get('start');
-        $order = $columns[$request->input('order.0.column')];
-        $dir = $request->input('order.0.dir');
-
-        if(!empty($request->input('search.value')))
-        {            
-            $search = $request->input('search.value'); 
-
-            $posts =  DB::table('car_type')->Where('Id', 'LIKE',"%{$search}%")
-                    ->orWhere('Name', 'LIKE',"%{$search}%")
-                    ->offset($start)
-                    ->limit($limit)
-                    ->orderBy($order,$dir)
-                    ->get();
-
-            $totalFiltered = DB::table('car_type')->where('Id','LIKE',"%{$search}%")
-                    ->orWhere('Name', 'LIKE',"%{$search}%")
-                    ->count();
-        }   
-        else
-        {            
-            $posts = DB::table('car_type')
-                    ->offset($start)
-                    ->limit($limit)
-                    ->orderBy($order,$dir)
-                    ->get();
-        }
-        $data = array();
-        $data1=array();
-
-        if($posts)
-        {
-            foreach ($posts as $post) 
-            {
-                $name = $post->name ? $post->name : '';
-                $img= $post->image ? $post->image : '';
-                
-                if($img != '')
-                {
-                    $image = "<img src=".URL::To('public/car_type/'.$post->image)." width='100px'>";
-                }
-                else
-                {
-                    $image = "<img src=".URL::To('public/default_image/default-image.jpeg').">";
-                }
-                $data['checkdata']="<input type='checkbox' class='case' name='case' value='$post->id'>";
-                $data['Id'] = $post->id;
-                $data['Name'] = $name;
-                $data['Image'] = $image;
-
-                $data['action'] = "<a style='float:left;' href=".route('car_type.form',['id'=>$post->id])." title='EDIT' class='btn btn-primary' ><span class='glyphicon glyphicon-edit'></span></a>
-                <form style='float:left;margin-left:6px;' method='POST' action=".route('car_type.delete',['id'=>$post->id]).">";
-               
-                $data['action'] .=  csrf_field();
-                $data['action'] .= method_field("DELETE");
-                $data['action'] .=  "<button class='btn btn-danger'><i class='glyphicon glyphicon-remove aria-hIdden='true'></i></button></form>";
-
-                $data1[]=$data;
-            }
-        }
-        $json_data = array(
-            "draw"            => intval($request->request->get('draw')),  
-            "recordsTotal"    => intval($totalData),  
-            "recordsFiltered" => intval($totalFiltered),
-            "data"            => $data1   
-        );
-        echo json_encode($json_data); 
+        $result = Category::where('status',1)->get();
+        return view('admin.category.index',['result'=>$result]);
     }
     
     /**
@@ -106,8 +25,8 @@ class CategoryController extends Controller
      */
     public function form(Request $request)
     {   
-        $carType = $request->id ? CarType::find($request->id) : new CarType ;  
-        return view('admin.car_type.create',['carType'=>$carType]);
+        $category = $request->id ? Category::find($request->id) : new Category ;  
+        return view('admin.category.form',['category'=>$category]);
     }
 
     /**
