@@ -17,8 +17,23 @@
                   <a href="{{public_url('index.html')}}"><img src="{{public_url('/assets/images/logo2.jpeg')}}" alt="Photo" /> </a>
                </div>
                <div class="logins">
-                  <a href="#" class="post_job"><span class="label job-type partytime">POST A JOB, IT’S FREE!</span></a> 
-                  <a href="#" class="login"><i class="fa fa-user"></i></a>
+                    <ul>
+                        <li>
+                          <a href="#" class="post_job"><span class="label job-type partytime">POST A JOB, IT’S FREE!</span></a>
+                        </li>
+                          <li class="dropdown">
+                          <a href="#" class="dropdown-toggle login" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+                          <ul class="dropdown-menu">
+                                 <li><a href="{{route('login')}}">Login</a></li>
+                                <li><a href="{{route('register')}}">Register</a></li>
+                                <li><a href="{{route('profile')}}">Profile</a></li>
+                                <li><form method="post" action="{{ route('logout')}}">
+                                    {{ csrf_field() }}
+                                 <button class="">Logout</button>
+                                 </form>
+                                </li>
+                          </ul>
+                    </ul>
                </div>
                <!-- Brand and toggle get grouped for better mobile display -->
                <div class="navbar-header">
@@ -32,21 +47,14 @@
                <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
-                     <li>   
+                     <li>
                         <li class="mobile-menu add-job"><a href="#">POST A JOB, IT’S FREE!</a></li>
                      </li>
                      <li><a href="#">Browse Jobs</a></li>
                      <li><a href="#">How It Works</a></li>
-                     <li><a href="{{route('login')}}">Login</a></li>
-                     <li><a href="{{route('register')}}">Register</a></li>
-                     <li><a href="{{route('profile')}}">Profile</a></li>
-                     <li><form method="post" action="{{ route('logout')}}">
-                        {{ csrf_field() }}
-                     <button class="btn btn-default btn-flat">Logout</button>
-                     </form>
-                     </li>
                      <li class="mobile-menu"><a href="#">POST A JOB, IT’S FREE!</a></li>
-                     <li class="mobile-menu"><a href="#">Register User</a></li>
+                     <li class="mobile-menu"><a href="{{route('login')}}">Login</a></li>
+                     <li class="mobile-menu"><a href="{{route('register')}}">Register</a></li>
                   </ul>
                </div>
                <!-- navbar-collapse -->

@@ -409,5 +409,10 @@
     </div>
 </div>
 <!-- Testimionals Slider-->
-
+<script>
+    $(document).ready(function(){
+        $("body").addClass("homepage");
+  
+    });
+</script>
 @endsection

@@ -3,11 +3,6 @@
 	}
 	.job-recom .recom-job:last-child {
 	}
-	.logo {
-		position: absolute;
-		left: 0;
-		margin-left: 50px;
-	}
 }
 @media (max-width: 1300px) {
 	.top_header .nav>li a {
@@ -123,7 +118,8 @@
         display: none!important;
     }
     .navbar-nav {
- 
+ 		    margin-left: 0;
+    margin-right: 0;
     }
     .navbar-nav>li {
 		float: left;

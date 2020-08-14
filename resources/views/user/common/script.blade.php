@@ -1,5 +1,4 @@
   	<!--  jQuery 1.7+  {{public_url("/js/plugins/chart.js")}}-->
-      <script type="text/javascript" src="{{public_url('/assets/js/jquery-1.9.1.min.js')}}"></script>
       <!--Select 2-->
      <script type="text/javascript" src="{{public_url('/assets/js/select2.min.js')}}"></script>
      <!-- Html Editor -->

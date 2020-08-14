@@ -47,6 +47,7 @@ body {
     background: #f9f9f9;	
 	font-family: OpenSansSemibold;
 	font-size:21px;
+    margin-top: 75px;
 }
 body.modal-open {
 	overflow: overlay;
@@ -55,10 +56,10 @@ body.modal-open {
 /*/////Logo//////////*/
 .logo {
     float: left;
-    width: 90px;
+    width: 55px;
     padding: 0 0;
     margin-right: 10px;
-    margin-top: -20px;
+    margin-top: 0;
 }
 .fixed-header .logo {
     width: 55px;
@@ -93,8 +94,9 @@ body.modal-open {
 }
 /*******************************/
 .logins {
-    position: absolute;
-    right: 60px;
+    float: right;
+/*    position: absolute;
+    right: 60px; */
     padding: 4px 0;
 }
 .logins span {
@@ -213,7 +215,7 @@ nav.navbar.home {
 /*///////////////*/
 .slider_items {
     background: url(assets/images/headerimage1.jpg);
-    height: 668px;
+    height: 500px;
 	background-attachment: fixed;
     background-position: 0 83%;
     background-repeat: no-repeat;
@@ -297,7 +299,7 @@ ul.dropdown-menu li:last-child a {
 }
 /*////////////Slogan Area/////////*/
 .container.slogan {
-	text-align: center;
+	/*text-align: center;*/
     color: #fff;
     position: absolute;
     left: 0;
@@ -306,16 +308,16 @@ ul.dropdown-menu li:last-child a {
 	z-index: -1;
 }
 .slogan h1 {
-color: #333333;
+color: #fff;
     font-family: LatoBlack;
-    font-size: 58px;
+    font-size: 48px;    margin-bottom: 20px;    line-height: normal;
 }
 .slogan h3 {
     margin: 0;
     font-family: RalewayLight;
     font-size: 25px;
-	color:#333;
-    text-align: center;
+	color:#fff;
+    text-align: left;
 }
 .slogan span {
     color: #d98639;
@@ -332,10 +334,14 @@ color: #333333;
     display: inline-block;
     font-family: OpenSansSemibold;
     font-size: 15px;
-    margin-top: 46px;
-    padding: 10px 31px;
+    margin-top: 25px;
+    padding: 13px 31px;
     text-decoration: none !important;
     border-radius: 44px;
+}
+.slogan .btn-clr {
+    background-color: #d98639;
+    color: #fff;
 }
 .slogan a span {
     font-family: OpenSansBold;
@@ -1107,7 +1113,7 @@ color: #ffffff;
     padding: 35px 0;
 }
 .last-footer p {
-    font-family: LatoRegular;
+    font-family: LatoRegular;    margin: 0;
 }
 .footer.last-footer ul li {
     padding-bottom: 0;
@@ -1131,7 +1137,7 @@ color: #ffffff;
 }
 .page-title,
 .header_area {
-    margin-top: 103px;
+    /*margin-top: 103px;*/
 }
 .page-title .white-heading {
  
@@ -1214,7 +1220,7 @@ background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 }
 
 .dashboard {
-    background: #ffffff none repeat scroll 0 0;
+    background: #eaeaea none repeat scroll 0 0;
     border-bottom: 1px solid #eee;
     
 }
@@ -1255,7 +1261,7 @@ background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 
 .user-data .seprator:before {
     position: absolute;
-    background: #eee;
+    background: #cacaca;
     right: 0;
     height: 100%;
     width: 1px;
@@ -1311,6 +1317,7 @@ ul.skills li {
     padding-bottom: 10px;
     padding-left: 25px;
     position: relative;
+    margin: 10px 0;
 }
 .content ul li:before {
     content: "";
@@ -1366,9 +1373,11 @@ ul.simple li {
   background: #ffffff none repeat scroll 0 0;
     border: 2px solid #d98639;
     border-radius: 77px;
-    color: #333;
+    color: #333;    cursor: pointer;
 }
-
+.apply-link {
+    cursor: pointer;
+}
 .label.apply-job:hover {box-shadow: 0 15px 37px #cdcdcd;}
 
 .widget ul li {
@@ -1382,9 +1391,11 @@ ul.simple li {
     font-size: 13px;
     position: relative;
     float: left;
-	padding-bottom: 20px;
-	text-align: center;
+    text-align: center;
     width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-right: 0;
 }
 .widget ul.social li {
     text-align: center;
@@ -2152,7 +2163,7 @@ ul.social li a {
     width: 100%;
 }
 .deximJobs_tabs .tab-content {
-	margin-top: 49px;
+	margin-top: 30px;
     float: left;
     width: 100%;
 }
@@ -2179,19 +2190,19 @@ ul.social li a {
 .deximJobs_tabs .contact_us label {
     color: #fff;
     width: 130px;
-    margin-left: -51px;
+    /*margin-left: -51px;*/
 	padding: 2% 0;
 }
 
 .deximJobs_tabs .contact_us input {
-	width: 75%;
+	width: calc(100% - 152px);
     font-size: 16px;
     padding: 10px 17px;
     font-family: LatoRegular;
     border: 1px solid #d98639;
 }
 .contact_us .form-group .dropdown {
-		width: 75%;
+		width: calc(100% - 152px);
 		float: left;
 }
 .deximJobs_tabs .dropdown button {
@@ -2232,7 +2243,7 @@ ul.social li a {
 }
 .deximJobs_tabs .sidebar {
     background: #965315;
-	margin-top: -109px;
+	margin-top: -30px;
     border-radius: 13px;
 }
 .deximJobs_tabs .sidebar .widget {
@@ -2301,10 +2312,10 @@ ul.social li a {
     background: #232323;
 }
 .deximJobs_tabs .sidebar .widget li .label.register {
-    background: #333;
+    background: #333; border: 2px solid #333333;
     width: initial;
-    padding: 15px 40px;} 
-	
+    padding: 15px 40px; } 
+.deximJobs_tabs .sidebar .widget li .label.register:hover { border-color: #fff; }
 	.fa.fa-clock-o, .fa.fa-child, .fa.fa-check-circle-o {
     font-size: 26px;
 }
@@ -3319,7 +3330,7 @@ span.login-ins {
     height: 563px;
 }
 .parallax-window {
-    min-height: 668px;
+    min-height: 500px;
     background: transparent;
 }
 
@@ -3376,7 +3387,7 @@ span.login-ins {
     -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
       animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
-#loadessr {background: #d9d9d9; position: absolute; width: 100%; height: 100%; z-index: 999999; }
+#loadessr {background: #d9d9d9; position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 999999; }
  
 @-webkit-keyframes spin {
     0%   {
@@ -3409,10 +3420,147 @@ span.login-ins {
 
 .navbar-toggle { background-color: #d58438; }
 .navbar-fixed-top {
-    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    /*background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
     background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
     background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );*/
+    background: #fff;
     padding-bottom: 10px;
+    padding-top: 10px;
     border: none;
 }
+.header_banner:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+.popular-company .block {
+    text-align: center; border-radius: 10px;
+}
+.popular-company .block h3 {
+    padding: 0;
+    border: none;
+    margin: 15px 0 0;
+}
+.popular-company .block .pc-img {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border: 2px solid #d98639;
+}
+.popular-company .block .pc-img img {
+    width: 100%;
+}
+.popular-company .block:hover {
+    transform: translate(0, -5px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+#header .collapse {
+    float: left;
+    padding: 4px 0;
+}
+.last-footer .main-container .list-group a::before { content: none; }
+.footer.last-footer ul.list-group {
+    float: right;    margin: 0;
+}
+
+
+.deximJobs_tabs .tab-content ul.nav.nav-pills {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.deximJobs_tabs .tab-content ul.nav.nav-pills li {
+    margin: 0;
+    width: 100%;
+}
+.deximJobs_tabs .tab-content ul.nav.nav-pills li a {
+    padding: 0;
+    pointer-events: none;
+    display: inline-block;
+}
+
+.header_banner {
+    display: none;
+}
+body.homepage .header_banner {
+    display: revert;
+}
+.logins > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.logins > ul li {
+    padding: 0;
+}
+.logins > ul li.dropdown ul.dropdown-menu {
+    right: 0;
+    left: auto;
+    min-width: 200px;
+    margin-top: 15px;
+    border: none;
+}
+ul.dropdown-menu li button {
+    text-transform: none;
+    color: #333 !important;
+    padding: 13px 20px;
+    margin: 0px 18px;
+    width: calc(100% - 34px);
+    border: none;
+    text-align: left;
+    background-color: transparent;
+}
+
+ul.dropdown-menu li button {
+    color: #d98639 !important;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
+.fixed-header nav.navbar-fixed-top {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.job-progress {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+}
+
+.job-progress .progress {
+    display: inline-block;
+    width: 100%;
+    background: #ececec;
+    margin: 10px 0 0;
+}
+.job-progress li {
+    padding: 0 15px !important;
+    list-style: none;
+}
+.job-progress li:before { content: none !important; }
+.progress-txt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.progress-txt lable {
+    font-family: OpenSansBold;
+}
+.job-progress .progress .progress-bar {
+    background-color: #d98639;
+}
+

@@ -1,64 +1,63 @@
 @extends('user.common.user_layout')
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ $title }}</div>
-                <div class="card-body">
-                    <form method="POST" action="{{ route($loginRoute) }}">
-                        @csrf
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route($forgotPasswordRoute) }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+        </div>
+    </div>
+</header>
+<div class="container-fluid login_register header_area deximJobs_tabs">
+    <div class="row">
+        <div class="container main-container-home">
+            <div class="tab-content">
+                <div id="login" class="tab-pane fade in active white-text">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 zero-padding-left">
+                        <ul class="nav nav-pills ">
+                            <li class="active"><a href="javascript:void(0)">Login</a></li>
+                        </ul>
+                        <form name="contact_us" class="contact_us">
+                          <div class="form-group">
+                             <label>Name</label>
+                             <input type="text" name="name">
+                          </div>
+                          <div class="form-group">
+                             <label>Password</label>
+                             <input type="password" name="password-2" id="password-2"/>
+                          </div>
+                          <div class="form-group submit">
+                             <label>Submit</label>
+                             <div class="cbox">
+                                <input type="checkbox" name="checkbox"/>
+                                <span>Remember me</span>
+                             </div>
+                          </div>
+                          <div class="form-group submit">
+                             <label>Submit</label>
+                             <input type="submit" name="submit" value="Sign in" class="signin" id="signin">
+                             <a href="lost-password.html" class="lost_password">Lost Password?</a>
+                          </div>
+                       </form>
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12  pull-right sidebar">
+                       <div class="widget">
+                          <h3>Don't have an account?</h3>
+                          <ul>
+                             <li>
+                                <p> If you'd like to find out more about how Jobsite can help you with your recruitment needs, please complete this enquiry form.</p>
+                             </li>
+                             <li>
+                                <p>A member of our Sales team will contact you shortly.</p>
+                             </li>
+                             <li>
+                                <a href="#" class="label job-type register">Register</a>
+                             </li>
+                          </ul>
+                       </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 @endsection
