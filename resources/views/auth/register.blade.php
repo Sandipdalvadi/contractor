@@ -15,6 +15,7 @@
                              <li class="active"><a href="javascript:void(0)">Register</a></li>
                         </ul>
                        <form name="contact_us" class="contact_us" method="POST" action="{{ route('register') }}">
+                        @csrf
                           <div class="form-group">
                              <label>Username</label>
                              <input type="text" name="name">
