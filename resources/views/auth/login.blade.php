@@ -14,14 +14,15 @@
                         <ul class="nav nav-pills ">
                             <li class="active"><a href="javascript:void(0)">Login</a></li>
                         </ul>
-                        <form name="contact_us" class="contact_us">
+                        <form name="contact_us" class="contact_us" action="{{ route($loginRoute) }}" method="POST">
+                           @csrf
                           <div class="form-group">
                              <label>Name</label>
-                             <input type="text" name="name">
+                             <input type="text" name="email">
                           </div>
                           <div class="form-group">
                              <label>Password</label>
-                             <input type="password" name="password-2" id="password-2"/>
+                             <input type="password" name="password" id="password-2"/>
                           </div>
                           <div class="form-group submit">
                              <label>Submit</label>
@@ -33,7 +34,7 @@
                           <div class="form-group submit">
                              <label>Submit</label>
                              <input type="submit" name="submit" value="Sign in" class="signin" id="signin">
-                             <a href="lost-password.html" class="lost_password">Lost Password?</a>
+                              <a href="{{route($forgotPasswordRoute)}}" class="lost_password">Lost Password?</a>
                           </div>
                        </form>
                     </div>
@@ -48,7 +49,7 @@
                                 <p>A member of our Sales team will contact you shortly.</p>
                              </li>
                              <li>
-                                <a href="#" class="label job-type register">Register</a>
+                                <a href="{{route('register')}}" class="label job-type register">Register</a>
                              </li>
                           </ul>
                        </div>

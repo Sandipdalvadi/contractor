@@ -14,7 +14,7 @@
                         <ul class="nav nav-pills ">
                              <li class="active"><a href="javascript:void(0)">Register</a></li>
                         </ul>
-                       <form name="contact_us" class="contact_us">
+                       <form name="contact_us" class="contact_us" method="POST" action="{{ route('register') }}">
                           <div class="form-group">
                              <label>Username</label>
                              <input type="text" name="name">
@@ -79,7 +79,7 @@
                              </li>
                              <li>
                                 <p>Already have an account?</p>
-                                <a href="" class="label job-type register" style="margin-top:15px;">LOGIN</a>
+                             <a href="{{route('login')}}" class="label job-type register" style="margin-top:15px;">LOGIN</a>
                              </li>
                           </ul>
                        </div>
