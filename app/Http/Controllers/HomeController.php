@@ -31,4 +31,10 @@ class HomeController extends Controller
         // echo 111;exit;
         return view('user.profile');
     }
+    public function editProfile()
+    {
+        // echo 111;exit;
+        return view('user.edit_profile');
+    }
+    
 }

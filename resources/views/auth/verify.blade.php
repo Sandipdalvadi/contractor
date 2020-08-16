@@ -1,3 +1,4 @@
+<?php// echo "confirm4"; exit;?>
 @extends('user.common.user_layout')
 
 @section('content')

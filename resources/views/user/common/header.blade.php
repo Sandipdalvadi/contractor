@@ -4,7 +4,7 @@
 <!-- Header Image Or May be Slider-->
 <header id="header" class="container-fluid home">
    <div class="row">
-      <div class="header_banner">
+         <div class="header_banner">
          <div class="slides">
             <div class="slider_items parallax-window"  data-parallax="scroll" data-image-src="{{public_url('/assets/images/headerimage1.jpg')}}"></div>
          </div>
@@ -14,25 +14,29 @@
          <nav class="navbar navbar-fixed-top">
             <div class="container">
                <div class="logo">
-                  <a href="{{public_url('index.html')}}"><img src="{{public_url('/assets/images/logo2.jpeg')}}" alt="Photo" /> </a>
+                  <a href="{{route('home')}}"><img src="{{public_url('/assets/images/logo2.jpeg')}}" alt="Photo" /> </a>
                </div>
                <div class="logins">
-                    <ul>
-                        <li>
-                          <a href="#" class="post_job"><span class="label job-type partytime">POST A JOB, IT’S FREE!</span></a>
-                        </li>
-                          <li class="dropdown">
-                          <a href="#" class="dropdown-toggle login" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
-                          <ul class="dropdown-menu">
-                                 <li><a href="{{route('login')}}">Login</a></li>
-                                <li><a href="{{route('register')}}">Register</a></li>
-                                <li><a href="{{route('profile')}}">Profile</a></li>
-                                <li><form method="post" action="{{ route('logout')}}">
+                  <ul>
+                     <li>
+                        <a href="#" class="post_job"><span class="label job-type partytime">POST A JOB, IT’S FREE!</span></a>
+                     </li>
+                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle login" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+                        <ul class="dropdown-menu">
+                           @if(Auth::check())
+                              <li><a href="{{route('profile')}}">Profile</a></li>
+                              <li>
+                                 <form method="post" action="{{ route('logout')}}">
                                     {{ csrf_field() }}
-                                 <button class="">Logout</button>
+                                    <button class="">Logout</button>
                                  </form>
-                                </li>
-                          </ul>
+                              </li>
+                           @else
+                              <li><a href="{{route('login')}}">Login</a></li>
+                              <li><a href="{{route('register')}}">Register</a></li>
+                           @endif
+                        </ul>
                     </ul>
                </div>
                <!-- Brand and toggle get grouped for better mobile display -->

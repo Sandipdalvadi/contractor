@@ -49,9 +49,10 @@ public function login(Request $request)
     if(Auth::guard('admin')->attempt($request->only('email','password'),$request->filled('remember'))){
         //Authentication passed...
         return redirect()
-            ->intended(route('admin.home'))
-            ->with('status','You are Logged in as Admin!');
+        ->intended(route('admin.home'))
+        ->with('status','You are Logged in as Admin!');
     }
+    // echo "<pre>";print_r($request->all());exit;
 
     //Authentication failed...
     return $this->loginFailed();

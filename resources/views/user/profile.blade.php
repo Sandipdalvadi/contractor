@@ -13,7 +13,7 @@
                 <div class="seprator ">
                     <div class="no-padding user-image"><img src="{{public_url("/assets/images/job-admin.png")}}" alt=""/></div>
                     <div class="user-tag">John Doe<span>@johndoe01</span></div>
-                    <div class="jos-status"><span class="label job-type job-partytime">Edit Profile</span></div>
+                    <div class="jos-status"><span class="label job-type job-partytime"><a href="{{route('editprofile')}}">Edit Profile</span></div>
                 </div>
                 <div class="seprator">
                     <div class="user-tag"><label>Sallary<span>$35000 - $38000</span></label></div>
@@ -86,6 +86,39 @@
                             </div>
                         </li>
                     </ul>
+                 </div>
+                 <div class="portfolio-main row">
+                    <h3 class="small-heading">Portfolio</h3>
+                    <div class="col-md-4">
+                        <div class="portfolio">
+                            <div class="portfolio-img"><img src="{{public_url("/assets/images/portfolio1.jpg")}}" alt=""/></div>
+                            <h4>portfolio Name</h4>
+                        </div>
+                    </div> 
+                    <div class="col-md-4">
+                        <div class="portfolio">
+                            <div class="portfolio-img"><img src="{{public_url("/assets/images/portfolio2.jpg")}}" alt=""/></div>
+                            <h4>portfolio Name</h4>
+                        </div>
+                    </div> 
+                    <div class="col-md-4">
+                        <div class="portfolio">
+                            <div class="portfolio-img"><img src="{{public_url("/assets/images/portfolio1.jpg")}}" alt=""/></div>
+                            <h4>portfolio Name</h4>
+                        </div>
+                    </div> 
+                    <div class="col-md-4">
+                        <div class="portfolio">
+                            <div class="portfolio-img"><img src="{{public_url("/assets/images/portfolio2.jpg")}}" alt=""/></div>
+                            <h4>portfolio Name</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio">
+                            <div class="portfolio-img"><img src="{{public_url("/assets/images/portfolio1.jpg")}}" alt=""/></div>
+                            <h4>portfolio Name</h4>
+                        </div>
+                    </div> 
                  </div>
               </div>
            </div>
