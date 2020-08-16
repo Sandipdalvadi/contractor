@@ -29,8 +29,8 @@ Route::namespace('Auth')->group(function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile', 'HomeController@profile')->name('profile');
-Route::get('/edit_profile', 'HomeController@editProfile')->name('editprofile');
+Route::get('/profile', 'ProfileController@profile')->name('profile');
+Route::get('/edit_profile', 'ProfileController@editProfile')->name('editprofile');
 
 Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::namespace('Auth')->group(function(){
