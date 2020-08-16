@@ -15,6 +15,9 @@ class CategoryController extends Controller
     public function index()
     { 
         $result = Category::where('status',1)->get();
+        // echo "<pre>";
+        // print_r($result);
+        // exit;
         return view('admin.category.index',['result'=>$result]);
     }
     

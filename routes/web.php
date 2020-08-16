@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','HomeController@index');
 
+// Route::get('/login', function (){
+//     // Session::put('locale', $locale);
+//     return "Hello";
+// });
 
 Route::namespace('Auth')->group(function(){
     //Login Routes
