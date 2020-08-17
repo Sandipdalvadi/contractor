@@ -2,12 +2,12 @@
 @section('content')
     <div class="page-title">
         <div>
-            <h1><i class="fa fa-dashboard"></i> {{$category->id ? 'Edit' : 'New' }} Statue</h1>
+            <h1><i class="fa fa-dashboard"></i> {{$category->id ? 'Edit' : 'New' }} Category</h1>
         </div>
         <div>
             <ul class="breadcrumb">
                 <li><i class="fa fa-home fa-lg"></i></li>
-                <li><a href="#">{{$category->id ? 'Edit' : 'New' }} Statue</a></li>
+                <li><a href="#">{{$category->id ? 'Edit' : 'New' }} Category</a></li>
             </ul>
         </div>
     </div>
@@ -44,10 +44,16 @@
 
                                 <form class="login-form" method="post" action="{{route('admin.category.save')}}"
                                       enctype="multipart/form-data">
+                                      @csrf
                                     
+                                    <input class="form-control" type="hidden" value="{{$category->id ? $category->id : 0}}">
                                     <div class="form-group">
                                         <label class="control-label">Name En</label>
-                                        <input class="form-control" type="text" placeholder="Name English" title="Name English" name="name_eng" value="{{$category->name_eng ? $category->name_eng : ''}}">
+                                        <input class="form-control" type="text" placeholder="Name English" title="Name English" name="name_en" value="{{$category->name_en ? $category->name_en : ''}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Name Ur</label>
+                                        <input class="form-control" type="text" placeholder="Name Urdu" title="Name Urdu" name="name_ur" value="{{$category->name_ur ? $category->name_ur : ''}}">
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">Name Ar</label>
@@ -55,10 +61,10 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label class="control-label">Statue - Active/Deactive</label>
-                                        <select class="form-control select2" id="select" name="statue_active">
-                                            <option @if($category->status == 1) 'selected' @endif value="1">Active</option>
-                                            <option @if($category->status == 0) 'selected' @endif value="0">In Active</option>
+                                        <label class="control-label">Status </label>
+                                        <select class="form-control select2" id="select" name="status">
+                                            <option @if($category->status == 1) selected @endif value="1">Active</option>
+                                            <option @if($category->status == 0) selected @endif value="0">In Active</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -68,7 +74,7 @@
                                                 <input class="form-control" type="file" name="image"  id="imgInp" >
                                             </div>
                                             <div class="col-md-6">
-                                                <img id="blah" src="{{$category->image !="" ? file_exists_in_folder("category",$category->image) : file_exists_in_folder("category","logo.jpeg")}}" alt="Image" width="150px"/>
+                                                <img id="blah" src="{{$category->image !="" ? file_exists_in_folder("category",$category->image) : file_exists_in_folder("default_images","blank_image.jpeg")}}" alt="Image" width="150px"/>
                                             </div>
                                         </div>
                                     </div>

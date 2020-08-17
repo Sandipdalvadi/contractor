@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{public_url("/datatable_js/css/bootstrap.min.css")}}">
     <link rel="stylesheet" type="text/css" href="{{public_url("/datatable_js/css/jquery.dataTables.min.css")}}">
     <link rel="stylesheet" type="text/css" href="{{public_url("/datatable_js/css/buttons.dataTables.min.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{public_url("/datatable_js/css/select2.min.css")}}">
     <link href="{!! public_url("/datatable_js/css/toggle_menu.css") !!}" rel="stylesheet">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css"

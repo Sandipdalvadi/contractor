@@ -9,6 +9,7 @@
 <script type="text/javascript" src="{{public_url("/datatable_js/js/vfs_fonts.js")}}"></script>
 <script type="text/javascript" src="{{public_url("/datatable_js/js/buttons.flash.min.js")}}"></script>
 <script type="text/javascript" src="{{public_url("/datatable_js/js/buttons.html5.min.js")}}"></script>
+<script type="text/javascript" src="{{public_url("/datatable_js/js/select2.min.js")}}"></script>
 <script type="text/javascript" src="{{public_url("/datatable_js/js/buttons.print.min.js")}}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -18,5 +19,6 @@
                 'excel', 'pdf', 'csv'
             ]
             });
+            $('.select2').select2();
     } );
 </script>

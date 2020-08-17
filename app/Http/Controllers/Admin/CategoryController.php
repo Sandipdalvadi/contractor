@@ -14,10 +14,7 @@ class CategoryController extends Controller
 {
     public function index()
     { 
-        $result = Category::where('status',1)->get();
-        // echo "<pre>";
-        // print_r($result);
-        // exit;
+        $result = Category::get();
         return view('admin.category.index',['result'=>$result]);
     }
     
@@ -44,53 +41,50 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255'
+            'name_ar' => 'required|max:255',
+            'name_ur' => 'required|max:255',
+            'name_en' => 'required|max:255',
         ]);
 
         if($validator->fails())
         {
-            return redirect()->route('car_type.form',['id'=>$request->id])->withErrors($validator)->withInput();
+            return redirect()->route('admin.category.form',['id'=>$request->id])->withErrors($validator)->withInput();
         } 
-        $carType = $request->id ? CarType::findOrFail($request->id) : new CarType;
-        $carType->name = $request->name;
-
+        $category = $request->id ? Category::findOrFail($request->id) : new Category;
+        $category->name_ar = $request->name_ar;
+        $category->name_en = $request->name_en;
+        $category->name_ur = $request->name_ur;
         if ($files = $request->file('image')) 
         {
-         
-            $destinationPath = public_path('car_type/'); // upload path
-            $carImage = time() . "." . $files->getClientOriginalName();
-            $files->move($destinationPath, $carImage);
-            $oldFile = $carType->image ? public_path('car_type/'.$carType->image) : '';
-            $oldFile != '' ? unlink($oldFile) : '';
-            $carType->image = $carImage;    
-        } 
+            $destinationPath = public_path('category/'); // upload path
+            // echo $destinationPath;exit;
+            $catImage = time() . "." . $files->getClientOriginalName();
+            $files->move($destinationPath, $catImage);
 
-        $carType->save();
-        $message = $request->id ? "Car Type Updated Successfully" :"New Car Type Created Successfully";
-        return redirect()->route('car_type.index')->with('message', $message );
+
+            old_file_remove('category',$category->image);
+            $category->image = $catImage;    
+        } 
+        $category->save();
+        $message = $request->id ? "Category Updated Successfully" :"New Category Created Successfully";
+        return redirect()->route('admin.category.index')->with('message', $message );
     }
 
     public function destroy($id)
     {   
-        $carType = CarType::findOrFail($id);
-        $oldFile = $carType->image ? public_path('car_type/'.$carType->image) : '';
-        $oldFile != '' ? unlink($oldFile) : '';
-        $carType->delete();
-        return redirect()->route('car_type.index')->with('message',"Car Type Deleted Successfully");
+        $category = Category::findOrFail($id);
+        old_file_remove('category',$category->image);
+        $category->delete();
+        return redirect()->route('admin.category.index')->with('message',"Category Deleted Successfully");
       
     }
-
-    public function alldeletes(Request $request)
+    public function changeStatus($id, Request $request)
     {   
-        $multiId = $request->id; 
-        
-        foreach ($multiId as $singleId) 
-        {
-            $carType = CarType::findOrFail($singleId);
-            $oldFile = $carType->image ? public_path('car_type/'.$carType->image) : '';
-            $oldFile != '' ? unlink($oldFile) : '';
-            $carType->delete();
-        }
+        $category = Category::findOrFail($id);
+        // old_file_remove('category',$category->image);
+        $category->status = $request->status;
+        $category->save();
+        // return redirect()->route('admin.category.index')->with('message',"Category Deleted Successfully");
       
     }
 }

@@ -38,6 +38,7 @@
                         <tr>
                             <th>#</th>
                             <th>Name English</th>
+                            <th>Name Urdu</th>
                             <th>Name Arebic</th>
                             <th>Image</th>
                             <th>Status</th>
@@ -50,19 +51,20 @@
                         @endphp
                         @foreach($result as $res)
                             @php($i++)
-                            <tr>
+                            <tr id="{{$res->id}}">
                                 <td>{{$i}}</td>
-                                <td>{{$res->name_eng ? $res->name_eng : ''}}</td>
+                                <td>{{$res->name_en ? $res->name_en : ''}}</td>
+                                <td>{{$res->name_ur ? $res->name_ur : ''}}</td>
                                 <td>{{$res->name_ar ? $res->name_ar : ''}}</td>
-                                <td><img src="{{$res->image !="" ? file_exists_in_folder("category",$res->image) : file_exists_in_folder("category/logo.jpeg")}}" height="100px"/></td>
-                                <td><label class='switch'><input type='checkbox' @if($res->status == 1) checked @endif value="{{$res->status}}" onchange="changeStatus(this,"{{route('admin.category.changeStatus',['id'=>$res->id])}}")"><span class='slider round'></span>
+                                <td><img src="{{$res->image !="" ? file_exists_in_folder("category",$res->image) : file_exists_in_folder("category","logo.jpeg")}}" height="100px"/></td>
+                                <td><label class='switch'><input type='checkbox' @if($res->status == 1) checked @endif value="{{$res->status}}" onchange="changeStatus(this,'{{route('admin.category.changeStatus',['id'=>$res->id])}}')"><span class='slider round'></span>
                                 </label></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="{{route('admin.category.edit',['id'=>$res->id])}}" class="btn btn-info"
+                                        <a href="{{route('admin.category.form',['id'=>$res->id])}}" class="btn btn-info"
                                         href="#"><i class="fa fa-lg fa-edit"></i></a>
                                         <a href="javascript:void(0)" class="btn btn-warning"
-                                        onclick="deleteRecord('{{route('admin.category.delete',['id'=>$res->id])}}')"><i class="fa fa-lg fa-trash"></i></a>
+                                        onclick="deleteRecord('{{route('admin.category.delete',['id'=>$res->id])}}',{{$res->id}})"><i class="fa fa-lg fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -74,4 +76,38 @@
     </div>
 </div>
 <script src="{!! public_url('/datatable_js/js/deletefunction.js') !!}"></script>
+<script>
+
+function changeStatus(objs,urls){
+
+    // if(objs.value == "Published")
+    // {
+    //     jQuery(objs).attr('value','Unpublished');
+    // }
+    // else
+    // {
+        // alert(objs.value);
+        // var dataValue = 'Published';
+    //     jQuery(objs).attr('value','Published');
+    // }
+    if($(objs).is(":checked")){
+        var dataValue = '1';
+        // alert("Checkbox is checked.");
+    }
+    else if($(objs).is(":not(:checked)")){
+        var dataValue = '0';
+        // alert("Checkbox is unchecked.");
+    }
+
+    jQuery.ajax({
+        type: "get",
+        url: urls,
+        data: {'status':dataValue},
+        success: function(resultData){
+            // alert
+        }
+    });
+
+}
+</script>
 @endsection

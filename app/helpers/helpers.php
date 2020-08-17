@@ -19,6 +19,13 @@
             }
         }
     }
+    function old_file_remove($directory,$fileName){
+        if($fileName !="" && file_exists(public_path($directory.'/'.$fileName)))
+        {
+            return unlink(public_path($directory.'/'.$fileName));
+        }
+    }
+
     function resize_crop_image($max_width, $max_height, $source_file, $dst_dir, $quality = 80)
     {
         $filename = $source_file;

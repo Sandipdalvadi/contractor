@@ -1,12 +1,12 @@
 
- function deleteRecord(urls){
+ function deleteRecord(urls,id){
     if(confirm("Are you sure you want to delete this?")){ 
         $.ajax({
-            type : 'POST',
+            type : 'get',
             // dataType : 'json',
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             url :urls, 
-            data : {id:id},
+            // data : {id:id},
             success:function(responce)
             {
                 // for(var i=0; i<id.length; i++)

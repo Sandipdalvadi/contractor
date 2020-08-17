@@ -53,6 +53,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         return redirect()->back();
     })->name('locale');
     Route::get('/dashboard','HomeController@index')->name('home');
+    Route::get('/category/changeStatus/{id}','CategoryController@changeStatus')->name('category.changeStatus');
     
     $paths = array(
         'category'       => 'CategoryController'
@@ -60,7 +61,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     foreach($paths as $slug => $controller){
         Route::get('/'.$slug.'/index', $controller.'@index')->name($slug.'.index');
         // Route::post('/'.$slug.'/list', $controller.'@list')->name($slug.'.list');
-        Route::delete('/'.$slug.'/delete/{id}', $controller.'@destroy')->name($slug.'.delete');
+        Route::get('/'.$slug.'/delete/{id}', $controller.'@destroy')->name($slug.'.delete');
         Route::get('/'.$slug.'/form/{id}', $controller.'@form')->name($slug.'.form');
         Route::post('/'.$slug.'/store/', $controller.'@store')->name($slug.'.save');
     }
