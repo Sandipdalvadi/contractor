@@ -37,7 +37,22 @@
                               <li><a href="{{route('register')}}">Register</a></li>
                            @endif
                         </ul>
-                    </ul>
+                     </li>
+                    
+                    
+                     <li class="dropdown">
+                        <a class="dropdown-toggle login" href="#" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">{{Lang::get('messages.languages')}}</a>
+                        <ul class="dropdown-menu settings-menu">
+                            <li><a href="{{route('locale',['locale'=>'en']) }}">English</a></li>
+                            <li><a href="{{route('locale',['locale'=>'ar']) }}">Arabic</a></li>
+                            <li><a href="{{route('locale',['locale'=>'ur']) }}">Urdu</a></li>
+                        </ul>
+                    </li>
+
+                    
+
+                  </ul>
                </div>
                <!-- Brand and toggle get grouped for better mobile display -->
                <div class="navbar-header">

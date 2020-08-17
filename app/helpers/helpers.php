@@ -25,7 +25,17 @@
             return unlink(public_path($directory.'/'.$fileName));
         }
     }
-
+    function get_language_name($objectName,$name = ""){
+        if(!empty($objectName)){
+            $locale = app()->getLocale();
+            $result = json_decode(json_encode($objectName, true));
+            $result = (array) $result;
+            return $result[$name.'_'.$locale];
+        }
+        else{
+            return '';
+        }
+    }
     function resize_crop_image($max_width, $max_height, $source_file, $dst_dir, $quality = 80)
     {
         $filename = $source_file;

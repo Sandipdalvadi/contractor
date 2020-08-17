@@ -14,11 +14,13 @@
        <script type="text/javascript" src="{{public_url('/assets/counter/jquery.counterup.min.js')}}"></script> 
      <!--Site JS-->
       <script src="{{public_url('/assets/js/webjs.js')}}"></script>
+      <script type="text/javascript" src="{{public_url("/datatable_js/js/select2.min.js")}}"></script>
  
       <script>
  $(window).load(function() {
  
     $("#loadessr").fadeOut();
+    $('.select2').select2();
  
  })
  </script>

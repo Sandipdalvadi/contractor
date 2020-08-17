@@ -25,14 +25,11 @@
                             </button>
                             <div class="dropdown-menu "  aria-labelledby="dropdownMenu1">
                                 <ul class="tiny_scrolling" id="style-3">
-                                    <li><a href="#">Web Developer</a></li>
-                                    <li><a href="#">Graphic designer</a></li>
-                                    <li><a href="#">Developer</a></li>
-                                    <li><a href="#">UX Designer</a></li>
-                                    <li><a href="#">Web Developer</a></li>
-                                    <li><a href="#">Graphic designer</a></li>
-                                    <li><a href="#">Developer</a></li>
-                                    <li><a href="#">UX Designer</a></li>
+                                    @if(count($categories))
+                                       @foreach ($categories as $category) 
+                                          <li><a href="#">{{get_language_name($category,'name')}}</a></li>
+                                       @endforeach
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -80,12 +77,11 @@
            </div>
            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 filters pull-right filter-category">
               <ul class="nav nav-pills">
-                 <li class="web-designer"><a href="#">Web Designer</a></li>
-                 <li class="fianance"><a href="#">Finance</a></li>
-                 <li class="education"><a href="#">Education</a></li>
-                 <li class="food-service"><a href="#">Food Services</a></li>
-                 <li class="health-services"><a href="#">Health Care</a></li>
-                 <li class="automative"><a href="#">Automative</a></li>
+               @if(count($categories))
+               @foreach ($categories as $category) 
+                  <li><a href="#">{{get_language_name($category,'name')}}</a></li>
+                  @endforeach
+               @endif
                  <li class="all active"><a href="#">All</a></li>
               </ul>
            </div>

@@ -31,6 +31,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'ProfileController@profile')->name('profile');
 Route::get('/edit_profile', 'ProfileController@editProfile')->name('editprofile');
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+})->name('locale');
 
 Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::namespace('Auth')->group(function(){

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Model\Category;
 
 class HomeController extends Controller
 {
@@ -19,7 +20,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        // echo 111;exit;
-        return view('user.home');
+        $categories = Category::where('status','1')->get();
+        // echo "<pre>";print_r($categories);exit;
+        return view('user.home',['categories'=>$categories]);
     }
 }

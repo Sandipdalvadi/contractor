@@ -21,6 +21,7 @@
      
     <!-- Default template -->
     <link rel="stylesheet" href="{{public_url('/assets/owlslider/owl-carousel/owl.template.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{public_url("/datatable_js/css/select2.min.css")}}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

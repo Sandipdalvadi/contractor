@@ -25,7 +25,8 @@
                     aria-haspopup="true" aria-expanded="false">{{Lang::get('messages.languages')}}</a>
                     <ul class="dropdown-menu settings-menu">
                         <li><a href="{{route('admin.locale',['locale'=>'en']) }}"><i class="fa fa-cog fa-lg"></i> English</a></li>
-                        <li><a href="{{route('admin.locale',['locale'=>'fr']) }}"><i class="fa fa-cog fa-lg"></i> French</a></li>
+                        <li><a href="{{route('admin.locale',['locale'=>'ar']) }}"><i class="fa fa-cog fa-lg"></i> Arabic</a></li>
+                        <li><a href="{{route('admin.locale',['locale'=>'ur']) }}"><i class="fa fa-cog fa-lg"></i> Urdu</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button"
