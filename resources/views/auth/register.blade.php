@@ -12,28 +12,28 @@
                 <div id="register-account" class="tab-content white-text">
                     <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12 zero-padding-left">
                         <ul class="nav nav-pills ">
-                             <li class="active"><a href="javascript:void(0)">Register</a></li>
+                             <li class="active"><a href="javascript:void(0)">{{__("messages.register")}}</a></li>
                         </ul>
                        <form name="contact_us" class="contact_us" method="POST" action="{{ route('register') }}">
                         @csrf
                           <div class="form-group">
-                             <label>Username</label>
-                             <input type="text" name="name">
+                             <label>{{__("messages.name")}}</label>
+                             <input type="text" name="name" placeholder="{{__("messages.name")}}">
                           </div>
                           <div class="form-group">
-                             <label>E-mail</label>
-                             <input type="email" name="email">
+                             <label>{{__("messages.email")}}</label>
+                             <input type="email" name="email" placeholder="{{__("messages.email")}}">
                           </div>
                           <div class="form-group">
-                             <label>Password</label>
-                             <input type="password" name="password" id="password"/>
+                             <label>{{__("messages.password")}}</label>
+                             <input type="password" name="password" id="password" placeholder="{{__("messages.password")}}"/>
                           </div>
                           <div class="form-group">
-                             <label>Confirm Password</label>
-                             <input type="password" name="password_confirmation" id="cpassword"/>
+                             <label>{{__("messages.confirmPassword")}}</label>
+                             <input type="password" name="password_confirmation" id="cpassword" {{__("messages.confirmPassword")}}/>
                           </div>
                           <div class="form-group">
-                             <label>I'm looking</label>
+                             <label>{{__("messages.imLooking")}}</label>
                              <div class="dropdown">
                                 <button class="filters_feilds btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Category
@@ -55,17 +55,16 @@
                           </div>
                           <div class="form-group text-center">
                              <label></label>
-                             <input type="submit" name="submit" value="Register" class="register">
+                             <input type="submit" name="submit" value="{{__("messages.register")}}" class="register">
                           </div>
                        </form>
                     </div>
                     <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12  pull-right sidebar">
                        <div class="widget">
-                          <h3>Why to have  an account in Contractor? </h3>
+                          <h3>{{__("messages.whyToHaveAnAccountInContractor")}}</h3>
                           <ul>
                              <li>
-                                <p><i class="fa fa-clock-o"></i>Fast applying for offers
-                                   the necessary documents are always at hand
+                                <p><i class="fa fa-clock-o"></i>{{__("messages.fastApplyingForOffersTheNecessaryDocumentsAreAlwaysAtHand")}}
                                 </p>
                              </li>
                              <!--<li>-->
@@ -74,13 +73,12 @@
                              <!--   </p>-->
                              <!--</li>-->
                              <li>
-                                <p><i class="fa fa-check-circle-o"></i>Matching jobs
-                                   We will suggest you offer to fit your needs on e-mail
+                                <p><i class="fa fa-check-circle-o"></i>{{__("messages.matchingJobsWeWillSuggestYouOfferToFitYourNeedsOnEmail")}}
                                 </p>
                              </li>
                              <li>
-                                <p>Already have an account?</p>
-                             <a href="{{route('login')}}" class="label job-type register" style="margin-top:15px;">LOGIN</a>
+                                <p>{{__("messages.alreadyHaveAnAccount")}}</p>
+                             <a href="{{route('login')}}" class="label job-type register" style="margin-top:15px;">{{__("messages.login")}}</a>
                              </li>
                           </ul>
                        </div>

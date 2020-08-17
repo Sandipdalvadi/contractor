@@ -3,37 +3,37 @@
     <div class="row">
     <div class="container main-container-home">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-            <h3>Pages</h3>
+            <h3>{{__('messages.pages')}}</h3>
             <ul class="list-group">
-                <li><a href="#">Browse jobs</a></li>
-                <li><a href="#">How it works</a></li>
-                <li><a href="#">Plans & Prices</a></li>
-                <li><a href="#">Companies</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="#">{{__('messages.browseJobs')}}</a></li>
+                <li><a href="#">{{__('messages.howItWorks')}}</a></li>
+                <li><a href="#">{{__('messages.plansPrices')}}</a></li>
+                <li><a href="#">{{__('messages.companies')}}</a></li>
+                <li><a href="#">{{__('messages.contactUs')}}</a></li>
             </ul>
         </div>
         <!---Footer Column 01-->
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-            <h3>Other page</h3>
+            <h3>{{__('messages.otherPage')}}</h3>
   <ul class="list-group">
-                <li><a href="#">Login/Register</a></li>
-                <li><a href="#">Payment</a></li>
-                <li><a href="#">Sumbit resume</a></li>
-                <li><a href="#">Resume</a></li>
-                <li><a href="#">Terms and conditions</a></li>
+                <li><a href="#">{{__('messages.login/Register')}}</a></li>
+                <li><a href="#">{{__('messages.payment')}}</a></li>
+                <li><a href="#">{{__('messages.sumbitResume')}}</a></li>
+                <li><a href="#">{{__('messages.resume')}}</a></li>
+                <li><a href="#">{{__('messages.termsAndConditions')}}</a></li>
 
             </ul>
         </div>
          <!---Footer Column 01-->
    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-            <h3>Contact with us</h3>
+            <h3>{{__('messages.contactWithUs')}}</h3>
                       <p>Manchester Road 123-78B, <br/>Silictown</p> 
                 <p>+46 123 456 789</p>
                 <p>hello@sitename.com</p>
         </div>
          <!---Footer Column 01-->
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-            <h3>About us</h3>
+            <h3>{{__('messages.aboutUs')}}</h3>
             <p>An employment website is a web site that deals specifically with employment or careers. Many employment websites are designed to allow employers to post job requirements for a position to be filled and are commonly known as job boards</p>
         </div>
         
@@ -46,7 +46,7 @@
     <div class="row">
         <div class="container main-container">
             <div class="col-lg-9 col-md-3 col-sm-9 col-xs-6" >
-                <p class="copyright">© copyright 2020 | All Rights Reserved.</p>
+                <p class="copyright">© {{__('messages.copyright 2020 | All Rights Reserved.')}}</p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                 <ul class="list-group">

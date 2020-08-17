@@ -19,22 +19,22 @@
                <div class="logins">
                   <ul>
                      <li>
-                        <a href="#" class="post_job"><span class="label job-type partytime">POST A JOB, IT’S FREE!</span></a>
+                        <a href="#" class="post_job"><span class="label job-type partytime">{{__('messages.postAJobItsFree')}}</span></a>
                      </li>
                      <li class="dropdown">
                         <a href="#" class="dropdown-toggle login" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
                         <ul class="dropdown-menu">
                            @if(Auth::check())
-                              <li><a href="{{route('profile')}}">Profile</a></li>
+                              <li><a href="{{route('profile')}}">{{__('messages.profile')}}</a></li>
                               <li>
                                  <form method="post" action="{{ route('logout')}}">
                                     {{ csrf_field() }}
-                                    <button class="">Logout</button>
+                                    <button class="">{{__('messages.logout')}}</button>
                                  </form>
                               </li>
                            @else
-                              <li><a href="{{route('login')}}">Login</a></li>
-                              <li><a href="{{route('register')}}">Register</a></li>
+                              <li><a href="{{route('login')}}">{{__('messages.login')}}</a></li>
+                              <li><a href="{{route('register')}}">{{__('messages.register')}}</a></li>
                            @endif
                         </ul>
                      </li>
@@ -57,7 +57,7 @@
                <!-- Brand and toggle get grouped for better mobile display -->
                <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
+                  <span class="sr-only">{{__('messages.toggleNavigation')}}</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
@@ -67,13 +67,13 @@
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
                      <li>
-                        <li class="mobile-menu add-job"><a href="#">POST A JOB, IT’S FREE!</a></li>
+                        <li class="mobile-menu add-job"><a href="#">{{__('messages.postAJobItsFree')}}</a></li>
                      </li>
-                     <li><a href="#">Browse Jobs</a></li>
-                     <li><a href="#">How It Works</a></li>
-                     <li class="mobile-menu"><a href="#">POST A JOB, IT’S FREE!</a></li>
-                     <li class="mobile-menu"><a href="{{route('login')}}">Login</a></li>
-                     <li class="mobile-menu"><a href="{{route('register')}}">Register</a></li>
+                     <li><a href="#">{{__('messages.browseJobs')}}</a></li>
+                     <li><a href="#">{{__('messages.howItWorks')}}</a></li>
+                     <li class="mobile-menu"><a href="#">{{__('messages.postAJobItsFree')}}</a></li>
+                     <li class="mobile-menu"><a href="{{route('login')}}">{{__('messages.login')}}</a></li>
+                     <li class="mobile-menu"><a href="{{route('register')}}">{{__('messages.register')}}</a></li>
                   </ul>
                </div>
                <!-- navbar-collapse -->

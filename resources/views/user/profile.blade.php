@@ -13,16 +13,16 @@
                 <div class="seprator ">
                     <div class="no-padding user-image"><img src="{{public_url("/assets/images/job-admin.png")}}" alt=""/></div>
                     <div class="user-tag">John Doe<span>@johndoe01</span></div>
-                    <div class="jos-status"><span class="label job-type job-partytime"><a href="{{route('editprofile')}}">Edit Profile</a></span></div>
+                    <div class="jos-status"><span class="label job-type job-partytime"><a href="{{route('editprofile')}}">{{__('messages.editProfile')}}</a></span></div>
                 </div>
                 <div class="seprator">
-                    <div class="user-tag"><label>Sallary<span>$35000 - $38000</span></label></div>
+                    <div class="user-tag"><label>{{__('messages.sallary')}}<span>$35000 - $38000</span></label></div>
                 </div>
                 <div class="seprator">
-                    <div class="user-tag"><label>Hours<span>44h / week</span></label></div>
+                    <div class="user-tag"><label>{{__('messages.hours')}}<span>44h / {{__('messages.week')}}</span></label></div>
                 </div>
                 <div class="seprator">
-                    <div class="user-tag"><label>Locations<span>Los Angeles</span></label></div>
+                    <div class="user-tag"><label>{{__('messages.locations')}}<span>Los Angeles</span></label></div>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="container main-container-job">
            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
               <div class="">
-                 <h3 class="small-heading">My skills:</h3>
+                 <h3 class="small-heading">{{__('messages.mySkills')}}:</h3>
                  <ul class="skills">
                     <li>Photoshop</li>
                     <li>Javascript</li>
@@ -44,11 +44,11 @@
                  </ul>
               </div>
               <div class="content">
-                 <h3 class="small-heading">About Me</h3>
+                 <h3 class="small-heading">{{__('messages.aboutMe')}}</h3>
                  <p>Ut sodales arcu sagittis metus molestie molestie. Nulla maximus volutpat dui. Etiam luctus lobortis massa in pulvinar. Maecenas nunc odio, faucibus in malesuada a, dignissim at odio. Aenean eleifend urna.<br />
                     Duis ac augue sit amet ex blandit facilisis sit amet ut dui. Nulla pharetra fermentum mollis. Duis in tempor tortor. Suspendisse vitae nisl diam. Proin eu erat vestibulum, suscipit quam et, cursus ante
                  </p>
-                 <h3 class="small-heading">Personal Characteristics:</h3>
+                 <h3 class="small-heading">{{__('messages.personalCharacteristics')}}:</h3>
                  <ul>
                     <li>Excellent customer service skills, communication skills, and a happy, smiling attitude are essential.</li>
                     <li>Available to work required shifts including weekends, evenings and holidays.</li>
@@ -58,28 +58,28 @@
                  <div class="job-progress">
                     <ul class="row">
                         <li class="col-md-6">
-                            <div class="progress-txt"><lable>Completed Projects</lable><span>80%</span></div>
+                            <div class="progress-txt"><lable>{{__('messages.completedProjects')}}</lable><span>80%</span></div>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">
                                 </div>
                             </div>
                         </li>
                         <li class="col-md-6">
-                            <div class="progress-txt"><lable>On Budget Rate</lable><span>90%</span></div>
+                            <div class="progress-txt"><lable>{{__('messages.onBudgetRate')}}</lable><span>90%</span></div>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:90%">
                                 </div>
                             </div>
                         </li>
                         <li class="col-md-6">
-                            <div class="progress-txt"><lable>On Time Rate</lable><span>60%</span></div>
+                            <div class="progress-txt"><lable>{{__('messages.onTimeRate')}}</lable><span>60%</span></div>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:60%">
                                 </div>
                             </div>
                         </li>
                         <li class="col-md-6">
-                            <div class="progress-txt"><lable>Repeat Hire Rate</lable><span>80%</span></div>
+                            <div class="progress-txt"><lable>{{__('messages.repeatHireRate')}}</lable><span>80%</span></div>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">
                                 </div>
@@ -88,7 +88,7 @@
                     </ul>
                  </div>
                  <div class="portfolio-main row">
-                    <h3 class="small-heading">Portfolio</h3>
+                    <h3 class="small-heading">{{__('messages.portfolio')}}</h3>
                     <div class="col-md-4">
                         <div class="portfolio">
                             <div class="portfolio-img"><img src="{{public_url("/assets/images/portfolio1.jpg")}}" alt=""/></div>
@@ -126,8 +126,8 @@
               <div class="widget w1">
                  <ul>
                     <li>
-                       <span class="label job-type apply-job">Hire me</span>
-                       <span class="label job-type apply-link">my profile on<i class="fa fa-linkedin"></i></span>
+                       <span class="label job-type apply-job">{{__('messages.hireMe')}}</span>
+                       <span class="label job-type apply-link">{{__('messages.myProfileOn')}}<i class="fa fa-linkedin"></i></span>
                     </li>
                  </ul>
                  <ul class="social">
