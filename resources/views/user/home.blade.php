@@ -18,12 +18,19 @@
                 <!--col-lg-3 filter_width -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 filter_width bgicon">
                     <div class="form-group">
-                       <div class="dropdown">
-                            <button class="filters_feilds btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                       <select name="category" id="">
+                        @if(count($categories))
+                           @foreach ($categories as $category) 
+                              <li><a href="#">{{get_language_name($category,'name')}}</a></li>
+                           @endforeach
+                        @endif
+                       </select>
+                       {{-- <div class="dropdown"> --}}
+                            {{-- <button class="filters_feilds btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 Category
                                 <span class="glyphicon glyphicon-menu-down"></span>
-                            </button>
-                            <div class="dropdown-menu "  aria-labelledby="dropdownMenu1">
+                            </button> --}}
+                            {{-- <div class="dropdown-menu "  aria-labelledby="dropdownMenu1">
                                 <ul class="tiny_scrolling" id="style-3">
                                     @if(count($categories))
                                        @foreach ($categories as $category) 
@@ -31,8 +38,8 @@
                                        @endforeach
                                     @endif
                                 </ul>
-                            </div>
-                        </div>
+                            </div> --}}
+                        {{-- </div> --}}
                     </div>
                     <span>e.g. Finance</span>
                  </div>
