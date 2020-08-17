@@ -25,7 +25,7 @@
                            @endforeach
                         @endif
                        </select>
-                       {{-- <div class="dropdown"> a--}}
+                       {{-- <div class="dropdown"> --}}
                             {{-- <button class="filters_feilds btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 Category
                                 <span class="glyphicon glyphicon-menu-down"></span>
