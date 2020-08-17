@@ -21,7 +21,7 @@
                        <select name="category" id="">
                         @if(count($categories))
                            @foreach ($categories as $category) 
-                              <li><a href="#">{{get_language_name($category,'name')}}</a></li>
+                              <option>{{get_language_name($category,'name')}}</option>
                            @endforeach
                         @endif
                        </select>
