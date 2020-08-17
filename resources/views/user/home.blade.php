@@ -18,7 +18,7 @@
                 <!--col-lg-3 filter_width -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 filter_width bgicon">
                     <div class="form-group">
-                       <select name="category" id="" class="form-control select2">
+                       <select name="category" id="" class="select2">
                         @if(count($categories))
                            @foreach ($categories as $category) 
                               <option>{{get_language_name($category,'name')}}</option>
