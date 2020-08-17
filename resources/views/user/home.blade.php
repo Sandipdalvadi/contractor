@@ -14,7 +14,7 @@
     </div>
     <div class="jobs_filters">
         <div class="container">
-            <form class="" action="index.html">
+            <form class="" action="">
                 <!--col-lg-3 filter_width -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 filter_width bgicon">
                     <div class="form-group">

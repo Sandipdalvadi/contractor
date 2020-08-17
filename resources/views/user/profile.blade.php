@@ -13,7 +13,7 @@
                 <div class="seprator ">
                     <div class="no-padding user-image"><img src="{{public_url("/assets/images/job-admin.png")}}" alt=""/></div>
                     <div class="user-tag">John Doe<span>@johndoe01</span></div>
-                    <div class="jos-status"><span class="label job-type job-partytime"><a href="{{route('editprofile')}}">Edit Profile</span></div>
+                    <div class="jos-status"><span class="label job-type job-partytime"><a href="{{route('editprofile')}}">Edit Profile</a></span></div>
                 </div>
                 <div class="seprator">
                     <div class="user-tag"><label>Sallary<span>$35000 - $38000</span></label></div>

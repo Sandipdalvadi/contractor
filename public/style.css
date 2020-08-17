@@ -350,7 +350,7 @@ color: #fff;
 .jobs_filters .container {
     padding: 0;
 }
-.jobs_filters .filters_feilds, .jobs_filters .form-group input {
+.jobs_filters .filters_feilds, .jobs_filters .form-group input, .form-group select {
     width: 100%;
     text-align: left;
     border: none;
@@ -2371,9 +2371,10 @@ ul.buttons li #signin,ul.buttons li #register {
 }
 .select2-container {
 	width: 100%;
-    border-radius: 0 !important;
+    /*border-radius: 0 !important;
     border: 1px solid #e2e2e2 !important;
-    box-shadow: none !important;
+    box-shadow: none !important;*/
+    float: left;
 }
 ul.select2-choices {
     border-radius: 0 !important;
@@ -2457,7 +2458,7 @@ body ul.select2-results {
     border: 1px solid #e2e2e2 !important;
     border-top: 0p !important	 ;
 }
-body ul.select2-results li {padding: 11px 14px;
+body ul.select2-results li { padding: 2px 14px;
 	margin-right: 22px;
 	font-family: LatoRegular;
 	font-size: 16px;
@@ -3628,3 +3629,7 @@ ul.dropdown-menu li button:over {
     padding: 0 15px;
 }
 
+.select2-results .select2-highlighted {
+    background: #d98639;
+    color: #fff;
+}
