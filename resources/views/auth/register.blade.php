@@ -1,5 +1,7 @@
 @extends('user.common.user_layout')
-
+<?php 
+$categories = \App\Model\Category::where('status',1)->get();
+?>
 @section('content')
 
         </div>
@@ -34,12 +36,21 @@
                           </div>
                           <div class="form-group">
                              <label>{{__("messages.imLooking")}}</label>
-                             <div class="dropdown">
-                                <button class="filters_feilds btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             <select name="category" id="" class="select2">
+                                 <option value="">{{__('messages.selectCategory')}}</option>
+                                 @if(count($categories))
+                                    @foreach ($categories as $category) 
+                                       <option value="{{$category->id}}">{{get_language_name($category,'name')}}</option>
+                                    @endforeach
+                                 @endif
+                              </select>
+                          
+                             {{-- <div class="dropdown"> --}}
+                                {{-- <button class="filters_feilds btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Category
                                 <span class="glyphicon glyphicon-menu-down"></span>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                </button> --}}
+                                {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                    <ul class="tiny_scrolling" id="style-3">
                                       <li><a href="#">Web Developer</a></li>
                                       <li><a href="#">Graphic designer</a></li>
@@ -50,8 +61,8 @@
                                       <li><a href="#">Developer</a></li>
                                       <li><a href="#">UX Designer</a></li>
                                    </ul>
-                                </div>
-                             </div>
+                                </div> --}}
+                             {{-- </div> --}}
                           </div>
                           <div class="form-group text-center">
                              <label></label>
