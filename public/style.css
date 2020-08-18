@@ -624,6 +624,7 @@ background: #d98639 none repeat scroll 0 0;
     border-radius: 33px;
     text-transform: none;
 }
+.label.job-partytime a { color: #fff; }
 #load_more {
     text-align: center;
     display: block;
@@ -2389,13 +2390,15 @@ ul.select2-choices {
     padding: 17px 15px;
     height: inherit;
     background: #fff;
+    border-radius: 12px;
+    border: none;
 }
 
 .select2-container a.select2-choice .select2-arrow {
     opacity: 0;
 }
 .select2-container a.select2-choice .select2-chosen {
-    color: #888e94;
+    color: #373737;
     margin: 0;
     font-family: LatoRegular;
     font-size: 15px;
@@ -2461,7 +2464,8 @@ body ul.select2-results {
 body ul.select2-results li { padding: 2px 14px;
 	margin-right: 22px;
 	font-family: LatoRegular;
-	font-size: 16px;
+	font-size: 16px;     margin: 0;
+
 }
 .container .select2-container-multi ul.select2-choices i {
 	float: right;
@@ -3520,7 +3524,7 @@ body.homepage .header_banner {
     left: auto;
     min-width: 200px;
     margin-top: 15px;
-    border: none;
+    border: none;    z-index: 9999;
 }
 ul.dropdown-menu li button {
     text-transform: none;
@@ -3633,3 +3637,28 @@ ul.dropdown-menu li button:over {
     background: #d98639;
     color: #fff;
 }
+.navbar-header ul.mobile-menu { display: none; margin: 0; padding: 0; list-style: none; float: right; margin-right: 15px; top: -19px;
+    position: relative; }
+.navbar-header ul.mobile-menu li { display: inline-block; padding: 0; width: 100%; }
+.navbar-header ul.mobile-menu li ul.dropdown-menu { right: 0; left: auto; }
+.deximJobs_tabs .contact_us .select2-container { width: calc(100% - 152px); }
+.deximJobs_tabs .contact_us .select2-container a.select2-choice { font-size: 16px; padding: 10px 17px; font-family: LatoRegular;
+    border: 1px solid #d98639; }
+.contact_us .form-control.item-list { padding: 0; border: none; height: auto; }
+.contact_us .select2-container.form-control {
+    padding: 0;
+    height: auto;
+    border-radius: 10px;
+}
+.contact_us .select2-container.form-control ul.select2-choices {
+    border-color: #ccc;
+    border-radius: 10px !important;
+    background-color: #fff !important;
+}
+.contact_us .select2-container.form-control a.select2-choice {
+    float: left;
+    padding: 14px 15px;
+}
+
+
+

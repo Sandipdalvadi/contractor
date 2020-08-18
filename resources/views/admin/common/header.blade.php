@@ -32,7 +32,7 @@
                 <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
                     <ul class="dropdown-menu settings-menu">
-                        <li><a href="#"><i class="fa fa-cog fa-lg"></i> {{Lang::get('messages.settings')}}</a></li>
+                        <li><a href="{{route('admin.profile.edit')}}"><i class="fa fa-cog fa-lg"></i> {{Lang::get('messages.settings')}}</a></li>
                         <li><a href="{{route('admin.logout')}}"><i class="fa fa-sign-out fa-lg"></i> {{Lang::get('messages.logout')}}</a></li>
                     </ul>
                 </li>

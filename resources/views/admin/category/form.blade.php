@@ -46,7 +46,7 @@
                                       enctype="multipart/form-data">
                                       @csrf
                                     
-                                    <input class="form-control" type="hidden" value="{{$category->id ? $category->id : 0}}">
+                                    <input class="form-control" type="hidden" name="id" value="{{$category->id ? $category->id : 0}}">
                                     <div class="form-group">
                                         <label class="control-label">Name En</label>
                                         <input class="form-control" type="text" placeholder="Name English" title="Name English" name="name_en" value="{{$category->name_en ? $category->name_en : ''}}">

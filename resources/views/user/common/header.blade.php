@@ -42,7 +42,7 @@
                     
                      <li class="dropdown">
                         <a class="dropdown-toggle login" href="#" data-toggle="dropdown" role="button"
-                        aria-haspopup="true" aria-expanded="false">{{Lang::get('messages.languages')}}</a>
+                        aria-haspopup="true" aria-expanded="false"><i class="fa fa-language" aria-hidden="true"></i></a>
                         <ul class="dropdown-menu settings-menu">
                             <li><a href="{{route('locale',['locale'=>'en']) }}">English</a></li>
                             <li><a href="{{route('locale',['locale'=>'ar']) }}">Arabic</a></li>
@@ -56,12 +56,24 @@
                </div>
                <!-- Brand and toggle get grouped for better mobile display -->
                <div class="navbar-header">
+                   
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                   <span class="sr-only">{{__('messages.toggleNavigation')}}</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   </button>
+                  <ul class="mobile-menu logins">
+                      <li class="dropdown">
+                        <a class="dropdown-toggle login" href="#" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false"><i class="fa fa-language" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu settings-menu">
+                            <li><a href="{{route('locale',['locale'=>'en']) }}">English</a></li>
+                            <li><a href="{{route('locale',['locale'=>'ar']) }}">Arabic</a></li>
+                            <li><a href="{{route('locale',['locale'=>'ur']) }}">Urdu</a></li>
+                        </ul>
+                      </li>
+                  </ul>
                </div>
                <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

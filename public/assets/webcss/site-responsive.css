@@ -402,6 +402,9 @@
 	.user-data .user-image { padding-right: 0;}
 	
 }
+@media (max-width: 991px) { 
+.navbar-header ul.mobile-menu { display: block; }
+}
 @media (max-width: 767px) { 
 	.page-title .main-container {padding: 12px;}
 
@@ -667,7 +670,7 @@
 	.register { margin-top: 15px;}
 	.deximJobs_tabs .contact_us .lost_password {padding: 0}
 	
- 
+ 	.select2-container a.select2-choice { padding: 10px 16px 11px; border-radius: 5px; }
 	
 
 	

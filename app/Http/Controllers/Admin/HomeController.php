@@ -4,15 +4,46 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Auth,Hash;
+use App\Model\Admin;
 class HomeController extends Controller
 {
     //
     public function index(){
-        // $code = public_url();
-        // $image = file_exists_in_folder('profile','default_user11.jpg');
-        // print_r($image);
-        // exit;
         return view('admin.home');
+    }
+    public function editProfile(){
+        $userId = Auth::guard('admin')->id();
+        $user = Admin::find($userId);
+        // echo "<pre>";print_r($user);
+        return view('admin.edit_profile',['user'=>$user]);
+    }
+    public function updateProfile(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email'=>'required',
+        ]);
+        $id = $request->input('id');
+        $name = $request->input('name');
+        $email= $request->input('email');
+        $phone= $request->input('phone');
+        $password = $request->input('Password');
+
+        if($request->id > 0)
+        {
+
+            $admin = Admin::find($id);
+            if($request->input('isChange') == '0'){
+                $admin->password = Hash::make($password);
+            }
+            $admin->name = $name;
+            $admin->email = $email;
+            $admin->phone = $phone;
+            $admin->save();
+            
+            return redirect()->route('admin.home');   
+             
+        }
+        return redirect()->back();
     }
 }

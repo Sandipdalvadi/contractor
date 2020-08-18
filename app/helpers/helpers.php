@@ -6,7 +6,7 @@
         return $fileUrl == "" ? asset('/public') : asset('/public'.$fileUrl);
     }
     function file_exists_in_folder($directory,$fileName){
-        if(file_exists(public_path($directory.'/'.$fileName)))
+        if($fileName!="" && file_exists(public_path($directory.'/'.$fileName)))
         {
             return public_url().'/'.$directory.'/'.$fileName;
         }
@@ -34,6 +34,18 @@
         }
         else{
             return '';
+        }
+    }
+    function get_timestamp($time=""){
+        return $time = $time == "" ? strtotime("now") : strtotime($time);
+
+    }
+    function get_time($timestamp="", $type=""){
+        if($timestamp == ""){
+            return $time = $type == "" ? date("Y/m/d") : date($type);
+        }
+        else{
+            return $time = $type == "" ? date("Y/m/d",$timestamp) : date($type,$timestamp);
         }
     }
     function resize_crop_image($max_width, $max_height, $source_file, $dst_dir, $quality = 80)

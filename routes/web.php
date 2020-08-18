@@ -57,6 +57,9 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         return redirect()->back();
     })->name('locale');
     Route::get('/dashboard','HomeController@index')->name('home');
+    Route::get('/edit/profile','HomeController@editProfile')->name('profile.edit');
+    Route::post('/update/profile','HomeController@updateProfile')->name('profile.update');
+    
     Route::get('/category/changeStatus/{id}','CategoryController@changeStatus')->name('category.changeStatus');
     
     $paths = array(
