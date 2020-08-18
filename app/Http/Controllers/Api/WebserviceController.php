@@ -299,7 +299,7 @@ class WebServiceController extends Controller
                         $userData['image'] = $user->image ? $user->image : '';
                     }
                     else{
-                        $userData['image'] = file_exists_in_folder("public",$user->image);
+                        $userData['image'] = file_exists_in_folder("profile",$user->image);
                     }
                     $userData['languageCode'] = $user->language_code;
                     $userData['facebookId'] = $user->facebook_id ? $user->facebook_id : '';
