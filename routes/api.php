@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Api')->group(function(){
     Route::post('/registerCustomerSocial', 'WebserviceController@registerCustomerSocial');
     Route::post('/registerCustomer', 'WebserviceController@registerCustomer');
+    Route::post('/loginCustomerSocial', 'WebserviceController@loginCustomerSocial');
     Route::post('/loginCustomer', 'WebserviceController@loginCustomer');
     Route::middleware(['\App\Http\Middleware\AuthBasic'])->group(function () {
         Route::post('/editCustomerProfile', 'WebserviceController@editCustomerProfile');
