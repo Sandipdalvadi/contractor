@@ -95,7 +95,7 @@ class WebServiceController extends Controller
         $new = str_replace('index.php', '', $urlnew);
         try
         {
-            if((!isset($post['email'])) || (!isset($post['userName'])) || (!isset($post['phone'])) || (!isset($post['deviceToken'])) || (!isset($post['device'])) || (!isset($post['languageCode'])) || (!isset($post['isEmailverified']))|| (!isset($post['isPhoneVerified']))|| (!isset($post['isSocial']))|| (empty($post['email'])) || (empty($post['userName'])) || (!isset($post['phone'])) || (empty($post['deviceToken'])) || (empty($post['device'])) || (empty($post['languageCode'])) || (empty($post['isPhoneVerified'])))
+            if((!isset($post['email'])) || (!isset($post['password'])) || (!isset($post['userName'])) || (!isset($post['phone'])) || (!isset($post['deviceToken'])) || (!isset($post['device'])) || (!isset($post['languageCode'])) || (!isset($post['isEmailverified']))|| (!isset($post['isPhoneVerified']))|| (!isset($post['isSocial'])) || (empty($post['email'])) || (empty($post['password'])) || (empty($post['userName'])) || (!isset($post['phone'])) || (empty($post['deviceToken'])) || (empty($post['device'])) || (empty($post['languageCode'])) || (empty($post['isPhoneVerified'])))
             {
                 $response = array('success' => 0, 'message' => 'All Fields Are Required');
                 echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;     
@@ -110,6 +110,7 @@ class WebServiceController extends Controller
             $user = new User;
             $user->name = $post['userName'];
             $user->email = $post['email'];
+            $user->password = Hash::make($post['password']);            
             $user->is_email_verified = $post['isEmailverified'];
             $user->is_mobile_verified = $post['isPhoneVerified'];
             $user->phone = $post['phone'];
