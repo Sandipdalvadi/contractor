@@ -269,10 +269,10 @@ class WebServiceController extends Controller
             }
             
                 
-            $user = User::where('email',$post['email'])->first();      
+            $user = User::where('phone',$post['phone'])->first();      
             if(empty($user))
             {
-                $arr = array('success' => 0, 'message' => 'Invalid email or password.');
+                $arr = array('success' => 0, 'message' => 'Invalid mobile or password.');
                 echo json_encode($arr,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_HEX_AMP);exit;       
             }
             else
