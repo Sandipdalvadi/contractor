@@ -84,6 +84,7 @@ class ProfileController extends Controller
         $userDetails = UserDetails::where('user_id',$request->id)->first();
         $userDetails = !empty($userDetails) ? $userDetails : new UserDetails;
         $userDetails->rate_per_hour = $request->rate_per_hour;
+        $userDetails->user_id = $request->id;
         // $userDetails->selected_category = $request->selected_category;
         $userDetails->country = $request->country;
         $userDetails->about = $request->about;
