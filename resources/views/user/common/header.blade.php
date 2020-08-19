@@ -25,7 +25,7 @@
                         <a href="#" class="dropdown-toggle login" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
                         <ul class="dropdown-menu">
                            @if(Auth::check())
-                              <li><a href="{{route('profile')}}">{{__('messages.profile')}}</a></li>
+                              <li><a href="{{route('user.profile')}}">{{__('messages.profile')}}</a></li>
                               <li>
                                  <form method="post" action="{{ route('logout')}}">
                                     {{ csrf_field() }}

@@ -5,24 +5,24 @@
         </div>
     </div>
 </header>
-
+<?php 
+    $userDetailObj = $user->hasOneUserDetails ? $user->hasOneUserDetails : '';
+    $countryObj = $userDetailObj ? $userDetailObj->hasOneCountry : '';
+?>
 <div class="container-fluid page-title dashboard">
     <div class="row dashboard">
         <div class="container main-container gery-bg">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  no-padding user-data">
                 <div class="seprator ">
-                    <div class="no-padding user-image"><img src="{{public_url("/assets/images/job-admin.png")}}" alt=""/></div>
-                    <div class="user-tag">John Doe<span>@johndoe01</span></div>
-                    <div class="jos-status"><span class="label job-type job-partytime"><a href="{{route('editprofile')}}">{{__('messages.editProfile')}}</a></span></div>
+                    <div class="no-padding user-image"><img width="100px" src="@if($user->is_image_link == 0){{file_exists_in_folder("profile",$user->image)}} @else {{$user->image}} @endif"  alt=""/></div>
+                    <div class="user-tag">{{$user->name ? $user->name : ''}}<span>{{$user->email ? $user->email : ''}}</span><span>{{$user->phone ? $user->phone : ''}}</span></div>
+                    <div class="jos-status"><span class="label job-type job-partytime"><a href="{{route('user.editprofile')}}">{{__('messages.editProfile')}}</a></span></div>
                 </div>
                 <div class="seprator">
-                    <div class="user-tag"><label>{{__('messages.sallary')}}<span>$35000 - $38000</span></label></div>
+                    <div class="user-tag"><label>{{__('messages.ratePerHour')}}<span>{{$userDetailObj ? $userDetailObj->rate_per_hour : ''}}</span></label></div>
                 </div>
                 <div class="seprator">
-                    <div class="user-tag"><label>{{__('messages.hours')}}<span>44h / {{__('messages.week')}}</span></label></div>
-                </div>
-                <div class="seprator">
-                    <div class="user-tag"><label>{{__('messages.locations')}}<span>Los Angeles</span></label></div>
+                    <div class="user-tag"><label>{{__('messages.locations')}}<span>{{$countryObj ? $countryObj->name : ""}}</span></label></div>
                 </div>
             </div>
         </div>
@@ -36,25 +36,25 @@
               <div class="">
                  <h3 class="small-heading">{{__('messages.mySkills')}}:</h3>
                  <ul class="skills">
-                    <li>Photoshop</li>
-                    <li>Javascript</li>
-                    <li>Wordpress</li>
-                    <li>HTML</li>
-                    <li>Designe</li>
+                    @foreach ($userCategories as $category)
+                    <?php $categoryObj = $category->hasOneCategory ? $category->hasOneCategory : '';?>
+                        <li>{{$categoryObj ? get_language_name($categoryObj,'name') : ''}}</li>
+                    @endforeach
                  </ul>
               </div>
               <div class="content">
                  <h3 class="small-heading">{{__('messages.aboutMe')}}</h3>
-                 <p>Ut sodales arcu sagittis metus molestie molestie. Nulla maximus volutpat dui. Etiam luctus lobortis massa in pulvinar. Maecenas nunc odio, faucibus in malesuada a, dignissim at odio. Aenean eleifend urna.<br />
-                    Duis ac augue sit amet ex blandit facilisis sit amet ut dui. Nulla pharetra fermentum mollis. Duis in tempor tortor. Suspendisse vitae nisl diam. Proin eu erat vestibulum, suscipit quam et, cursus ante
+                 <p>
+                    {{ $userDetailObj ? $userDetailObj->about : ''}}
                  </p>
                  <h3 class="small-heading">{{__('messages.personalCharacteristics')}}:</h3>
-                 <ul>
+                 <p>{{ $userDetailObj ? $userDetailObj->personal_characteristics : ''}}</p>
+                 {{-- <ul>
                     <li>Excellent customer service skills, communication skills, and a happy, smiling attitude are essential.</li>
                     <li>Available to work required shifts including weekends, evenings and holidays.</li>
                     <li>I have great time management skills.</li>
                     <li>I take constructive criticism well and I am comfortable voicing opinions.</li>
-                 </ul>
+                 </ul> --}}
                  <div class="job-progress">
                     <ul class="row">
                         <li class="col-md-6">
@@ -131,9 +131,9 @@
                     </li>
                  </ul>
                  <ul class="social">
-                    <li><a href="#"><i class="fa fa-link"></i>www</a></li>
-                    <li><a href="#"><i class="fa fa-facebook"></i>facebook</a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i>twitter</a></li>
+                    <li><a href="" onclick="window.location({{$userDetailObj ? $userDetailObj->linkedin_url : '#'}})"><i class="fa fa-link"></i>www</a></li>
+                    <li><a href="" onclick="window.location({{$userDetailObj ? $userDetailObj->facebook_url : '#'}})"><i class="fa fa-facebook"></i>facebook</a></li>
+                    <li><a href="" onclick="window.location({{$userDetailObj ? $userDetailObj->twitter_url : '#'}})"><i class="fa fa-twitter"></i>twitter</a></li>
                  </ul>
               </div>
            </div>

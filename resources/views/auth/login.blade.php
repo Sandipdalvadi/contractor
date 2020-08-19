@@ -17,8 +17,8 @@
                         <form name="contact_us" class="contact_us" action="{{ route($loginRoute) }}" method="POST">
                            @csrf
                           <div class="form-group">
-                             <label>{{__('messages.name')}}</label>
-                             <input type="text" name="email" placeholder="{{__('messages.name')}}">
+                             <label>{{__('messages.phone')}}</label>
+                             <input type="text" name="phone" placeholder="{{__('messages.phone')}}">
                           </div>
                           <div class="form-group">
                              <label>{{__('messages.password')}}</label>

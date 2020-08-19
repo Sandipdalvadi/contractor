@@ -91,6 +91,8 @@ return [
     "matchingJobsWeWillSuggestYouOfferToFitYourNeedsOnEmail"=>"وظائف مطابقة نقترح عليك عرضها لتناسب احتياجاتك على البريد الإلكتروني",
     "alreadyHaveAnAccount"=>"هل لديك حساب؟",
     "email"=>"البريد الإلكتروني",
+    "phone"=>"هاتف",
+    "+919*********"=>"+919*********",
 
 
     

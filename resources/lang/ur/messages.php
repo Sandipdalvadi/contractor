@@ -87,4 +87,7 @@ return [
     "matchingJobsWeWillSuggestYouOfferToFitYourNeedsOnEmail"=>"ملاپ کی ملازمتیں ہم آپ کو ای میل پر اپنی ضروریات کو فٹ کرنے کی پیش کش کرتے ہیں",
     "alreadyHaveAnAccount"=>"پہلے سے ہی ایک اکاؤنٹ ہے؟",
     "email"=>"ای میل",
+
+    "phone"=>"فون",
+    "+919*********"=>"+919*********",
 ];

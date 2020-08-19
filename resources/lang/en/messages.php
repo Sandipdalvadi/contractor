@@ -72,7 +72,6 @@ return [
     "hireMe"=>"Hire Me",
     "myProfileOn"=>"My Profile On",
     "dontHaveAnAccount"=>"Don't Have An Account?",
-
     "name"=>"Name",
     "password"=>"Password",
     "submit"=>"Submit",
@@ -81,7 +80,6 @@ return [
     "lostPassword"=>"Lost Password",
     "ifYoudLikeToFindOutMoreAboutHowJobsiteCanHelpYouWithYourRecruitmentNeedsPleaseCompleteThisEnquiryForm"=>"If you'd like to find out more about how Jobsite can help you with your recruitment needs, please complete this enquiry form.",
     "aMemberOfOurSalesTeamWillContactYouShortly"=>"A member of our Sales team will contact you shortly.",
-
     "imLooking"=>"I'm looking",
     "confirmPassword"=>"Confirm Password",
     "whyToHaveAnAccountInContractor"=>"Why to have  an account in Contractor? ",
@@ -89,4 +87,10 @@ return [
     "matchingJobsWeWillSuggestYouOfferToFitYourNeedsOnEmail"=>"Matching jobs We will suggest you offer to fit your needs on e-mail",
     "alreadyHaveAnAccount"=>"Already have an account?",
     "email"=>"E-mail",
+
+    "phone"=>"Phone",
+    "+919*********"=>"+919*********",
+    "verificationCode"=>"Verification Code",
+    "updateProfile"=>"Update Profile",
+    
 ];

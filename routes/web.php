@@ -29,8 +29,10 @@ Route::namespace('Auth')->group(function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile', 'ProfileController@profile')->name('profile');
-Route::get('/edit_profile', 'ProfileController@editProfile')->name('editprofile');
+Route::get('/profile', 'ProfileController@profile')->name('user.profile');
+Route::get('/edit_profile', 'ProfileController@editProfile')->name('user.editprofile');
+Route::post('/edit_profile', 'ProfileController@updateProfile')->name('user.updateProfile');
+
 Route::get('locale/{locale}', function ($locale){
     Session::put('locale', $locale);
     return redirect()->back();

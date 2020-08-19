@@ -54,6 +54,7 @@ class CategoryController extends Controller
         $category->name_ar = $request->name_ar;
         $category->name_en = $request->name_en;
         $category->name_ur = $request->name_ur;
+        $category->status = $request->status;
         if ($files = $request->file('image')) 
         {
             $destinationPath = public_path('category/'); // upload path

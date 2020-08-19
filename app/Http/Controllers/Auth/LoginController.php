@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
+use Illuminate\Http\Request;
+
 class LoginController extends Controller
 {
     /*
@@ -47,11 +49,29 @@ class LoginController extends Controller
             'forgotPasswordRoute' => 'password.request',
         ]);
     }
+    public function login(Request $request)
+    {
+        $this->validator($request);
+    // echo "Validator<pre>";print_r($request->all());exit;
+        
+        if(Auth::guard('web')->attempt($request->only('phone','password'),$request->filled('remember'))){
+            //Authentication passed...
+            return redirect()
+            ->intended(route('home'))
+            ->with('status','You are Logged in as Admin!');
+        }
+        // echo "<pre>";print_r($request->all());exit;
+
+        //Authentication failed...
+        return $this->loginFailed();
+    }
+
     private function validator(Request $request)
-{
+    {
     //validation rules.
+    // echo "Validator<pre>";print_r($request->all());exit;
     $rules = [
-        'email'    => 'required|email|exists:admins|min:5|max:191',
+        'phone'    => 'required',
         'password' => 'required|string|min:4|max:255',
     ];
 
