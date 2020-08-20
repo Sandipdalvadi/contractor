@@ -45,10 +45,10 @@
               <div class="content">
                  <h3 class="small-heading">{{__('messages.aboutMe')}}</h3>
                  <p>
-                    {{ $userDetailObj ? $userDetailObj->about : ''}}
+                    {!! $userDetailObj ? $userDetailObj->about : '' !!}
                  </p>
                  <h3 class="small-heading">{{__('messages.personalCharacteristics')}}:</h3>
-                 <p>{{ $userDetailObj ? $userDetailObj->personal_characteristics : ''}}</p>
+                 <p>{!! $userDetailObj ? $userDetailObj->personal_characteristics : '' !!}</p>
                  {{-- <ul>
                     <li>Excellent customer service skills, communication skills, and a happy, smiling attitude are essential.</li>
                     <li>Available to work required shifts including weekends, evenings and holidays.</li>

@@ -63,7 +63,8 @@ class ProfileController extends Controller
     public function updateProfile(Request $request){
         echo "<pre>";print_r($request->all());
         exit;
-        if(count($request->selected_category)){
+        $allSelectedCategory = $request->selected_category ? $request->selected_category : [];
+        if(count($allSelectedCategory)){
                 $selectedCategory = $request->selected_category; 
                 $alreadyUserCategory = UserCategory::where('user_id',$request->id)->get();
                 foreach($alreadyUserCategory as $alreadyCategory){
