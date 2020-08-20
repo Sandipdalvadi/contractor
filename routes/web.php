@@ -82,3 +82,6 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     
     //All the admin routes will be defined here...
 });
+
+URL::forceScheme('https');
+
