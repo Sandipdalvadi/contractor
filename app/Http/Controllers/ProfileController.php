@@ -64,12 +64,12 @@ class ProfileController extends Controller
         // echo "<pre>";print_r($request->all());
         // exit;
         $allSelectedCategory = $request->selected_category ? $request->selected_category : [];
+        $alreadyUserCategory = UserCategory::where('user_id',$request->id)->get();
+        foreach($alreadyUserCategory as $alreadyCategory){
+            UserCategory::where('id',$alreadyCategory->id)->delete();
+        }
         if(count($allSelectedCategory)){
                 $selectedCategory = $request->selected_category; 
-                $alreadyUserCategory = UserCategory::where('user_id',$request->id)->get();
-                foreach($alreadyUserCategory as $alreadyCategory){
-                    UserCategory::where('id',$alreadyCategory->id)->delete();
-                }
                 foreach($selectedCategory as $category){
                     $userCategory = new UserCategory;
                     $userCategory->user_id = $request->id;
