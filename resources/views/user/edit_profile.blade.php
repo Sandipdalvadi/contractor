@@ -44,7 +44,7 @@ $userDetails = $user->hasOneUserDetails ? $user->hasOneUserDetails : '';
                            <input type="file" name="image" class="inputfile"  placeholder="" id="imgInp">
                            <div class="upload resume">
                               <div class="filename"><i class="fa fa-file-image-o" aria-hidden="true"></i>Browse image</div>
-                              <img src="{{file_exists_in_folder("profile",$user->image)}}" width="100px" height="100px" id="blah">
+                              <img src="@if($user->is_image_link == 0){{file_exists_in_folder("profile",$user->image)}} @else {{$user->image}} @endif" width="100px" height="100px" id="blah">
                            </div>
                         </div>
                     </div>
