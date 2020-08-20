@@ -32,11 +32,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'ProfileController@profile')->name('user.profile');
 Route::get('/edit_profile', 'ProfileController@editProfile')->name('user.editprofile');
 Route::post('/edit_profile', 'ProfileController@updateProfile')->name('user.updateProfile');
+// Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
+// Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('redirect/{driver}', 'Auth\LoginController@redirectToProvider')
+    ->name('login.provider');
 
 Route::get('locale/{locale}', function ($locale){
     Session::put('locale', $locale);
     return redirect()->back();
 })->name('locale');
+
 
 Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::namespace('Auth')->group(function(){
