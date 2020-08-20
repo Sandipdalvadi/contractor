@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://globearchitectures.com'),
+    'url' => env('APP_URL', 'http://globearchitectures.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
