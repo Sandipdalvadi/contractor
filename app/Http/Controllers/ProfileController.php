@@ -38,12 +38,6 @@ class ProfileController extends Controller
             }
         ])->find($user->id);
         $userCategories = UserCategory::with('hasOneCategory')->where('user_id',$user->id)->get();
-        // $alreadyUser = [];
-        
-        // foreach($userCategory as $userCategories){
-        //     $alreadyUser[] = $userCategories->category_id;
-        // }
-        // $userCategory = $alreadyUser;
         
         return view('user.profile',['userCategories'=>$userCategories,'user'=>$user]);
         
@@ -67,8 +61,9 @@ class ProfileController extends Controller
         
     }
     public function updateProfile(Request $request){
-        // echo "<pre>";print_r($request->all());
-            if(count($request->selected_category)){
+        echo "<pre>";print_r($request->all());
+        exit;
+        if(count($request->selected_category)){
                 $selectedCategory = $request->selected_category; 
                 $alreadyUserCategory = UserCategory::where('user_id',$request->id)->get();
                 foreach($alreadyUserCategory as $alreadyCategory){

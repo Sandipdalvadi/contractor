@@ -97,8 +97,8 @@ $categories = \App\Model\Category::where('status',1)->get();
          </div>
        </div>
        <div class="modal-footer">
-         <button type="button" onclick="codeverify();">{{__("messages.submit")}}</button>
-         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-success" onclick="codeverify();">{{__("messages.submit")}}</button>
+         <button type="button" class="btn" data-dismiss="modal">Close</button>
        </div>
      </div>
    </div>
@@ -111,7 +111,6 @@ $categories = \App\Model\Category::where('status',1)->get();
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
-
 
 
 <script>

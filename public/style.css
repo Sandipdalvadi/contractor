@@ -524,9 +524,9 @@ color: #fff;
     padding: 19px 0;
 }
 .tab_filters h5 {
-    padding-right: 44px;
+    padding-right: 34px;
     border-right: 1px solid #d0d0d0;
-    margin-right: 40px;
+    margin-right: 30px;
 }
 
 /*/////////////////Filters Result /////////*/
@@ -1212,6 +1212,7 @@ background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     width: 100%;
     color: #d98639;
     font-family: LatoRegular;
+        padding: 3px 0;
 }
 .user-data .user-tag {
     line-height: normal;
@@ -2563,6 +2564,7 @@ background: #d98639 none repeat scroll 0 0;
 }
 #form-style-2 .file-type input[type="file"] {
     padding: 13px 0;
+        width: 155px !important;
 }
 #form-style-2 .image_uplaod {
 	display:none;
@@ -3019,7 +3021,7 @@ ul.order-table li span.mobile {
     float: left;
     width: 100%;
     text-align: left;
-    margin-bottom: 1px;
+    margin-bottom: 7px;
 }
 .modal-dialog input,.modal-dialog textarea {
     width: 100%;
@@ -3056,8 +3058,8 @@ ul.order-table li span.mobile {
     float: left;
 }
 .modal-dialog .modal-footer {
-    float: left;
-    width: 100%;
+    /*float: left;
+    width: 100%;*/
 }
 .modal-dialog .modal-footer span {
 	text-align: center;
@@ -3658,6 +3660,49 @@ ul.dropdown-menu li button:over {
 .contact_us .select2-container.form-control a.select2-choice {
     float: left;
     padding: 14px 15px;
+}
+div#recaptcha-container {
+    width: calc(100% - 152px);
+    font-size: 16px;
+    padding: 0;
+    font-family: LatoRegular;
+    border: 1px solid #d98639;
+    float: right;
+}
+
+.deximJobs_tabs form .register {
+    background: #333;
+    border: 2px solid #333333;
+    width: initial;
+    padding: 15px 40px;
+    border-radius: 40px;
+    font-size: 14px;    color: #fff;
+}
+.deximJobs_tabs form .register:hover {
+    border-color: #fff;
+}
+
+.user-data .user-image img {
+    border-radius: 50%;
+    width: 60px;
+}
+
+.site-btn {
+    border: 1px solid #d98639;
+    border-radius: 22px;
+    color: #d98639;
+    font-family: OpenSansBold;
+    font-size: 11px;
+    padding: 9px 19px;
+    text-transform: uppercase;
+}
+.site-btn:hover {
+    background: #333 none repeat scroll 0 0;
+    border: 1px solid #333;
+    color: #ffffff;
+}
+h5.modal-title {
+    font-size: 18px;
 }
 
 
