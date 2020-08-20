@@ -38,10 +38,16 @@
                           </div>
                           <div class="form-group submit">
                            <label>{{__('messages.submit')}}</label>
-                           <a href="{{ route('login.provider', 'google') }}" class="btn btn-secondary">{{ __('Google Sign in') }}</a>
+                           <a href="{{ route('login.provider', 'google') }}" class="signin" >{{ __('Google Sign in') }}</a>
                            {{-- <input type="submit" name="submit" value="{{__('messages.signIn')}}" class="signin" id="signin"> --}}
                             {{-- <a href="{{route($forgotPasswordRoute)}}" class="lost_password">{{__('messages.lostPassword')}}?</a> --}}
-                        </div>
+                           </div>
+                           <div class="form-group submit">
+                              <label>{{__('messages.submit')}}</label>
+                              <a href="{{ route('login.provider', 'facebook') }}" class="signin" >{{ __('Facebook Sign in') }}</a>
+                              {{-- <input type="submit" name="submit" value="{{__('messages.signIn')}}" class="signin" id="signin"> --}}
+                               {{-- <a href="{{route($forgotPasswordRoute)}}" class="lost_password">{{__('messages.lostPassword')}}?</a> --}}
+                           </div>
                        </form>
                     </div>
                     <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12  pull-right sidebar">
