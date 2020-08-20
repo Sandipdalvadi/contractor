@@ -33,9 +33,9 @@ Route::get('/profile', 'ProfileController@profile')->name('user.profile');
 Route::get('/edit_profile', 'ProfileController@editProfile')->name('user.editprofile');
 Route::post('/edit_profile', 'ProfileController@updateProfile')->name('user.updateProfile');
 // Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
-// Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 Route::get('redirect/{driver}', 'Auth\LoginController@redirectToProvider')
-    ->name('login.provider');
+->name('login.provider');
+Route::get('/callback/{driver}', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('locale/{locale}', function ($locale){
     Session::put('locale', $locale);
