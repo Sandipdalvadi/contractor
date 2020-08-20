@@ -61,8 +61,8 @@ class ProfileController extends Controller
         
     }
     public function updateProfile(Request $request){
-        echo "<pre>";print_r($request->all());
-        exit;
+        // echo "<pre>";print_r($request->all());
+        // exit;
         $allSelectedCategory = $request->selected_category ? $request->selected_category : [];
         if(count($allSelectedCategory)){
                 $selectedCategory = $request->selected_category; 
