@@ -83,7 +83,7 @@
                      </li>
                      <li><a href="#">{{__('messages.browseJobs')}}</a></li>
                      <li><a href="#">{{__('messages.howItWorks')}}</a></li>
-                     <li class="mobile-menu"><a href="#">{{__('messages.postAJobItsFree')}}</a></li>
+                     <li class="mobile-menu"><a href="{{route('user.createProject')}}">{{__('messages.postAJobItsFree')}}</a></li>
                      <li class="mobile-menu"><a href="{{route('login')}}">{{__('messages.login')}}</a></li>
                      <li class="mobile-menu"><a href="{{route('register')}}">{{__('messages.register')}}</a></li>
                   </ul>
