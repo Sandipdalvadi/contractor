@@ -44,7 +44,25 @@
         </div>
     </div>
 </div>
-
+<div id="sidebar" class="users p-chat-user showChat">
+    <div class="had-container">
+        <div class="card card_main p-fixed users-main">
+            <div class="user-box">
+                <div class="chat-inner-header">
+                    <div class="back_chatBox">
+                        <div class="right-icon-control">
+                            <input type="text" class="form-control  search-text" placeholder="Search Friend" id="search-friends">
+                            <div class="form-icon">
+                                <i class="icofont icofont-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Sidebar inner chat start-->
 
 
@@ -118,23 +136,25 @@
                         <li class="user-profile header-notification">
                             <div class="dropdown-primary dropdown">
                                 <div class="dropdown-toggle" data-toggle="dropdown">
-                                          <img src="{{ public_url("/default_images/default_user.jpg") }}" class="img-radius" 
+                                          <img src="Imag" class="img-radius" 
                                           alt="Image">
                                     <span>Admin</span>
                                     <i class="feather icon-chevron-down"></i>
                                 </div>
                                 <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                   
                                     <li>
                                         <a href="{{route('admin.profile.edit')}}">
-                                            <i class="feather icon-user"></i> Profile
+                                            <i class="feather icon-user"></i> {{trans('labels.Profile')}}
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{route('admin.logout')}}">
-                                        <i class="feather icon-log-out"></i> Logout
+                                            <i class="feather icon-log-out"></i> {{trans('labels.logout')}}
                                         </a>
                                     </li>
                                 </ul>
+
                             </div>
                         </li>
                     </ul>
@@ -142,23 +162,3 @@
             </div>
         </nav>    
 <!-- Navbar-->
-
-        <div id="sidebar" class="users p-chat-user showChat">
-    <div class="had-container">
-        <div class="card card_main p-fixed users-main">
-            <div class="user-box">
-                <div class="chat-inner-header">
-                    <div class="back_chatBox">
-                        <div class="right-icon-control">
-                            <input type="text" class="form-control  search-text" placeholder="Search Friend" id="search-friends">
-                            <div class="form-icon">
-                                <i class="icofont icofont-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>

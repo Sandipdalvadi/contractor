@@ -6,7 +6,7 @@
     <meta name="description" content="#">
     <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="#">
-    <link rel="icon" href="{!! asset('/public/d_files/assets/images/logo.png') !!}" type="image/x-icon">
+    <link rel="icon" href="{{ public_url("/default_images/logo.jpeg") }}" type="image/x-icon">
   
     {{-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> --}}
     

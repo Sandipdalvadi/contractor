@@ -58,6 +58,7 @@ class LoginController extends Controller
             ->intended(route('home'))
             ->with('status','You are Logged in as Admin!');
         }
+        // echo "<pre>";exit;
     
         //Authentication failed...
         return $this->loginFailed();
@@ -79,6 +80,7 @@ class LoginController extends Controller
         $request->validate($rules,$messages);
     }
     private function loginFailed(){
+        // echo "Hello";exit;
         return redirect()
             ->back()
             ->withInput()

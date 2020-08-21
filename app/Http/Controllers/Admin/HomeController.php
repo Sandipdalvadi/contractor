@@ -6,11 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth,Hash;
 use App\Model\Admin;
+use App\Model\Category;
 class HomeController extends Controller
 {
     //
     public function index(){
-        return view('admin.home');
+        $categoryCount = Category::where('status','1')->count();
+        // echo $categoryCount;exit;
+        return view('admin.home',['categoryCount'=>$categoryCount]);
     }
     public function editProfile(){
         $userId = Auth::guard('admin')->id();

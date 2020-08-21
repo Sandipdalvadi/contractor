@@ -1,8 +1,8 @@
 
 <!-- Required Jquery -->
     
-<script type="text/javascript" src="{{public_url("/d_files/bower_components/popper.js/js/popper.min.js") }}"></script>
 <script type="text/javascript" src="{{public_url("/d_files/bower_components/bootstrap/js/bootstrap.min.js") }}"></script>
+<script type="text/javascript" src="{{public_url("/d_files/bower_components/popper.js/js/popper.min.js") }}"></script>
 <!-- jquery slimscroll js -->
 <script type="text/javascript" src="{{public_url("/d_files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js") }}"></script>
 <!-- modernizr js -->
@@ -25,7 +25,7 @@
 <!-- lightbox js -->
 <script type="text/javascript" src="{{public_url("/d_files/bower_components/ekko-lightbox/js/ekko-lightbox.js") }}"></script>
 <script type="text/javascript" src="{{public_url("/d_files/bower_components/lightbox2/js/lightbox.js") }}"></script>
-{{-- <script src="{{public_url("/d_files/bower_components/datatables.net-buttons/js/buttons.flash.min.js") }}"></script> --}}
+<script src="{{public_url("/d_files/bower_components/datatables.net-buttons/js/buttons.flash.min.js") }}"></script>
 <script src="{{public_url("/d_files/bower_components/datatables.net-buttons/js/buttons.html5.min.js") }}"></script>
 <script src="{{public_url("/d_files/bower_components/datatables.net-buttons/js/buttons.print.min.js") }}"></script>
 <script type="text/javascript" src="{{public_url("/datatable_js/js/select2.min.js")}}"></script>
@@ -44,7 +44,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#basic-btn").DataTable({
+        $("#example").DataTable({
             dom: 'Bfrtip',
             buttons: [
                 'excel', 'pdf', 'csv'

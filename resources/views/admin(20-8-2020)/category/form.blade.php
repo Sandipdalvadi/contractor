@@ -36,31 +36,32 @@
                     <div class="card">
                         <div class="card-header">
                             <h5 class="page-title">{{$category->id ? 'Edit' : 'Add new' }}</h5>
+                            
                             <div class="float-right">
                                 <a href="{{route('admin.category.index')}}"><button class="btn btn-primary pull-right box-title" type="submit">Back</button></a>
+                                    
+                                @if(session()->has('message'))
+                                    <div class="alert alert-success" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        {{ session()->get('message') }}
+                                    </div>
+                                @endif
+                      
+                                @if(session()->has('errorMessage'))
+                                    <div class="alert alert-danger" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        {{ session()->get('errorMessage') }}
+                                    </div>
+                                @endif
                             </div>
                         </div>
+                        
+                        
+                        
                         <div class="card-block">
                                   
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <div class="col-sm-12">
-                        
-                                        @if(session()->has('message'))
-                                            <div class="alert alert-success" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                {{ session()->get('message') }}
-                                            </div>
-                                        @endif
-                            
-                                        @if(session()->has('errorMessage'))
-                                            <div class="alert alert-danger" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                {{ session()->get('errorMessage') }}
-                                            </div>
-                                        @endif
-                                    </div>
-                                    
 
                                     <form class="login-form" method="post" action="{{route('admin.category.save')}}"
                                       enctype="multipart/form-data">
