@@ -19,7 +19,7 @@
                <div class="logins">
                   <ul>
                      <li>
-                        <a href="#" class="post_job"><span class="label job-type partytime">{{__('messages.postAJobItsFree')}}</span></a>
+                        <a href="{{route('user.createProject')}}" class="post_job"><span class="label job-type partytime">{{__('messages.postAJobItsFree')}}</span></a>
                      </li>
                      <li class="dropdown">
                         <a href="#" class="dropdown-toggle login" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
