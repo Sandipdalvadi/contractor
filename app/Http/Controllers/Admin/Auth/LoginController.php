@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Auth;
 
 use Auth;
+use Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -24,13 +25,13 @@ class LoginController extends Controller
 {
     //validation rules.
     $rules = [
-        'email'    => 'required|email|exists:admins|min:5|max:191',
+        'phone'    => 'required|exists:admins|min:5|max:191',
         'password' => 'required|string|min:4|max:255',
     ];
 
     //custom validation error messages.
     $messages = [
-        'email.exists' => 'These credentials do not match our records.',
+        'phone.exists' => 'These credentials do not match our records.',
     ];
 
     //validate the request.
@@ -46,7 +47,7 @@ public function login(Request $request)
 {
     $this->validator($request);
     
-    if(Auth::guard('admin')->attempt($request->only('email','password'),$request->filled('remember'))){
+    if(Auth::guard('admin')->attempt($request->only('phone','password'),$request->filled('remember'))){
         //Authentication passed...
         return redirect()
         ->intended(route('admin.home'))
