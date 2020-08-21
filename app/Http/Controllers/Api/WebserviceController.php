@@ -2,15 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use Validator;
-use DB;
-use Hash;
-use Auth;
-use Carbon;
-use Session;
-use Lang;
-use App;
-use URL;
+use Validator, DB, Hash, Auth, Carbon, Session, Lang, App, URL;
 use App\Model\User;
 use App\Model\Category;
 use Illuminate\Http\Request;
@@ -102,8 +94,10 @@ class WebServiceController extends Controller
             $user->created_at = get_timestamp();
             $user->updated_at = get_timestamp();
             $user->save();
-
+            auth()->login($user, true);
+            
             $userData=[];
+            $userData['token'] =  $user->createToken('MyApp')-> accessToken;
             $userData['userId']=(string)$user->id;
             $userData['userName']=$user->name ? $user->name : '';
             $userData['email']=$user->email ? $user->email : '';
@@ -300,7 +294,23 @@ class WebServiceController extends Controller
             echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;
         }
     }
+    public function login(){ 
+        if(Auth::attempt(['phone' => request('phone'), 'password' => request('password')])){ 
+            $user = Auth::user(); 
+            $success['token'] =  $user->createToken('MyApp')-> accessToken; 
+            return response()->json(['success' => $success], '200'); 
+        } 
+        else{ 
+            return response()->json(['error'=>'Unauthorised'], 401); 
+        } 
+    }
+    public function details() 
+    { 
+        $user = Auth::user(); 
+        return response()->json(['success' => $user], '200'); 
+    } 
     public function categoryList(){
+        // echo "hello";exit;
         $input = file_get_contents('php://input');
         $post = json_decode($input, true);
     

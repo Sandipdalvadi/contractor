@@ -23,8 +23,19 @@ Route::namespace('Api')->group(function(){
     Route::post('/registerCustomer', 'WebserviceController@registerCustomer');
     Route::post('/loginCustomerSocial', 'WebserviceController@loginCustomerSocial');
     Route::post('/loginCustomer', 'WebserviceController@loginCustomer');
-    Route::post('/categoryList', 'WebserviceController@categoryList');
-    Route::middleware(['\App\Http\Middleware\AuthBasic'])->group(function () {
+    Route::post('/login', 'WebserviceController@login');
+    // Route::post('/categoryList', 'WebserviceController@categoryList');
+    // Route::middleware(['\App\Http\Middleware\AuthBasic'])->group(function () {
+    //     Route::post('/editCustomerProfile', 'WebserviceController@editCustomerProfile');
+    // });
+    // Route::group(['middleware' => 'auth:api'], function(){
+        Route::post('/categoryList', 'WebserviceController@categoryList');
+        // Route::post('/categoryList', function (){
+        //     // Session::put('locale', $locale);
+        //     return "Hello";
+        // });
+        
+        Route::post('/details', 'WebserviceController@details');
         Route::post('/editCustomerProfile', 'WebserviceController@editCustomerProfile');
-    });
+    // });
 });

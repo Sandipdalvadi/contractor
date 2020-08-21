@@ -79,7 +79,7 @@
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
                      <li>
-                        <li class="mobile-menu add-job"><a href="#">{{__('messages.postAJobItsFree')}}</a></li>
+                        <li class="mobile-menu add-job"><a href="{{route('user.createProject')}}">{{__('messages.postAJobItsFree')}}</a></li>
                      </li>
                      <li><a href="#">{{__('messages.browseJobs')}}</a></li>
                      <li><a href="#">{{__('messages.howItWorks')}}</a></li>

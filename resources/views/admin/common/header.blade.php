@@ -1,42 +1,164 @@
-<!-- Navbar-->
-<header class="main-header hidden-print"><a class="logo" href="{{URL::To('/')}}">{{Lang::get('messages.contractor')}}</a>
-    <nav class="navbar navbar-static-top">
-        <!-- Sidebar toggle button--><a class="sidebar-toggle" href="#" data-toggle="offcanvas"></a>
-        <!-- Navbar Right Menu-->
-        <div class="navbar-custom-menu">
-            <ul class="top-nav">
-                <!--Notification Menu-->
-                <li class="dropdown notification-menu"><a class="dropdown-toggle" href="#" data-toggle="dropdown"
-                                                          aria-expanded="false"><i
-                                class="fa fa-bell-o fa-lg"></i></a>
-                    <ul class="dropdown-menu">
-                        <li class="not-head">You have 4 new notifications.</li>
-                        <li><a class="media" href="javascript:;"><span class="media-left media-icon"><span
-                                            class="fa-stack fa-lg"><i
-                                                class="fa fa-circle fa-stack-2x text-primary"></i><i
-                                                class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
-                                <div class="media-body"><span class="block">Lisa sent you a mail</span><span
-                                            class="text-muted block">2min ago</span></div>
-                            </a></li>
-                    </ul>
-                </li>
-                <!-- User Menu-->
-                <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button"
-                    aria-haspopup="true" aria-expanded="false">{{Lang::get('messages.languages')}}</a>
-                    <ul class="dropdown-menu settings-menu">
-                        <li><a href="{{route('admin.locale',['locale'=>'en']) }}"><i class="fa fa-cog fa-lg"></i> English</a></li>
-                        <li><a href="{{route('admin.locale',['locale'=>'ar']) }}"><i class="fa fa-cog fa-lg"></i> Arabic</a></li>
-                        <li><a href="{{route('admin.locale',['locale'=>'ur']) }}"><i class="fa fa-cog fa-lg"></i> Urdu</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button"
-                                        aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
-                    <ul class="dropdown-menu settings-menu">
-                        <li><a href="{{route('admin.profile.edit')}}"><i class="fa fa-cog fa-lg"></i> {{Lang::get('messages.settings')}}</a></li>
-                        <li><a href="{{route('admin.logout')}}"><i class="fa fa-sign-out fa-lg"></i> {{Lang::get('messages.logout')}}</a></li>
-                    </ul>
-                </li>
-            </ul>
+<style>
+    .dropdown-primary .dropdown-menu.noti-ul a:hover {
+        background: transparent;
+    }
+    .dropdown-primary .dropdown-menu.noti-ul a {
+        display: inline-block;
+        width: 100%;
+    }
+    
+    </style>
+<div class="theme-loader">
+    <div class="ball-scale">
+        <div class='contain'>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
         </div>
-    </nav>
-</header>
+    </div>
+</div>
+<div id="sidebar" class="users p-chat-user showChat">
+    <div class="had-container">
+        <div class="card card_main p-fixed users-main">
+            <div class="user-box">
+                <div class="chat-inner-header">
+                    <div class="back_chatBox">
+                        <div class="right-icon-control">
+                            <input type="text" class="form-control  search-text" placeholder="Search Friend" id="search-friends">
+                            <div class="form-icon">
+                                <i class="icofont icofont-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sidebar inner chat start-->
+
+
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+
+        <nav class="navbar header-navbar pcoded-header">
+            
+            <div class="navbar-wrapper">
+
+                <div class="navbar-logo">
+                    <a class="mobile-menu" id="mobile-collapse" href="#!">
+                        <i class="feather icon-menu"></i>
+                    </a>
+                    <a href="#" style="display: flex; align-items: center; font-size: 15px; font-weight: 600;">
+                        <img class="img-fluid" src="{!! asset('/public/d_files/assets/images/logo.png') !!}" style="height:40px; margin-right: 10px;" alt="Theme-Logo">
+                        Contractor
+                    </a>
+                    <a class="mobile-options">
+                        <i class="feather icon-more-horizontal"></i>
+                    </a>
+                </div>
+
+                <div class="navbar-container container-fluid">
+                    <ul class="nav-left">
+                        <li>
+                            <a href="#!" onclick="javascript:toggleFullScreen()">
+                                <i class="feather icon-maximize full-screen"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <ul class="nav-right">
+                        <li class="header-notification">
+                            <div class="dropdown-primary dropdown">
+                                <div class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="zmdi zmdi-notifications-none"></i>
+                                    <span class="badge bg-c-pink">11</span>
+                                </div>
+                                    <div class="show-notification notification-view dropdown-menu noti-ul" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                        <ul class="">
+                                            <li>
+                                                <h6>Notifications</h6>
+                                                <label class="label label-danger">New</label>
+                                            </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="media">
+                                                            <img class="d-flex align-self-center img-radius" src="" alt="Generic placeholder image">
+                                                            <div class="media-body">
+                                                                <h5 class="notification-user"> New Customer</h5>
+                                                                <p class="notification-msg">New Order.</p>
+                                                                <span class="notification-time">11:24</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                    </ul>
+                                    </div>
+                            </div>
+                        </li>
+                        <li class="header-notification">
+                            <div class="dropdown-primary dropdown">
+                                <div class="displayChatbox dropdown-toggle" data-toggle="dropdown">
+                                    <i class="zmdi zmdi-comment-outline"></i>
+                                    <span class="badge bg-c-green" id="userTotalMessageCount">0</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="user-profile header-notification">
+                            <div class="dropdown-primary dropdown">
+                                <div class="dropdown-toggle" data-toggle="dropdown">
+                                          <img src="Imag" class="img-radius" 
+                                          alt="Image">
+                                    <span>Admin</span>
+                                    <i class="feather icon-chevron-down"></i>
+                                </div>
+                                <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                   
+                                    <li>
+                                        <a href="{{route('admin.profile.edit')}}">
+                                            <i class="feather icon-user"></i> {{trans('labels.Profile')}}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('admin.logout')}}">
+                                            <i class="feather icon-log-out"></i> {{trans('labels.logout')}}
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>    
+<!-- Navbar-->
