@@ -308,6 +308,12 @@ class WebServiceController extends Controller
         $new = str_replace('index.php', '', $urlnew);   
         try
         {
+            $languageCode ='en'; 
+              
+            if((isset($post['languageCode'])) && (!empty($post['languageCode'])))
+            {
+                $languageCode = $post['languageCode'];
+            }
             $limit = isset($post['startLimit']) ? $post['startLimit'] : 0;
             $categories = Category::where('status','1')->limit(10)->offset($limit)->orderBy('id', 'desc')->get();
             $totalCount = Category::where('status','1')->count();
@@ -317,9 +323,15 @@ class WebServiceController extends Controller
                 foreach($categories as $category)
                 {
                     $allCategory['id'] = $category->id;
-                    $allCategory['name'] = $category->name_ar ? $category->name_ar : '';
-                    $allCategory['name'] = $category->name_en ? $category->name_en : '';
-                    $allCategory['name'] = $category->name_ur ? $category->name_ur : '';
+                    if($languageCode == 'en'){
+                        $allCategory['name'] = $category->name_en ? $category->name_en : '';
+                    }
+                    elseif($languageCode == 'ar'){
+                        $allCategory['name'] = $category->name_ar ? $category->name_ar : '';
+                    }
+                    elseif($languageCode == 'ur'){
+                        $allCategory['name'] = $category->name_ur ? $category->name_ur : '';
+                    }
                     $allCategory['image'] = file_exists_in_folder("category",$category->image);
                     $allCategories[] = $allCategory;
                 }
