@@ -36,6 +36,8 @@ Route::post('/edit_profile', 'ProfileController@updateProfile')->name('user.upda
 Route::get('redirect/{driver}', 'Auth\LoginController@redirectToProvider')
 ->name('login.provider');
 Route::get('/callback/{driver}', 'Auth\LoginController@handleProviderCallback');
+Route::post('/facebook_login', 'Auth\LoginController@facebookLogin')->name('user.facebookLogin');
+
 Route::get('/create_project', 'JobController@createProject')->name('user.createProject');
 
 Route::get('locale/{locale}', function ($locale){

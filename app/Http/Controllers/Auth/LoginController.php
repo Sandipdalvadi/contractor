@@ -140,6 +140,53 @@ class LoginController extends Controller
         return redirect()->route('user.profile')->with('message','User login successfully');;
     }
 
+    public function facebookLogin(Request $request)
+    {
+        // echo "<pre>";print_r();exit;
+        $data = $request->data;
+        $existingUser = User::where('email', $data['email'])->first();
+        if ($existingUser) {
+            if($existingUser->status == 1){
+                auth()->login($existingUser, true);
+            }
+            else{
+                return redirect()->route('login')->with('message',"You are blocked please contact us!");
+            }
+        } else {
+            $newUser                    = new User;
+            $newUser->google_id       = '';
+            $newUser->facebook_id       = $data['uid'];
+            $newUser->apple_id       = '';
+            // $newUser->provider_name     = $driver;
+            $newUser->name              = $data['displayName'];
+            $newUser->email             = $data['email'];
+            $newUser->phone             = $data['phoneNumber'];
+            $newUser->is_email_verified= 1;
+            if($data['phoneNumber'] != ""){
+                $newUser->is_mobile_verified= 1;
+            }
+            else{
+                $newUser->is_mobile_verified= 0;
+            }
+            $newUser->email_verified_at = now();
+            $newUser->image            = $data['photoURL'];
+            $newUser->is_image_link            = 1;
+            $newUser->language_code = 1;
+            $newUser->status = 1;
+            $newUser->is_social = 1;
+            $newUser->created_at = get_timestamp();
+            $newUser->updated_at = get_timestamp();
+            $newUser->save();
+
+            auth()->login($newUser, true);
+        }
+        $return['url'] = route('user.profile');
+        $return['message'] = 'User login successfully';
+        return $return;
+        // return redirect($this->redirectPath());
+        // return redirect()->->with('message',);;
+    }
+
     public function logout(){
         Auth::logout();
         return redirect('/')->with('status','User has been logged out!');

@@ -32,6 +32,7 @@ class WebServiceController extends Controller
     function customerRegisterSub($post){
         if((!isset($post['email'])) || (!isset($post['userName'])) || (!isset($post['deviceToken'])) || (!isset($post['device'])) || (!isset($post['languageCode'])) || (!isset($post['isEmailverified']))|| (!isset($post['isPhoneVerified']))|| (!isset($post['isSocial'])) || (empty($post['email'])) || (empty($post['userName'])) || (empty($post['deviceToken'])) || (empty($post['device'])) || (empty($post['languageCode'])) || (empty($post['isEmailverified'])))
             {
+                echo "Hello";exit;
                 $response = array('success' => 0, 'message' => 'All Fields Are Required');
                 echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;     
             }
@@ -272,6 +273,5 @@ class WebServiceController extends Controller
             $response = array('success' => 0, 'message' => $e->getMessage());
             echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;
         }
-    }
-    
+    } 
 }
