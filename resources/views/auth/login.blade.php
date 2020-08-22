@@ -126,7 +126,7 @@ $(function(){
 function facebookSignin(){
    // alert("Hello");
    var provider = new firebase.auth.FacebookAuthProvider();
-   provider.addScope('user_birthday,email');
+   provider.addScope('user_birthday');
    firebase.auth().useDeviceLanguage();
    firebase.auth().signInWithPopup(provider).then(function(result) {
       var token = result.credential.accessToken;
