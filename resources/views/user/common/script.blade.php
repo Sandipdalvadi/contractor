@@ -22,7 +22,7 @@
 
     $("#loadessr").fadeOut();
     $('.select2').select2();
-    notify("Message Show", "success", "bottom", "right")
+    // notify("Message Show", "success", "bottom", "right")
     //  notify(message,type,from,align)
   })
 
@@ -43,3 +43,23 @@
   }
 
   </script>
+@section('script')
+@if (Session::has('message'))
+    <script type="text/javascript">
+        $(function() {
+            notify("{{ Session::get('message') }}", "info", "bottom", "right")
+        });
+
+    </script>
+@endif
+@if ($alert = Session::get('error'))
+    <script type="text/javascript">
+        $(function() {
+            notify("{{ Session::get('error') }}", "danger", "bottom", "right")
+        });
+
+    </script>
+
+@endif
+
+@endsection

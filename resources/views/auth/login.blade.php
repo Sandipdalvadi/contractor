@@ -5,11 +5,6 @@
     </div>
     </div>
     </header>
-    @if ($alert = Session::get('error'))
-        <div class="tost-error">
-            {{ $alert }}
-        </div>
-    @endif
     <div class="container-fluid login_register header_area deximJobs_tabs">
         <div class="row">
             <div class="container main-container-home">
@@ -83,17 +78,4 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        $(function() {
-            //$('.testtost').on("click", function () {
-            $('.tost-error').addClass("show-error");
-            setTimeout(RemoveClass, 3000);
-            // });
-            function RemoveClass() {
-                $('.tost-error').removeClass("show-error");
-            }
-        });
-
-    </script>
-
 @endsection
