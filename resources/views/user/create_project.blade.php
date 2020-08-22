@@ -10,11 +10,8 @@
 <div class="container-fluid page-title">
 <div class="row green-banner">
 <div class="container main-container">
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-<h3 class="white-heading">Post A Job</h3>
-</div>
-<div class="col-lg-9 col-md-8 col-sm-6 colxs-12 capital">
-<h5></h5>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<h3 class="white-heading" style="text-align: center">Post A Job</h3>
 </div>
 </div>
 </div>

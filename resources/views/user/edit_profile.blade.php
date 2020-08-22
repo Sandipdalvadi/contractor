@@ -113,14 +113,14 @@ $userDetails = $user->hasOneUserDetails ? $user->hasOneUserDetails : '';
                            <textarea name="about" class="textarea">{{$userDetails ? $userDetails->about : ""}}</textarea>
                         </div>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                         <label>Personal Characteristics:</label>
                      </div>
                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                         <textarea name="personal_characteristics" class="textarea">{{$userDetails ? $userDetails->personal_characteristics : ""}}</textarea>
                      </div>
-                 </div>
+                 </div> --}}
                     <div class="clearfix"></div>
                     <div class="form-group">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
