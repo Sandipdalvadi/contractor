@@ -50,21 +50,12 @@
                                <label>Or Login with</label>
                           <ul class="social-login">
                             <li class="google-login">
-                               <a href="{{ route('login.provider', 'google') }}" class="" ><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                               {{-- <input type="submit" name="submit" value="{{__('messages.signIn')}}" class="signin" id="signin"> --}}
-                                {{-- <a href="{{route($forgotPasswordRoute)}}" class="lost_password">{{__('messages.lostPassword')}}?</a> --}}
+                                 <a href="{{ route('login.provider', 'google') }}" class="" ><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                                </li>
                                <li class="facebook-login">
-                               {{-- <div class="form-group submit">
-                                  <a href="{{ route('login.provider', 'facebook') }}" class="" >{{ __('Facebook Sign in') }}</a> --}}
-                                  {{-- <input type="submit" name="submit" value="{{__('messages.signIn')}}" class="signin" id="signin"> --}}
-                                   {{-- <a href="{{route($forgotPasswordRoute)}}" class="lost_password">{{__('messages.lostPassword')}}?</a> --}}
-                               {{-- </div> --}}
                                
                                   <a href="{{ route('login.provider', 'facebook') }}" class="" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                  {{-- <input type="submit" name="submit" value="{{__('messages.signIn')}}" class="signin" id="signin"> --}}
-                                   {{-- <a href="{{route($forgotPasswordRoute)}}" class="lost_password">{{__('messages.lostPassword')}}?</a> --}}
-                            </li>
+                               </li>
                           </ul>
                           </div>
                        </form>
@@ -90,32 +81,6 @@
         </div>
     </div>
 </div>
-{{-- <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
-
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script> --}}
-
-
-<script>
-//     var firebaseConfig = {
-//     apiKey: "AIzaSyCOC3Xgz4CR1tXFfYxJEa5aIJ4gn_76cNs",
-//     authDomain: "contractor-b8107.firebaseapp.com",
-//     databaseURL: "https://contractor-b8107.firebaseio.com",
-//     projectId: "contractor-b8107",
-//     storageBucket: "contractor-b8107.appspot.com",
-//     messagingSenderId: "812649320275",
-//     appId: "1:812649320275:web:962c654201d90ed3a99ba6",
-//     measurementId: "G-2PT7LT4NGL"
-//   };
-  // Initialize Firebase
-//   firebase.initializeApp(firebaseConfig);
-//   firebase.analytics();
-</script>
-
 <script type="text/javascript">
 $(function(){
     //$('.testtost').on("click", function () {
@@ -126,37 +91,6 @@ $(function(){
     $('.tost-error').removeClass("show-error");
     }
 }); 
-// function facebookSignin(){
-//    // alert("Hello");
-//    var provider = new firebase.auth.FacebookAuthProvider();
-//    provider.addScope('user_birthday');
-//    firebase.auth().useDeviceLanguage();
-//    firebase.auth().signInWithPopup(provider).then(function(result) {
-//       var token = result.credential.accessToken;
-//       var user = result.user;
-//       $.ajax({
-//          url: "{{route('user.facebookLogin')}}",
-//          type: 'post',
-//          // dataType: 'application/json',
-//          data: {
-//             "_token": "{{ csrf_token() }}",  
-//             "data":user.providerData[0]
-//          },
-//          success: function(data) {
-//             // alert(home_page_link);
-//             console.log("data");
-//             console.log(data);
-//             window.location=data["url"];
-//          }
-//       });
-//    }).catch(function(error) {
-//       var errorCode = error.code;
-//       var errorMessage = error.message;
-//       var email = error.email;
-//       var credential = error.credential;
-//    });
-// }
-
 </script>
 
 @endsection
