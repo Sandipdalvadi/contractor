@@ -18,9 +18,9 @@
 </div>
 
 <div class="container-fluid contact_us">
-<form name="contact_us" id="form-style-2">
-<div class="row user-information">
-<div class="container main-container-home">
+<form name="contact_us" class="main-container-home" id="form-style-2">
+<div class="row">
+<div class="container">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <div class="form-group">
 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
@@ -83,16 +83,8 @@
 </div>
 <!-- User Data Row-->
 <div class="row user-info">
-<div class="container main-container-home">
+<div class="container">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="form-group submit">
-<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-<label>Your email</label>
-</div>
-<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-<span>Write about your company, job description, skills required, benefits, etc.</span>
-</div>
-</div>
 <div class="form-group">
 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 <label>Description</label>
