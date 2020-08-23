@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('Api')->group(function(){
     // Route::post('/registerCustomerSocial', 'WebserviceController@registerCustomerSocial');
-    Route::post('/registerCustomer', 'WebserviceController@registerCustomer');
-    Route::post('/loginCustomerSocial', 'WebserviceController@loginCustomerSocial');
-    Route::post('/loginCustomer', 'WebserviceController@loginCustomer');
+    Route::post('/register', 'WebserviceController@register');
     Route::post('/login', 'WebserviceController@login');
+    // Route::post('/loginCustomer', 'WebserviceController@loginCustomer');
+    // Route::post('/login', 'WebserviceController@login');
     // Route::post('/categoryList', 'WebserviceController@categoryList');
     // Route::middleware(['\App\Http\Middleware\AuthBasic'])->group(function () {
     //     Route::post('/editCustomerProfile', 'WebserviceController@editCustomerProfile');
@@ -36,6 +36,6 @@ Route::namespace('Api')->group(function(){
         // });
         
         Route::post('/details', 'WebserviceController@details');
-        Route::post('/editCustomerProfile', 'WebserviceController@editCustomerProfile');
+        Route::post('/editProfile', 'WebserviceController@editProfile');
     // });
 });

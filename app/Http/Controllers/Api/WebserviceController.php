@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Mail;
 class WebServiceController extends Controller
 {
 
-    public function registerCustomer(Request $request)  
+    public function register(Request $request)  
     { 
         $input = file_get_contents('php://input');
         $post = json_decode($input, true);
@@ -19,7 +19,7 @@ class WebServiceController extends Controller
         $new = str_replace('index.php', '', $urlnew);
         try
         {           
-            $userData = $this->customerRegisterSub($post);
+            $userData = $this->registerSub($post);
             $response = array('success' => 1, 'message' => 'User Registered Succeessfully','result' => $userData);
             echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;            
         }
@@ -29,35 +29,22 @@ class WebServiceController extends Controller
             echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;
         }   
     }
-    function customerRegisterSub($post){
+    function registerSub($post){
+        $image = $password = $phone = $facebookId = $googleId = $appleId = "";
         if((!isset($post['email'])) || (!isset($post['userName'])) || (!isset($post['deviceToken'])) || (!isset($post['device'])) || (!isset($post['languageCode'])) || (!isset($post['isEmailverified']))|| (!isset($post['isPhoneVerified']))|| (!isset($post['isSocial'])) || (empty($post['email'])) || (empty($post['userName'])) || (empty($post['deviceToken'])) || (empty($post['device'])) || (empty($post['languageCode'])) || (empty($post['isEmailverified'])))
             {
-                echo "Hello";exit;
                 $response = array('success' => 0, 'message' => 'All Fields Are Required');
                 echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;     
             }
-            elseif($post['isSocial'] == 1){
-                if((!isset($post['socialType']) || $post['socialType'] == 1 || $post['socialType'] == "1") && (!isset($post['facebookId']) || empty($post['facebookId']))){
-                    $response = array('success' => 0, 'message' => 'Facebook id required');
-                    echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;     
-                }
-                elseif((!isset($post['socialType']) || $post['socialType'] == 2 || $post['socialType'] == "2") && (!isset($post['googleId']) || empty($post['googleId']))){
-                    $response = array('success' => 0, 'message' => 'Google id required');
-                    echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;     
-                }
-                elseif((!isset($post['socialType']) || $post['socialType'] == 3 || $post['socialType'] == "3") && (!isset($post['appleId']) || empty($post['appleId']))){
-                    $response = array('success' => 0, 'message' => 'Apple id required');
-                    echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;     
-                }
-                $password = $phone = $facebookId = $googleId = $appleId = "";
+            elseif($post['isSocial'] == 1 && (isset($post['socialId']) && !empty($post['socialId']))){
                 if($post['socialType'] == "1" || $post['socialType'] == 1){
-                    $facebookId = $post['facebookId'];
+                    $facebookId = $post['socialId'];
                 }
                 if($post['socialType'] == "2" || $post['socialType'] == 2){
-                    $googleId = $post['googleId'];
+                    $googleId = $post['socialId'];
                 }
                 if($post['socialType'] == "3" || $post['socialType'] == 3){
-                    $appleId = $post['appleId'];
+                    $appleId = $post['socialId'];
                 }
                 $image = $post['image'];
                 $imageLink = 1;
@@ -70,14 +57,17 @@ class WebServiceController extends Controller
                 
                 $checkPhone = User::where('phone',$post['phone'])->first();
                 if (!empty($checkPhone)) 
-                {
+                {   
                     $response = array('success' => 0, 'message' => 'This Phone Already Exists');
                     echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;
                 }
-                $image = $facebookId = $googleId = $appleId = "";
                 $phone = $post['phone'];
                 $password = Hash::make($post['password']);
                 $imageLink = 0;
+            }
+            else{
+                $response = array('success' => 0, 'message' => 'All Feilds are required');
+                echo json_encode($responsefacebookId,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;     
             }
 
             $checkEmail = User::where('email',$post['email'])->first();
@@ -97,7 +87,7 @@ class WebServiceController extends Controller
             $user->password = !empty($checkEmail) ? $checkEmail->password : $password;
             $user->is_email_verified = $post['isEmailverified'];
             $user->is_mobile_verified = $post['isPhoneVerified'];
-            $user->image = !empty($checkEmail) ? $checkEmail->image : $image;
+            $user->image = !empty($checkEmail) && !empty($checkEmail->image) ? $checkEmail->image : $image;
             $user->phone = !empty($checkEmail) ? $checkEmail->phone : $phone;
             $user->language_code = $post['languageCode'];
             $user->is_image_link = $imageLink;
@@ -138,7 +128,7 @@ class WebServiceController extends Controller
             return $userData;
     }
   
-    public function loginCustomer(Request $request)
+    public function login(Request $request)
     {
         $input = file_get_contents('php://input');
         $post = json_decode($input, true);
@@ -151,7 +141,7 @@ class WebServiceController extends Controller
                 echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;     
             }
             if($post['isSocial'] == 1){
-                $userData = $this->customerRegisterSub($post);
+                $userData = $this->registerSub($post);
                 $response = array('success' => 1, 'message' => 'Login Successfully' ,'result' => $userData);
                 echo json_encode($response,JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_HEX_AMP);exit;
             }
