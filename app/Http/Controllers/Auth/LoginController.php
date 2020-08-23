@@ -97,7 +97,7 @@ class LoginController extends Controller
         } catch (\Exception $e) {
             return redirect()->route('login');
         }
-        // echo "<pre>";print_r($user);exit;
+        echo "<pre>";print_r($user);exit;
         $existingUser = User::where('email', $user->getEmail())->first();
 
         if ($existingUser) {
