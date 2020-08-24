@@ -20,13 +20,13 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook;
+namespace App\Http\facebookToken;
 
 use ArrayIterator;
 use IteratorAggregate;
 use ArrayAccess;
-use Facebook\Authentication\AccessToken;
-use Facebook\Exception\SDKException;
+use App\Http\facebookToken\Authentication\AccessToken;
+use App\Http\facebookToken\Exception\SDKException;
 
 /**
  * @package Facebook

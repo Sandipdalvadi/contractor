@@ -20,12 +20,12 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook;
+namespace App\Http\facebookToken;
 
-use Facebook\Exception\SDKException;
-use Http\Client\HttpClient;
-use Http\Discovery\HttpClientDiscovery;
-use Http\Discovery\MessageFactoryDiscovery;
+use App\Http\facebookToken\Exception\SDKException;
+use App\Http\facebookToken\Http\Client\HttpClient;
+use App\Http\facebookToken\Http\Discovery\HttpClientDiscovery;
+use App\Http\facebookToken\Http\Discovery\MessageFactoryDiscovery;
 
 /**
  * @package Facebook

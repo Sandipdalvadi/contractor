@@ -20,7 +20,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\Authentication;
+namespace App\Http\facebookToken\Facebook\Authentication;
 
 /**
  * @package Facebook

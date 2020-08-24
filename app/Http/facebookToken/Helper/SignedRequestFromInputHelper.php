@@ -20,14 +20,14 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\Helper;
+namespace App\Http\facebookToken\Helper;
 
-use Facebook\Facebook;
-use Facebook\Application;
-use Facebook\Client;
-use Facebook\SignedRequest;
-use Facebook\Authentication\AccessToken;
-use Facebook\Authentication\OAuth2Client;
+use App\Http\facebookToken\Facebook;
+use App\Http\facebookToken\Application;
+use App\Http\facebookToken\Client;
+use App\Http\facebookToken\SignedRequest;
+use App\Http\facebookToken\Authentication\AccessToken;
+use App\Http\facebookToken\Authentication\OAuth2Client;
 
 /**
  * @package Facebook

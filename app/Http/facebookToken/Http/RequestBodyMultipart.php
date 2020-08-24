@@ -20,9 +20,9 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\Http;
+namespace App\Http\facebookToken\Http;
 
-use Facebook\FileUpload\File;
+use App\Http\facebookToken\FileUpload\File;
 
 /**
  * Some things copied from Guzzle.

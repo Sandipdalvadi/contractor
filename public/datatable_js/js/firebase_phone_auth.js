@@ -11,7 +11,7 @@ function phoneAuth() {
 
     //get the number
     // jQuery[=""]
-    if (jQuery("[name='name']").val() == "" || jQuery("[name='email']").val() == "" || jQuery("[name='phone']").val() == "" || jQuery("[name='password']").val() == "" || jQuery("[name='password_confirmation']").val() == "" || jQuery("[name='password_confirmation']").val() != jQuery("[name='password']").val()) {
+    if (jQuery("[name='name']").val() == "" || jQuery("[name='email']").val() == "" || jQuery("[name='phone']").val() == "" || jQuery("#register_password").val() == "" || jQuery("#register_c_password").val() == "" || jQuery("#register_password").val() != jQuery("#register_c_password").val()) {
         if (jQuery("[name='name']").val() == "") {
             notify("Name is required", "danger", "bottom", "right")
         }
@@ -21,13 +21,13 @@ function phoneAuth() {
         if (jQuery("[name='phone']").val() == "") {
             notify("Phone is required", "danger", "bottom", "right")
         }
-        if (jQuery("[name='password']").val() == "") {
+        if (jQuery("#register_password").val() == "") {
             notify("Password is required", "danger", "bottom", "right");
         }
-        if (jQuery("[name='password_confirmation']").val() == "") {
+        if (jQuery("#register_c_password").val() == "") {
             notify("Confirmation password is required", "danger", "bottom", "right");
         }
-        if (jQuery("[name='password_confirmation']").val() != jQuery("[name='password']").val()) {
+        if (jQuery("#register_c_password").val() != jQuery("#register_password").val()) {
             notify("Password and confirmation password does not match", "danger", "bottom", "right")
         }
         return false;
@@ -39,6 +39,7 @@ function phoneAuth() {
         //s is in lowercase
         window.confirmationResult = confirmationResult;
         coderesult = confirmationResult;
+        $('#registerPopup').modal('hide')
         $('#verificationCodeModal').modal('show')
 
     }).catch(function(error) {

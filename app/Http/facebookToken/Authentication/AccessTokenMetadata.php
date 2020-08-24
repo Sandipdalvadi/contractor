@@ -20,9 +20,9 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\Authentication;
+namespace App\Http\facebookToken\Facebook\Authentication;
 
-use Facebook\Exception\SDKException;
+use App\Http\facebookToken\Facebook\Exception\SDKException;
 
 /**
  * Represents metadata from an access token.

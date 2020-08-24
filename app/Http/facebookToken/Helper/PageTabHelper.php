@@ -20,10 +20,10 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\Helper;
+namespace App\Http\facebookToken\Helper;
 
-use Facebook\Application;
-use Facebook\Client;
+use App\Http\facebookToken\Application;
+use App\Http\facebookToken\Client;
 
 /**
  * @package Facebook

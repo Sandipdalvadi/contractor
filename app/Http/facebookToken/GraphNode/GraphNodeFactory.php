@@ -20,10 +20,10 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\GraphNode;
+namespace App\Http\facebookToken\GraphNode;
 
-use Facebook\Response;
-use Facebook\Exception\SDKException;
+use App\Http\facebookToken\Response;
+use App\Http\facebookToken\Exception\SDKException;
 
 /**
  * Class GraphNodeFactory.

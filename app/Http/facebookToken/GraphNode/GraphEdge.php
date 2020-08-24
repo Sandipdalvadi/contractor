@@ -20,11 +20,11 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\GraphNode;
+namespace App\Http\facebookToken\GraphNode;
 
-use Facebook\Request;
-use Facebook\Url\UrlManipulator;
-use Facebook\Exception\SDKException;
+use App\Http\facebookToken\Request;
+use App\Http\facebookToken\Url\UrlManipulator;
+use App\Http\facebookToken\Exception\SDKException;
 
 /**
  * @package Facebook

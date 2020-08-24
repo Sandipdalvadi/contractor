@@ -20,16 +20,16 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\Helper;
+namespace App\Http\facebookToken\Helper;
 
-use Facebook\Authentication\AccessToken;
-use Facebook\Authentication\OAuth2Client;
-use Facebook\Exception\SDKException;
-use Facebook\PersistentData\SessionPersistentDataHandler;
-use Facebook\PersistentData\PersistentDataInterface;
-use Facebook\Url\UrlDetectionHandler;
-use Facebook\Url\UrlManipulator;
-use Facebook\Url\UrlDetectionInterface;
+use App\Http\facebookToken\Authentication\AccessToken;
+use App\Http\facebookToken\Authentication\OAuth2Client;
+use App\Http\facebookToken\Exception\SDKException;
+use App\Http\facebookToken\PersistentData\SessionPersistentDataHandler;
+use App\Http\facebookToken\PersistentData\PersistentDataInterface;
+use App\Http\facebookToken\Url\UrlDetectionHandler;
+use App\Http\facebookToken\Url\UrlManipulator;
+use App\Http\facebookToken\Url\UrlDetectionInterface;
 
 /**
  * @package Facebook

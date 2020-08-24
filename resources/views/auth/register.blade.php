@@ -57,7 +57,9 @@ $categories = \App\Model\Category::where('status',1)->get();
                           <ul>
                              <li>
                                 <p><i class="fa fa-clock-o"></i>{{__("messages.fastApplyingForOffersTheNecessaryDocumentsAreAlwaysAtHand")}}
-                                </p>
+                                </p>    
+                                @endsection
+                               <
                              </li>
                              <!--<li>-->
                              <!--   <p><i class="fa fa-child"></i>Effectively target employers-->
@@ -103,7 +105,9 @@ $categories = \App\Model\Category::where('status',1)->get();
      </div>
    </div>
  </div>
-<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+ @endsection
+ @section('script')
+ <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
 
   <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
   <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>

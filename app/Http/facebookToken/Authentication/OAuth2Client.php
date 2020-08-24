@@ -20,15 +20,15 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\Authentication;
+namespace App\Http\facebookToken\Facebook\Authentication;
 
-use Facebook\Facebook;
-use Facebook\Application;
-use Facebook\Request;
-use Facebook\Response;
-use Facebook\Client;
-use Facebook\Exception\ResponseException;
-use Facebook\Exception\SDKException;
+use App\Http\facebookToken\Facebook\Facebook;
+use App\Http\facebookToken\Facebook\Application;
+use App\Http\facebookToken\Facebook\Request;
+use App\Http\facebookToken\Facebook\Response;
+use App\Http\facebookToken\Facebook\Client;
+use App\Http\facebookToken\Facebook\Exception\ResponseException;
+use App\Http\facebookToken\Facebook\Exception\SDKException;
 
 /**
  * @package Facebook

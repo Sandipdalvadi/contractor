@@ -9,6 +9,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Socialite;
 use App\Model\User;
+// use App\Http\facebookToken\Facebook;
 class LoginController extends Controller
 {
     /*
@@ -95,9 +96,22 @@ class LoginController extends Controller
         try {
             $user = Socialite::driver($driver)->user();
         } catch (\Exception $e) {
+        // echo "<pre>";print_r("Hello");exit;
+            
             return redirect()->route('login');
+            
         }
-        echo "<pre>";print_r($user);exit;
+        // $facebook = new Facebook(array(
+        //     'appId'  => "2628932507423359",
+        //     'secret' => "a48b4b47c0837808e616d777df3be472",
+        // ));
+        // echo "<pre>";print_r($facebook);exit;
+        
+        // $facebook->setAccessToken($_REQUEST['access_token']);
+        
+        // if (($userId = $facebook->getUser())) {
+        //     // $_REQUEST['access_token'] is valid token for user with id $userId
+        // }
         $existingUser = User::where('email', $user->getEmail())->first();
 
         if ($existingUser) {

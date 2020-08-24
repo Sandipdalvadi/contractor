@@ -20,15 +20,15 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook;
+namespace App\Http\facebookToken;
 
-use Facebook\Authentication\AccessToken;
-use Facebook\Url\UrlManipulator;
-use Facebook\FileUpload\File;
-use Facebook\FileUpload\Video;
-use Facebook\Http\RequestBodyMultipart;
-use Facebook\Http\RequestBodyUrlEncoded;
-use Facebook\Exception\SDKException;
+use App\Http\facebookToken\Authentication\AccessToken;
+use App\Http\facebookToken\Url\UrlManipulator;
+use App\Http\facebookToken\FileUpload\File;
+use App\Http\facebookToken\FileUpload\Video;
+use App\Http\facebookToken\Http\RequestBodyMultipart;
+use App\Http\facebookToken\Http\RequestBodyUrlEncoded;
+use App\Http\facebookToken\Exception\SDKException;
 
 /**
  * Class Request.

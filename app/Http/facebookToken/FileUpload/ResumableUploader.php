@@ -20,15 +20,15 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\FileUpload;
+namespace App\Http\facebookToken\FileUpload;
 
-use Facebook\Authentication\AccessToken;
-use Facebook\Exception\ResponseException;
-use Facebook\Exception\ResumableUploadException;
-use Facebook\Exception\SDKException;
-use Facebook\Application;
-use Facebook\Client;
-use Facebook\Request;
+use App\Http\facebookToken\Authentication\AccessToken;
+use App\Http\facebookToken\Exception\ResponseException;
+use App\Http\facebookToken\Exception\ResumableUploadException;
+use App\Http\facebookToken\Exception\SDKException;
+use App\Http\facebookToken\Application;
+use App\Http\facebookToken\Client;
+use App\Http\facebookToken\Request;
 
 /**
  * @package Facebook

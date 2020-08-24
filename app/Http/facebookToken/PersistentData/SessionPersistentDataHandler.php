@@ -20,9 +20,9 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
  */
-namespace Facebook\PersistentData;
+namespace App\Http\facebookToken\PersistentData;
 
-use Facebook\Exception\SDKException;
+use App\Http\facebookToken\Exception\SDKException;
 
 /**
  * @package Facebook
