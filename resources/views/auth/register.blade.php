@@ -58,8 +58,7 @@ $categories = \App\Model\Category::where('status',1)->get();
                              <li>
                                 <p><i class="fa fa-clock-o"></i>{{__("messages.fastApplyingForOffersTheNecessaryDocumentsAreAlwaysAtHand")}}
                                 </p>    
-                                @endsection
-                               <
+                                
                              </li>
                              <!--<li>-->
                              <!--   <p><i class="fa fa-child"></i>Effectively target employers-->
