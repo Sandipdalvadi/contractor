@@ -14,6 +14,9 @@
             <div class="modal-body">
                 <form name="contact_us" class="contact_us" action="{{ route('login') }}" method="POST">
                     @csrf
+                    <div class="form-group" style="text-align: center">
+                        <img src="{{public_url('/assets/images/logo2.jpeg')}}" width="150px">
+                    </div>
                     <div class="form-group">
                         <label>{{ __('messages.phone') }}</label>
                         <input type="text" name="phone" placeholder="{{ __('messages.phone') }}">
@@ -69,6 +72,10 @@
                     action="{{ route('register') }}">
                     @csrf
                     <input type="hidden" name="home_page_link" id="home_page_link" value="{{ route('home') }}" />
+
+                    <div class="form-group" style="text-align: center">
+                        <img src="{{public_url('/assets/images/logo2.jpeg')}}" width="150px">
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -170,8 +177,13 @@
                     <div class="logins">
                         <ul>
                             <li>
+                                @if (Auth::check())
                                 <a href="{{ route('user.createProject') }}" class="post_job"><span
                                         class="label job-type partytime">{{ __('messages.postAJobItsFree') }}</span></a>
+                                @else
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#loginPopup" class="post_job"><span
+                                    class="label job-type partytime">{{ __('messages.postAJobItsFree') }}</span></a>
+                                @endif
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle login" data-toggle="dropdown" role="button"

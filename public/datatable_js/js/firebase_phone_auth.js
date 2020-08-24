@@ -54,7 +54,7 @@ function codeverify() {
         $('#verificationCodeModal').modal('hide');
         registerFormSubmit()
         var user = result.user;
-        console.log(user);
+        // console.log(user);
     }).catch(function(error) {
         alert(error.message);
     });
@@ -71,6 +71,13 @@ function registerFormSubmit() {
             console.log("data");
             console.log(data);
             window.location = home_page_link;
+        },
+        error: function(error) {
+            var returnArray = JSON.parse(error.responseText);
+            var returnError = returnArray.errors;
+            $.each(returnError, function(i, index) {
+                notify(index[0], "danger", "bottom", "right")
+            });
         }
     });
 }
