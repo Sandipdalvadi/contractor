@@ -15,7 +15,7 @@
                 return public_url().'/default_images/default_user.jpg';
             }
             elseif($directory == "category"){
-                return public_url().'/default_images/logo.jpeg';
+                return public_url().'/default_images/logo.png';
             }
         }
     }

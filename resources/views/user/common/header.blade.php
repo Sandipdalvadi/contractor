@@ -15,7 +15,7 @@
                 <form name="contact_us" class="contact_us" action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="form-group" style="text-align: center">
-                        <img src="{{public_url('/assets/images/logo2.jpeg')}}" width="150px">
+                        <img src="{{public_url('/default_images/logo.png')}}" width="150px">
                     </div>
                     <div class="form-group">
                         <label>{{ __('messages.phone') }}</label>
@@ -74,7 +74,7 @@
                     <input type="hidden" name="home_page_link" id="home_page_link" value="{{ route('home') }}" />
 
                     <div class="form-group" style="text-align: center">
-                        <img src="{{public_url('/assets/images/logo2.jpeg')}}" width="150px">
+                        <img src="{{public_url('/default_images/logo.png')}}" width="150px">
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -171,19 +171,19 @@
             <nav class="navbar navbar-fixed-top">
                 <div class="container">
                     <div class="logo">
-                        <a href="{{ route('home') }}"><img src="{{ public_url('/assets/images/logo2.jpeg') }}"
+                        <a href="{{ route('home') }}"><img src="{{ public_url('/default_images/logo.png') }}"
                                 alt="Photo" /> </a>
                     </div>
                     <div class="logins">
                         <ul>
                             <li>
-                                @if (Auth::check())
+                                {{-- @if (Auth::check()) --}}
                                 <a href="{{ route('user.createProject') }}" class="post_job"><span
                                         class="label job-type partytime">{{ __('messages.postAJobItsFree') }}</span></a>
-                                @else
+                                {{-- @else
                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#loginPopup" class="post_job"><span
                                     class="label job-type partytime">{{ __('messages.postAJobItsFree') }}</span></a>
-                                @endif
+                                @endif --}}
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle login" data-toggle="dropdown" role="button"
@@ -198,10 +198,12 @@
                                             </form>
                                         </li>
                                     @else
-                                        <li><a href="javascript:void(0)" data-toggle="modal"
+                                    <li><a href="{{route('login')}}">{{ __('messages.login') }}</a></li>
+                                    <li><a href="{{route('register')}}">{{ __('messages.register') }}</a></li>
+                                        {{-- <li><a href="javascript:void(0)" data-toggle="modal"
                                                 data-target="#loginPopup">{{ __('messages.login') }}</a></li>
                                         <li><a href="javascript:void(0)" data-toggle="modal"
-                                                data-target="#registerPopup">{{ __('messages.register') }}</a></li>
+                                                data-target="#registerPopup">{{ __('messages.register') }}</a></li> --}}
                                     @endif
                                 </ul>
                             </li>

@@ -235,7 +235,7 @@
             <div class="col-lg-12">
                 <a href="#" class="block">
                   <div class="pc-img">
-                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                    <img src="{{public_url("/default_images/logo.png")}}">
                   </div>  
                   <h3>Company Name</h3>
                 </a>
@@ -243,7 +243,7 @@
             <div class="col-lg-12">
                 <a href="#" class="block">
                   <div class="pc-img">
-                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                    <img src="{{public_url("/default_images/logo.png")}}">
                   </div>  
                   <h3>Company Name</h3>
                 </a>
@@ -251,7 +251,7 @@
             <div class="col-lg-12">
                 <a href="#" class="block">
                   <div class="pc-img">
-                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                    <img src="{{public_url("/default_images/logo.png")}}">
                   </div>  
                   <h3>Company Name</h3>
                 </a>
@@ -259,7 +259,7 @@
             <div class="col-lg-12">
                 <a href="#" class="block">
                   <div class="pc-img">
-                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                    <img src="{{public_url("/default_images/logo.png")}}">
                   </div>  
                   <h3>Company Name</h3>
                 </a>
@@ -267,7 +267,7 @@
             <div class="col-lg-12">
                 <a href="#" class="block">
                   <div class="pc-img">
-                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                    <img src="{{public_url("/default_images/logo.png")}}">
                   </div>  
                   <h3>Company Name</h3>
                 </a>
@@ -275,7 +275,7 @@
             <div class="col-lg-12">
                 <a href="#" class="block">
                   <div class="pc-img">
-                    <img src="{{public_url("/assets/images/logo2.jpeg")}}">
+                    <img src="{{public_url("/default_images/logo.png")}}">
                   </div>  
                   <h3>Company Name</h3>
                 </a>

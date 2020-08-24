@@ -79,7 +79,7 @@
                         <i class="feather icon-menu"></i>
                     </a>
                     <a href="#" style="display: flex; align-items: center; font-size: 15px; font-weight: 600;">
-                        <img class="img-fluid" src="{{ public_url("/default_images/logo.jpeg") }}" style="height:40px; margin-right: 10px;" alt="Theme-Logo">
+                        <img class="img-fluid" src="{{ public_url("/default_images/logo.png") }}" style="height:40px; margin-right: 10px;" alt="Theme-Logo">
                         Contractor
                     </a>
                     <a class="mobile-options">

@@ -14,7 +14,7 @@
          <nav class="navbar navbar-fixed-top">
             <div class="container">
                <div class="logo">
-                  <a href="{{public_url('index.html')}}"><img src="{{public_url('/assets/images/logo2.jpeg')}}" alt="Photo" /> </a>
+                  <a href="{{public_url('index.html')}}"><img src="{{public_url('/default_images/logo.png')}}" alt="Photo" /> </a>
                </div>
                <div class="logins">
                   <a href="#" class="post_job"><span class="label job-type partytime">POST A JOB, IT’S FREE!</span></a> 

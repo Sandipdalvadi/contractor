@@ -54,7 +54,7 @@
                                 <td>{{$i}}</td>
                                 <td>{{$res->name_eng ? $res->name_eng : ''}}</td>
                                 <td>{{$res->name_ar ? $res->name_ar : ''}}</td>
-                                <td><img src="{{$res->image !="" ? file_exists_in_folder("category",$res->image) : file_exists_in_folder("category/logo.jpeg")}}" height="100px"/></td>
+                                <td><img src="{{$res->image !="" ? file_exists_in_folder("category",$res->image) : file_exists_in_folder("category/logo.png")}}" height="100px"/></td>
                                 <td><label class='switch'><input type='checkbox' @if($res->status == 1) checked @endif value="{{$res->status}}" onchange="changeStatus(this,"{{route('admin.category.changeStatus',['id'=>$res->id])}}")"><span class='slider round'></span>
                                 </label></td>
                                 <td>

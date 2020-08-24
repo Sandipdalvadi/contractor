@@ -68,7 +68,7 @@
                                                 <input class="form-control" type="file" name="image"  id="imgInp" >
                                             </div>
                                             <div class="col-md-6">
-                                                <img id="blah" src="{{$category->image !="" ? file_exists_in_folder("category",$category->image) : file_exists_in_folder("category","logo.jpeg")}}" alt="Image" width="150px"/>
+                                                <img id="blah" src="{{$category->image !="" ? file_exists_in_folder("category",$category->image) : file_exists_in_folder("category","logo.png")}}" alt="Image" width="150px"/>
                                             </div>
                                         </div>
                                     </div>

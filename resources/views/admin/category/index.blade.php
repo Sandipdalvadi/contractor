@@ -87,7 +87,7 @@
                                                                 <td>{{ $res->name_en ? $res->name_en : '' }}</td>
                                                                 <td>{{ $res->name_ur ? $res->name_ur : '' }}</td>
                                                                 <td>{{ $res->name_ar ? $res->name_ar : '' }}</td>
-                                                                <td><img src="{{ $res->image != '' ? file_exists_in_folder('category', $res->image) : file_exists_in_folder('category', 'logo.jpeg') }}"
+                                                                <td><img src="{{ $res->image != '' ? file_exists_in_folder('category', $res->image) : file_exists_in_folder('category', 'logo.png') }}"
                                                                         height="100px" /></td>
                                                                 <td><label class='switch'><input type='checkbox' @if ($res->status == 1) checked
                                                         @endif value="{{ $res->status }}"
