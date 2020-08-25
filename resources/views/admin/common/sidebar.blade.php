@@ -8,10 +8,16 @@
                     <span class="pcoded-mtext">Dashboard</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="{{route('admin.category.index')}}">
                     <span class="pcoded-micon"><i class="zmdi zmdi-home"></i></span>
                     <span class="pcoded-mtext">Category</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('admin.siteSetting')}}">
+                    <span class="pcoded-micon"><i class="zmdi zmdi-home"></i></span>
+                    <span class="pcoded-mtext">Settings</span>
                 </a>
             </li>
         </ul>

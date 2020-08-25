@@ -82,6 +82,9 @@ class ProfileController extends Controller
         $userDetails->rate_per_hour = $request->rate_per_hour;
         $userDetails->user_id = $request->id;
         // $userDetails->selected_category = $request->selected_category;
+        $userDetails->address = $request->address;
+        $userDetails->latitude = $request->latitude;
+        $userDetails->longitude = $request->longitude;
         $userDetails->country = $request->country;
         $userDetails->about = $request->about;
         $userDetails->personal_characteristics = $request->personal_characteristics;

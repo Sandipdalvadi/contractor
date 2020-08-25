@@ -81,14 +81,18 @@ $userDetails = $user->hasOneUserDetails ? $user->hasOneUserDetails : '';
                                     <option value="{{$category->id}}" @if(in_array($category->id,$userCategory)) selected @endif>{{get_language_name($category,'name')}}</option>
                                  @endforeach
                               @endif
-                              {{-- <option value="1">Graphic Designer</option>
-                              <option value="2">Email marketing</option>
-                              <option value="3">Webdesigner    </option>
-                              <option value="4">Animations</option>
-                              <option value="5">Display Adversting</option>
-                              <option value="6">Web develioper</option>
-                              <option value="7">Programmer</option> --}}
                            </select>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                           <label>Address</label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                           <input type="text" name="address" id="address" required placeholder="address" value="{{$userDetails ? $userDetails->address : ''}}"/>
+                           <input type="hidden" id="latitude" name="latitude" value="{{$userDetails ? $userDetails->latitude : ''}}"/>
+                           <input type="hidden" id="longitude" name="longitude" value="{{$userDetails ? $userDetails->longitude : ''}}"/>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -166,7 +170,8 @@ $userDetails = $user->hasOneUserDetails ? $user->hasOneUserDetails : '';
         </div>
     </form>
 </div>
-
+@endsection
+@section('script')
 <script>
    function readURL(input) {
        if (input.files && input.files[0]) {
@@ -182,6 +187,22 @@ $userDetails = $user->hasOneUserDetails ? $user->hasOneUserDetails : '';
        readURL(this);
    });
 </script>
-
-
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;key=AIzaSyC3YYz8jqvHY3Yup1lzIdlU51FsjHKH5yE&amp;libraries=places"></script>
+ 
+<script>
+google.maps.event.addDomListener(window, 'load', initialize);
+function initialize() {
+var input = document.getElementById('address');
+var autocomplete = new google.maps.places.Autocomplete(input);
+autocomplete.addListener('place_changed', function () {
+var place = autocomplete.getPlace();
+// place variable will have all the information you are looking for.
+ 
+  var latitude = place.geometry['location'].lat();
+  var longitude = place.geometry['location'].lng();
+  jQuery("#latitude").val(latitude);
+  jQuery("#longitude").val(longitude);
+});
+}
+</script>
 @endsection

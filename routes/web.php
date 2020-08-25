@@ -69,8 +69,10 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/dashboard','HomeController@index')->name('home');
     Route::get('/edit/profile','HomeController@editProfile')->name('profile.edit');
     Route::post('/update/profile','HomeController@updateProfile')->name('profile.update');
+    Route::get('/siteSetting/form','SiteSettingController@form')->name('siteSetting');
+    Route::post('/siteSetting/save','SiteSettingController@save')->name('siteSetting.save');
     
-    Route::get('/category/changeStatus/{id}','CategoryController@changeStatus')->name('category.changeStatus');
+    // Route::get('/category/changeStatus/{id}','CategoryController@changeStatus')->name('category.changeStatus');
     
     $paths = array(
         'category'       => 'CategoryController'
@@ -80,6 +82,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         // Route::post('/'.$slug.'/list', $controller.'@list')->name($slug.'.list');
         Route::get('/'.$slug.'/delete/{id}', $controller.'@destroy')->name($slug.'.delete');
         Route::get('/'.$slug.'/form/{id}', $controller.'@form')->name($slug.'.form');
+        Route::get('/'.$slug.'/changeStatus/{id}', $controller.'@changeStatus')->name($slug.'.changeStatus');
         Route::post('/'.$slug.'/store/', $controller.'@store')->name($slug.'.save');
     }
     

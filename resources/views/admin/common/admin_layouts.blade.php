@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 @include('admin.common.style')
+@yield('style')
 <body class="">
     @include('admin.common.header')
     <div class="pcoded-main-container">
@@ -13,5 +14,6 @@
     @include('admin.common.footer')
 
 @include('admin.common.script')
+@yield('script')
 </body>
 </html>

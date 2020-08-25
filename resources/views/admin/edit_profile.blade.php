@@ -110,6 +110,8 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
     <script type="text/javascript">
         function showPassword(checkValue) {
             if (checkValue == 1) {
@@ -122,4 +124,5 @@
         }
 
     </script>
+
 @endsection

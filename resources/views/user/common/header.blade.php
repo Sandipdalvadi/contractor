@@ -21,13 +21,8 @@
                     <div class="logins">
                         <ul>
                             <li>
-                                {{-- @if (Auth::check()) --}}
                                 <a href="{{ route('user.createProject') }}" class="post_job"><span
                                         class="label job-type partytime">{{ __('messages.postAJobItsFree') }}</span></a>
-                                {{-- @else
-                                <a href="javascript:void(0)" data-toggle="modal" data-target="#loginPopup" class="post_job"><span
-                                    class="label job-type partytime">{{ __('messages.postAJobItsFree') }}</span></a>
-                                @endif --}}
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle login" data-toggle="dropdown" role="button"
@@ -44,10 +39,6 @@
                                     @else
                                     <li><a href="{{route('login')}}">{{ __('messages.login') }}</a></li>
                                     <li><a href="{{route('register')}}">{{ __('messages.register') }}</a></li>
-                                        {{-- <li><a href="javascript:void(0)" data-toggle="modal"
-                                                data-target="#loginPopup">{{ __('messages.login') }}</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal"
-                                                data-target="#registerPopup">{{ __('messages.register') }}</a></li> --}}
                                     @endif
                                 </ul>
                             </li>
@@ -63,9 +54,6 @@
                                     <li><a href="{{ route('locale', ['locale' => 'ur']) }}">Urdu</a></li>
                                 </ul>
                             </li>
-
-
-
                         </ul>
                     </div>
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -113,32 +101,3 @@
                 </div>
                 <!-- container-fluid -->
             </nav>
-            @section('script')
-                <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
-
-                <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-                <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
-
-                <!-- Add Firebase products that you want to use -->
-                <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
-
-
-                <script>
-                    var firebaseConfig = {
-                        apiKey: "AIzaSyCOC3Xgz4CR1tXFfYxJEa5aIJ4gn_76cNs",
-                        authDomain: "contractor-b8107.firebaseapp.com",
-                        databaseURL: "https://contractor-b8107.firebaseio.com",
-                        projectId: "contractor-b8107",
-                        storageBucket: "contractor-b8107.appspot.com",
-                        messagingSenderId: "812649320275",
-                        appId: "1:812649320275:web:962c654201d90ed3a99ba6",
-                        measurementId: "G-2PT7LT4NGL"
-                    };
-                    // Initialize Firebase
-                    firebase.initializeApp(firebaseConfig);
-                    //   firebase.analytics();
-
-                </script>
-                <script src="{{ public_url('/datatable_js/js/firebase_phone_auth.js') }}" type="text/javascript"></script>
-            @endsection
