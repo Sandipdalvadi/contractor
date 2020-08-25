@@ -2,7 +2,7 @@
     <div id="loader"></div>
 </div>
 <!-- Login Start -->
-<div class="modal fade" id="loginPopup" tabindex="-1" role="dialog" aria-labelledby="loginPopup" aria-hidden="true">
+{{-- <div class="modal fade" id="loginPopup" tabindex="-1" role="dialog" aria-labelledby="loginPopup" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -56,8 +56,8 @@
             </div>
         </div>
     </div>
-</div>
-<div class="modal fade" id="registerPopup" tabindex="-1" role="dialog" aria-labelledby="registerPopup"
+</div> --}}
+{{-- <div class="modal fade" id="registerPopup" tabindex="-1" role="dialog" aria-labelledby="registerPopup"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
         <div class="modal-content">
@@ -125,15 +125,15 @@
                                 {{-- <button type="button" data-toggle="modal"
                                     data-target="#verificationCodeModal">Launch modal</button>
                                 --}}
-                            </div>
+                            {{-- </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</div>
-<div class="modal fade" id="verificationCodeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+</div>  --}}
+{{-- <div class="modal fade" id="verificationCodeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -154,7 +154,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   
 <!-- Login End -->
 <!-- Header Image Or May be Slider-->

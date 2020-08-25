@@ -53,7 +53,7 @@ class LoginController extends Controller
     {
         $this->validator($request);
         
-        if(Auth::guard('web')->attempt($request->only('phone','password'),$request->filled('remember'))){
+        if(Auth::guard('web')->attempt($request->only('email','password'),$request->filled('remember'))){
             //Authentication passed...
             return redirect()
             ->intended(route('home'))
@@ -68,7 +68,7 @@ class LoginController extends Controller
     private function validator(Request $request)
     {
         $rules = [
-            'phone'    => 'required',
+            'email'    => 'required',
             'password' => 'required|string|min:4|max:255',
         ];
 

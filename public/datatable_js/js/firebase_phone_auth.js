@@ -5,13 +5,16 @@ window.onload = function() {
 function render() {
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
     recaptchaVerifier.render();
+    // alert("Hello")
 }
 
 function phoneAuth() {
 
     //get the number
+    var number = document.getElementById('number').value;
     // jQuery[=""]
-    if (jQuery("[name='name']").val() == "" || jQuery("[name='email']").val() == "" || jQuery("[name='phone']").val() == "" || jQuery("#register_password").val() == "" || jQuery("#register_c_password").val() == "" || jQuery("#register_password").val() != jQuery("#register_c_password").val()) {
+    if (jQuery("[name='name']").val() == "" || jQuery("[name='email']").val() == "" || jQuery("[name='phone']").val() == "" ||
+        jQuery("[name='password']").val() == "" || jQuery("[name='password_confirmation']").val() == "" || jQuery("[name='password']").val() != jQuery("[name='password_confirmation']").val()) {
         if (jQuery("[name='name']").val() == "") {
             notify("Name is required", "danger", "bottom", "right")
         }
@@ -21,18 +24,19 @@ function phoneAuth() {
         if (jQuery("[name='phone']").val() == "") {
             notify("Phone is required", "danger", "bottom", "right")
         }
-        if (jQuery("#register_password").val() == "") {
+        if (jQuery("[name='password']").val() == "") {
             notify("Password is required", "danger", "bottom", "right");
         }
-        if (jQuery("#register_c_password").val() == "") {
+        if (jQuery("[name='password_confirmation']").val() == "") {
             notify("Confirmation password is required", "danger", "bottom", "right");
         }
-        if (jQuery("#register_c_password").val() != jQuery("#register_password").val()) {
+        if (jQuery("[name='password_confirmation']").val() != jQuery("[name='password']").val()) {
             notify("Password and confirmation password does not match", "danger", "bottom", "right")
         }
+        // alert(jQuery("[name='password_confirmation']").val());
+        // alert(jQuery("[name='password']").val());
         return false;
     }
-    var number = document.getElementById('number').value;
     //phone number authentication function of firebase
     //it takes two parameter first one is number,,,second one is recaptcha
     firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function(confirmationResult) {
