@@ -26,12 +26,12 @@ header#header, .footer { display: none; }
                             @csrf
 
                             <div class="form-group">
-                                <input id="email" type="email" class="form-control"
+                                <input id="email" type="email"
                                     name="email" value="{{ $email ?? old('email') }}" required placeholder="{{ __('E-Mail Address') }}">
                                 {{-- <input type="text" name="email" placeholder="{{ __('messages.email') }}"> --}}
                             </div>
                             <div class="form-group submit">
-                                <input type="submit" style="margin: 10px 0 20px" name="submit" value="{{ __('Send Password Reset Link') }}" class="signin"
+                                <input type="submit" style="margin: 10px 0 0px" name="submit" value="{{ __('Send Password Reset Link') }}" class="signin"
                                     id="signin">
                             </div>
                         </form>
