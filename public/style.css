@@ -4462,10 +4462,13 @@ h5.modal-title {
 }
 
 .log-reg {
-	text-align: center;
-	display: inline-block;
-	width: 100%;
-	padding: 30px 0;
+    text-align: center;
+    width: 100%;
+    padding: 30px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .log-reg .log-reg-pop {
