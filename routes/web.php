@@ -13,6 +13,11 @@ Route::get('/','HomeController@index');
 
 Route::namespace('Auth')->group(function(){
     //Login Routes
+    Route::get('/verify_phone','RegisterController@verifyPhone')->name('auth.verifyPhone');
+    Route::post('/confirm_verify','RegisterController@confirmVerify')->name('auth.confirmVerify');
+    Route::get('/register_form','RegisterController@showRegisterForm')->name('registerForm');
+    Route::post('/register','RegisterController@create');
+    
     Route::get('/login','LoginController@showLoginForm')->name('login');
     Route::post('/login','LoginController@login');
     Route::post('/logout','LoginController@logout')->name('logout');
@@ -27,7 +32,6 @@ Route::namespace('Auth')->group(function(){
 
 });
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'ProfileController@profile')->name('user.profile');
 Route::get('/edit_profile', 'ProfileController@editProfile')->name('user.editprofile');

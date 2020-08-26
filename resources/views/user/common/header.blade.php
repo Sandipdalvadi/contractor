@@ -38,7 +38,7 @@
                                         </li>
                                     @else
                                     <li><a href="{{route('login')}}">{{ __('messages.login') }}</a></li>
-                                    <li><a href="{{route('register')}}">{{ __('messages.register') }}</a></li>
+                                    <li><a href="{{route('auth.verifyPhone')}}">{{ __('messages.register') }}</a></li>
                                     @endif
                                 </ul>
                             </li>

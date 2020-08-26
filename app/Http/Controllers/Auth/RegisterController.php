@@ -8,6 +8,7 @@ use App\Model\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -47,6 +48,37 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    public function verifyPhone(){
+        return view('auth.register_phone');
+    }
+    public function confirmVerify(Request $request){
+        $user = User::where('phone',$request->phone)->first();
+        $returnArray = [];
+        if(!empty($user)){
+            // return
+            $returnArray['status'] = 0;
+            $returnArray['message'] = "This mobile number already register";
+            $returnArray['redirect'] = route('auth.verifyPhone');
+        }
+        else{
+            $request->session()->put('userPhone', $request->phone);
+            $returnArray['status'] = 1;
+            $returnArray['message'] = "Mobile Register";
+            $returnArray['redirect'] = route('registerForm');
+        }
+        return $returnArray;
+    }
+    public function showRegisterForm(Request $request){
+        $phoneNumber = $request->session()->get('userPhone');
+        if($phoneNumber != ""){
+            return view('auth.register_profile',['phone'=>$phoneNumber]);
+        }
+        else{
+            return redirect()->route('auth.verifyPhone')->with('error','Please verify mobile number');
+        }
+        
+        // echo $value;
+    }
     protected function validator(array $data)
     {
         // echo "<pre>";print_r($data);exit;
@@ -61,14 +93,15 @@ class RegisterController extends Controller
         
         /**
          * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
-    {
-        // echo "<pre>";print_r($data);exit;
-        return User::create([
+         *
+         * @param  array  $data
+         * @return \App\User
+         */
+        protected function create(array $data)
+        {
+            session()->forget('userPhone');
+
+            return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
