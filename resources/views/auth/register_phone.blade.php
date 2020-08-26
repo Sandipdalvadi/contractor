@@ -19,7 +19,7 @@ header#header, .footer { display: none; }
                 <div class="log-reg">
                     <div class="log-reg-pop">
                         <div class="logo-wlcm">
-                            <img src="{{ public_url('/default_images/logo.png') }}" alt="Photo" />
+                            <a href="{{route('home')}}"><img src="{{ public_url('/default_images/logo.png') }}" alt="Photo" /></a>
                             <h4>Welcome</h4>
                         </div>
                         <form name="contact_us" class="contact_us" id="register-form" action="{{route('auth.confirmVerify')}}" method="POST">
