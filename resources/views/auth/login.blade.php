@@ -62,7 +62,7 @@ header#header, .footer { display: none; }
                                 </div>
                             </div>
                         </form>
-                        <div class="logorreg">Don't have an account? <a href="{{ route('register') }}" class="">{{ __('messages.register') }}</a></div>
+                        <div class="logorreg">Don't have an account? <a href="{{ route('auth.verifyPhone') }}" class="">{{ __('messages.register') }}</a></div>
                     </div>
                 </div>
             </div>
