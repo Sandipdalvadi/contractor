@@ -31,11 +31,11 @@ header#header, .footer { display: none; }
                                 {{-- <input type="text" name="email" placeholder="{{ __('messages.email') }}"> --}}
                             </div>
                             <div class="form-group submit">
-                                <input type="submit" name="submit" value="{{ __('Send Password Reset Link') }}" class="signin"
+                                <input type="submit" style="margin: 10px 0 20px" name="submit" value="{{ __('Send Password Reset Link') }}" class="signin"
                                     id="signin">
                             </div>
                         </form>
-                        <div class="logorreg">Back to login <a href="{{ route('login') }}" class="">{{ __('messages.login') }}</a></div>
+                        <div class="logorreg">Back to <a href="{{ route('login') }}" class="">{{ __('messages.login') }}</a></div>
                         {{-- <div class="logorreg">Don't have an account? <a href="{{ route('auth.verifyPhone') }}" class="">{{ __('messages.register') }}</a></div> --}}
                     </div>
                 </div>
