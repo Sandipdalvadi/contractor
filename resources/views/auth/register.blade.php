@@ -3,83 +3,62 @@
 $categories = \App\Model\Category::where('status',1)->get();
 ?>
 @section('content')
-
+<style>
+body {
+    margin: 0 !important;
+}
+header#header, .footer { display: none; }
+</style>
         </div>
     </div>
 </header>
-<div class="container-fluid login_register header_area deximJobs_tabs">
-    <div class="row">
-        <div class="container main-container-home">
-            <div class="col-lg-offset-1 col-lg-11 col-md-12 col-sm-12 col-xs-12">
-                <div id="register-account" class="tab-content white-text">
-                    <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12 zero-padding-left">
-                        <ul class="nav nav-pills ">
-                             <li class="active"><a href="javascript:void(0)">{{__("messages.register")}}</a></li>
-                        </ul>
-                       <form name="contact_us" id="register-form" class="contact_us" method="POST" action="{{ route('register') }}">
-                        @csrf
-                           <input type="hidden" name="home_page_link" id="home_page_link" value="{{route('home')}}"/>
-                          <div class="form-group">
-                             <label>{{__("messages.name")}}</label>
-                             <input type="text" name="name" placeholder="{{__("messages.name")}}">
-                          </div>
-                          <div class="form-group">
-                             <label>{{__("messages.email")}}</label>
-                             <input type="email" name="email" placeholder="{{__("messages.email")}}">
-                          </div>
-                          <div class="form-group">
-                              <label>{{__("messages.phone")}}</label>
-                              <input type="text" id="number" name="phone" placeholder="{{__("messages.+919*********")}}">
-                           </div>
-                          <div class="form-group">
-                             <label>{{__("messages.password")}}</label>
-                             <input type="password" name="password" id="password" placeholder="{{__("messages.password")}}"/>
-                          </div>
-                          <div class="form-group">
-                             <label>{{__("messages.confirmPassword")}}</label>
-                             <input type="password" name="password_confirmation" id="cpassword" {{__("messages.confirmPassword")}}/>
-                          </div>
-                          <div class="form-group">
-                             <div id="recaptcha-container"></div>
-                           </div>
-                          <div class="form-group text-center">
-                             <label></label>
-                             <button type="button" name="submit" class="register" onclick="phoneAuth();">{{__("messages.register")}}</button>
-                             {{-- <input type="submit" name="submit" value="{{__("messages.register")}}" class="register"> --}}
-                             {{-- <button type="button" data-toggle="modal" data-target="#verificationCodeModal">Launch modal</button> --}}
+<div class="log-reg-main">
+  <div class="container">
+      <div class="row">
+          <div id="register-account" class="log-reg">
+              <div class="log-reg-pop">
+                  <div class="logo-wlcm">
+                      <img src="{{ public_url('/default_images/logo.png') }}" alt="Photo" />
+                      <h4>Welcome</h4>
+                  </div>
+                 <form name="contact_us" id="register-form" class="contact_us" method="POST" action="{{ route('register') }}">
+                  @csrf
+                     <input type="hidden" name="home_page_link" id="home_page_link" value="{{route('home')}}"/>
+                    <div class="form-group">
+                       <input type="text" name="name" placeholder="{{__("messages.name")}}">
+                    </div>
+                    <div class="form-group">
+                       <input type="email" name="email" placeholder="{{__("messages.email")}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="number" name="phone" placeholder="{{__("messages.+919*********")}}">
+                     </div>
+                    <div class="form-group">
+                       <input type="password" name="password" id="password" placeholder="{{__("messages.password")}}"/>
+                    </div>
+                    <div class="form-group">
+                       <input type="password" name="password_confirmation" id="cpassword" placeholder="{{__("messages.confirmPassword")}}"/>
+                    </div>
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <label><input type="checkbox" value="">I agree to the Freelancer <a href="#">User Agreement</a> and <a href="#">Privacy Policy</a>.</label>
+                      </div>
+                    </div>
+                    <div class="form-group google-captcha">
+                       <div id="recaptcha-container"></div>
+                     </div>
+                    <div class="form-group submit">
+                       <button type="button" name="submit" class="signin" id="signin" onclick="phoneAuth();">{{__("messages.register")}}</button>
+                       {{-- <input type="submit" name="submit" value="{{__("messages.register")}}" class="register"> --}}
+                       {{-- <button type="button" data-toggle="modal" data-target="#verificationCodeModal">Launch modal</button> --}}
 
-                           </div>
-                       </form>
-                    </div>
-                    <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12  pull-right sidebar">
-                       <div class="widget">
-                          <h3>{{__("messages.whyToHaveAnAccountInContractor")}}</h3>
-                          <ul>
-                             <li>
-                                <p><i class="fa fa-clock-o"></i>{{__("messages.fastApplyingForOffersTheNecessaryDocumentsAreAlwaysAtHand")}}
-                                </p>    
-                                
-                             </li>
-                             <!--<li>-->
-                             <!--   <p><i class="fa fa-child"></i>Effectively target employers-->
-                             <!--      You can share your profile and CV recruiters-->
-                             <!--   </p>-->
-                             <!--</li>-->
-                             <li>
-                                <p><i class="fa fa-check-circle-o"></i>{{__("messages.matchingJobsWeWillSuggestYouOfferToFitYourNeedsOnEmail")}}
-                                </p>
-                             </li>
-                             <li>
-                                <p>{{__("messages.alreadyHaveAnAccount")}}</p>
-                             <a href="{{route('login')}}" class="label job-type register" style="margin-top:15px;">{{__("messages.login")}}</a>
-                             </li>
-                          </ul>
-                       </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                     </div>
+                 </form>
+                 <div class="logorreg">Already have an account? <a href="{{ route('login') }}" class="">{{ __('messages.login') }}</a></div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 
  <div class="modal fade" id="verificationCodeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

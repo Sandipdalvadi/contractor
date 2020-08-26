@@ -31,34 +31,38 @@ header#header, .footer { display: none; }
                                 <input type="password" name="password" id="password-2"
                                     placeholder="{{ __('messages.password') }}" />
                             </div>
-                            <div class="form-group submit">
+                            <div class="form-group submit frgt-pw">
+                            
                                 <div class="cbox">
                                     <input type="checkbox" name="checkbox" />
                                     <span>{{ __('messages.rememberMe') }}</span>
                                 </div>
+                                <a href="{{ route($forgotPasswordRoute) }}"
+                                    class="lost_password">{{ __('messages.lostPassword') }}?</a>
+
                             </div>
                             <div class="form-group submit">
                                 <input type="submit" name="submit" value="{{ __('messages.signIn') }}" class="signin"
                                     id="signin">
-                                <a href="{{ route($forgotPasswordRoute) }}"
-                                    class="lost_password">{{ __('messages.lostPassword') }}?</a>
                             </div>
                             <div class="form-group">
-                                <ul class="social-login">
-                                    <li class="google-login">
-                                        <a href="{{ route('login.provider', 'google') }}" class=""><i
-                                                class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="facebook-login">
+                                <div class="or-social-log">
+                                    <div class="slor"><span>OR</span></div>
+                                    <ul class="social-login">
+                                        <li class="google-login">
+                                            <a href="{{ route('login.provider', 'google') }}" class=""><i
+                                                    class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li class="facebook-login">
 
-                                        <a href="{{ route('login.provider', 'facebook') }}" class=""><i
-                                                class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
+                                            <a href="{{ route('login.provider', 'facebook') }}" class=""><i
+                                                    class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </form>
-                        <a href="{{ route('register') }}"
-                                        class="label job-type register">{{ __('messages.register') }}</a>
+                        <div class="logorreg">Don't have an account? <a href="{{ route('register') }}" class="">{{ __('messages.register') }}</a></div>
                     </div>
                 </div>
             </div>
