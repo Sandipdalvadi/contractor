@@ -25,7 +25,7 @@ header#header, .footer { display: none; }
                         <form name="contact_us" class="contact_us" id="register-form" action="{{route('auth.confirmVerify')}}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <input type="number" id="number" name="phone" placeholder="{{ __('messages.phone') }}">
+                                <input type="text" id="number" name="phone" placeholder="{{ __('messages.phone') }}">
                             </div>
                             <div class="form-group" style="display: none" id="verificationCodeDiv">
                                 <input type="text" name="verificationCode" id="verificationCode"
@@ -35,10 +35,7 @@ header#header, .footer { display: none; }
                                 <div id="recaptcha-container"></div>
                               </div>         
                             <div class="form-group submit">
-                                {{-- <input type="submit" name="submit" value="{{ __('messages.signIn') }}" class="signin" --}}
-                                    {{-- id="signin"> --}}
                                 <button type="button" name="submit" class="signin" id="signin" onclick="phoneAuth();">Send OTP</button>
-
                             </div>
                             <div class="form-group">
                                 <div class="or-social-log">
@@ -57,6 +54,8 @@ header#header, .footer { display: none; }
                                 </div>
                             </div>
                         </form>
+                        <div class="logorreg">Already have an account? <a href="{{ route('login') }}" class="">{{ __('messages.login') }}</a></div>
+
                     </div>
                 </div>
             </div>
