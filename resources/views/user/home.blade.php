@@ -1,13 +1,15 @@
 @extends('user.common.user_layout')
 @section('content')
     <div class="container slogan">
-        <div class="col-lg-6">
-            <h1 class="animated fadeInDown">{{ __('messages.hireTheBestFreelancersForAnyJobOnline') }}</h1>
-            <h3 class="text-center"><span>{{ __('messages.JoinUs') }} </span>& {{ __('messages.exploreThousandsOfJobs') }}
-            </h3>
-            <div class="banner-btn">
-                <a href="#" class="btn-clr">{{ __('messages.hireAsAFreelancer') }}</a>
-                <a href="#">{{ __('messages.earnMoneyFreelancing') }}</a>
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="animated fadeInDown">{{ __('messages.hireTheBestFreelancersForAnyJobOnline') }}</h1>
+                <h3 class=""><span>{{ __('messages.JoinUs') }} </span>& {{ __('messages.exploreThousandsOfJobs') }}
+                </h3>
+                <div class="banner-btn">
+                    <a href="#" class="btn-clr">{{ __('messages.hireAsAFreelancer') }}</a>
+                    <a href="#">{{ __('messages.earnMoneyFreelancing') }}</a>
+                </div>
             </div>
         </div>
     </div>
@@ -75,6 +77,82 @@
     </div>
     </header>
     <!-- End Header Section -->
+
+
+    <div class="browse-job-sec">
+    	<div class="container">
+    		<div class="sec-title">
+    			<h3>Browse Jobs or Companies</h3>
+    		</div>
+    		<div class="row">
+    			<div class="col-md-6">
+    				<div class="compny-job">
+    					<a href="#">
+    						<img src="{{ public_url('/assets/images/jobs.jpg') }}">
+    						<label>Browse jobs</label>
+    					</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6">
+    				<div class="compny-job">
+    					<a href="#">
+    						<img src="{{ public_url('/assets/images/companyes.jpg') }}">
+    						<label>Browse Companies</label>
+    					</a>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+    <div class="about-done">
+    	<div class="container">
+    		<div class="sec-title">
+    			<h3>Need something done?</h3>
+    		</div>
+    		<div class="row">
+    			<div class="col-md-4">
+    				<div class="done-somthng">
+    					<img src="{{ public_url('/assets/images/post-job.png') }}">
+    					<h5>Post a job</h5>
+    					<p>It's easy. Simply post a job you need completed and receive competitive bids from freelancers within minutes.</p>
+    				</div>
+    			</div>
+    			<div class="col-md-4">
+    				<div class="done-somthng">
+    					<img src="{{ public_url('/assets/images/choose-freelancers.png') }}">
+    					<h5>Choose freelancers</h5>
+    					<p>Whatever your needs, there will be a freelancer to get it done: from web design (and a whole lot more).</p>
+    				</div>
+    			</div>
+    			<div class="col-md-4">
+    				<div class="done-somthng">
+    					<img src="{{ public_url('/assets/images/pay-safely.png') }}">
+    					<h5>Pay safely</h5>
+    					<p>With secure payments and thousands of reviewed professionals to choose from globearchitectures</p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+    <div class="category-sec">
+    	<div class="container">
+    		<div class="sec-title">
+    			<h3>Browse top job categories</h3>
+    		</div>
+    		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul class="nav nav-pills">
+                    @if (count($categories))
+                        @foreach ($categories as $category)
+                            <li><a href="#">{{ get_language_name($category, 'name') }}</a></li>
+                        @endforeach
+                    @endif
+                </ul>
+            </div>
+    	</div>
+    </div>
+
 
 
     <!--maine container Section -->

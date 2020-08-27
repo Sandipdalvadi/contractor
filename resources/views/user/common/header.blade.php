@@ -2,12 +2,22 @@
     <div id="loader"></div>
 </div>
 <!-- Header Image Or May be Slider-->
+
+<script>
+    document.getElementById('bannerVideo').play();
+</script>
+
 <header id="header" class="container-fluid home">
     <div class="row">
         <div class="header_banner">
             <div class="slides">
                 <div class="slider_items parallax-window" data-parallax="scroll"
-                    data-image-src="{{ public_url('/assets/images/headerimage1.jpg') }}"></div>
+                    data-image-src="{{ public_url('/assets/images/headerimage1.jpg') }}">
+                        <video autoplay muted loop id="bannerVideo">
+                          <source src="{{ public_url('/assets/images/banner1.mp4') }}" type="video/mp4">
+                          <source src="{{ public_url('/assets/images/banner1.ogg') }}" type="video/ogg">
+                        </video>
+                    </div>
             </div>
         </div>
         <!-- Header Image Or May be Slider-->
@@ -25,6 +35,15 @@
                                         class="label job-type partytime">{{ __('messages.postAJobItsFree') }}</span></a>
                             </li>
                             <li class="dropdown">
+                                <a class="dropdown-toggle language" href="#" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Language</a>
+                                <ul class="dropdown-menu settings-menu">
+                                    <li><a href="{{ route('locale', ['locale' => 'en']) }}">English</a></li>
+                                    <li><a href="{{ route('locale', ['locale' => 'ar']) }}">Arabic</a></li>
+                                    <li><a href="{{ route('locale', ['locale' => 'ur']) }}">Urdu</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle login" data-toggle="dropdown" role="button"
                                     aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
                                 <ul class="dropdown-menu">
@@ -40,18 +59,6 @@
                                     <li><a href="{{route('login')}}">{{ __('messages.login') }}</a></li>
                                     <li><a href="{{route('auth.verifyPhone')}}">{{ __('messages.register') }}</a></li>
                                     @endif
-                                </ul>
-                            </li>
-
-
-                            <li class="dropdown">
-                                <a class="dropdown-toggle login" href="#" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false"><i class="fa fa-language"
-                                        aria-hidden="true"></i></a>
-                                <ul class="dropdown-menu settings-menu">
-                                    <li><a href="{{ route('locale', ['locale' => 'en']) }}">English</a></li>
-                                    <li><a href="{{ route('locale', ['locale' => 'ar']) }}">Arabic</a></li>
-                                    <li><a href="{{ route('locale', ['locale' => 'ur']) }}">Urdu</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -93,7 +100,7 @@
                                     href="{{ route('user.createProject') }}">{{ __('messages.postAJobItsFree') }}</a>
                             </li>
                             <li class="mobile-menu"><a href="{{ route('login') }}">{{ __('messages.login') }}</a></li>
-                            <li class="mobile-menu"><a href="{{ route('register') }}">{{ __('messages.register') }}</a>
+                            <li class="mobile-menu"><a href="{{route('auth.verifyPhone')}}">{{ __('messages.register') }}</a>
                             </li>
                         </ul>
                     </div>
