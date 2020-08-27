@@ -21,7 +21,16 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::where('status','1')->get();
-        // echo "<pre>";print_r($categories);exit;
         return view('user.home',['categories'=>$categories]);
+    }
+    public function browseJobs()
+    {
+        $categories = Category::where('status','1')->get();
+        return view('user.browse_jobs',['categories'=>$categories]);
+    }
+    public function popularCompany()
+    {
+        $categories = Category::where('status','1')->get();
+        return view('user.popular_company',['categories'=>$categories]);
     }
 }

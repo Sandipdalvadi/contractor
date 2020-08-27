@@ -1,3 +1,4 @@
+
 <div id="loadessr">
     <div id="loader"></div>
 </div>
@@ -38,9 +39,9 @@
                                 <a class="dropdown-toggle language" href="#" data-toggle="dropdown" role="button"
                                     aria-haspopup="true" aria-expanded="false">Language</a>
                                 <ul class="dropdown-menu settings-menu">
-                                    <li><a href="{{ route('locale', ['locale' => 'en']) }}">English</a></li>
-                                    <li><a href="{{ route('locale', ['locale' => 'ar']) }}">Arabic</a></li>
-                                    <li><a href="{{ route('locale', ['locale' => 'ur']) }}">Urdu</a></li>
+                                    <li @if(app()->getLocale() == 'en') class="active" @endif><a href="{{ route('locale', ['locale' => 'en']) }}">English</a></li>
+                                    <li @if(app()->getLocale() == 'ar') class="active" @endif><a href="{{ route('locale', ['locale' => 'ar']) }}">Arabic</a></li>
+                                    <li @if(app()->getLocale() == 'ur') class="active" @endif><a href="{{ route('locale', ['locale' => 'ur']) }}">Urdu</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -79,9 +80,9 @@
                                     aria-haspopup="true" aria-expanded="false"><i class="fa fa-language"
                                         aria-hidden="true"></i></a>
                                 <ul class="dropdown-menu settings-menu">
-                                    <li><a href="{{ route('locale', ['locale' => 'en']) }}">English</a></li>
-                                    <li><a href="{{ route('locale', ['locale' => 'ar']) }}">Arabic</a></li>
-                                    <li><a href="{{ route('locale', ['locale' => 'ur']) }}">Urdu</a></li>
+                                    <li @if(Config::get('app.locale') == 'en') class="active" @endif><a href="{{ route('locale', ['locale' => 'en']) }}">English</a></li>
+                                    <li @if(app()->getLocale() == 'ar') class="active" @endif><a href="{{ route('locale', ['locale' => 'ar']) }}">Arabic</a></li>
+                                    <li @if(app()->getLocale() == 'ur') class="active" @endif><a href="{{ route('locale', ['locale' => 'ur']) }}">Urdu</a></li>
                                 </ul>
                             </li>
                         </ul>

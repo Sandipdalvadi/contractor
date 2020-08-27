@@ -37,12 +37,13 @@ Route::get('/profile', 'ProfileController@profile')->name('user.profile');
 Route::get('/edit_profile', 'ProfileController@editProfile')->name('user.editprofile');
 Route::post('/edit_profile', 'ProfileController@updateProfile')->name('user.updateProfile');
 // Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
-Route::get('redirect/{driver}', 'Auth\LoginController@redirectToProvider')
-->name('login.provider');
+Route::get('redirect/{driver}', 'Auth\LoginController@redirectToProvider')->name('login.provider');
 Route::get('/callback/{driver}', 'Auth\LoginController@handleProviderCallback');
 Route::post('/facebook_login', 'Auth\LoginController@facebookLogin')->name('user.facebookLogin');
 
 Route::get('/create_project', 'JobController@createProject')->name('user.createProject');
+Route::get('/browse_jobs', 'HomeController@browseJobs')->name('user.browseJobs');
+Route::get('/popular_company', 'HomeController@popularCompany')->name('user.popularCompany');
 
 Route::get('locale/{locale}', function ($locale){
     Session::put('locale', $locale);
