@@ -17,6 +17,7 @@
     <!-- Default template -->
     <link rel="stylesheet" href="{{ public_url('/assets/owlslider/owl-carousel/owl.template.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ public_url('/assets/webcss/select2.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ public_url('/assets/bootstrap-slider/bootstrap-slider.min.css') }}">
     <!--Custom template CSS-->
     <link href="{{ public_url('/style.css') }}" rel="stylesheet">
     <!--Custom template CSS Responsive-->
