@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Auth, Hash, DB, Lang, URL;
 
-
 class CategoryController extends Controller
 {
     public function index()
